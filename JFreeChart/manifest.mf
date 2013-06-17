@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.edwin.my.jfreechart
+OpenIDE-Module-Localizing-Bundle: com/edwin/my/jfreechart/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

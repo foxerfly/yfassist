@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 10, 2013 10:23:40 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.edwin.authorize.UserAuthorize" table="UserAuthorize" schema="dbo" >
+        <id name="userId" type="string">
+            <column name="UserId" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="authorizeId" type="string">
+            <column name="AuthorizeID" length="30" not-null="true" />
+        </property>
+        <property name="c" type="java.lang.Character">
+            <column name="C" length="1" />
+        </property>
+        <property name="r" type="java.lang.Character">
+            <column name="R" length="1" />
+        </property>
+        <property name="u" type="java.lang.Character">
+            <column name="U" length="1" />
+        </property>
+        <property name="d" type="java.lang.Character">
+            <column name="D" length="1" />
+        </property>
+        <property name="s" type="java.lang.Character">
+            <column name="S" length="1" />
+        </property>
+        <property name="cs" type="java.lang.Character">
+            <column name="CS" length="1" />
+        </property>
+        <property name="a" type="java.lang.Character">
+            <column name="A" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

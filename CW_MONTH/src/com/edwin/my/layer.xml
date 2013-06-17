@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+
+
+    <folder name="Actions">
+        <folder name="Tools">
+            <file name="com-edwin-my-sheets-ExcelCheckinTopComponent.instance">
+                <attr name="iconBase" stringvalue="ICONS/download.png"/>
+                <attr name="instanceCreate" methodvalue="org.openide.windows.TopComponent.openAction"/>
+                <attr name="preferredID" stringvalue="ExcelCheckinTopComponent"/>
+            </file>
+        </folder>
+        <folder name="Window_hidden">
+            <file name="com-edwin-my-Cost-eeTopComponent.instance_hidden"/>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="File_hidden">
+            <file name="Export_hidden"/>
+            <file name="Import_hidden"/>
+            <file name="Separator2.instance_hidden"/>
+            <file name="SeparatorNew.instance_hidden"/>
+            <file name="SeparatorOpen.instance_hidden"/>
+            <file name="import-export-sep.instance_hidden"/>
+            <file name="org-netbeans-modules-openfile-OpenFileAction.shadow_hidden"/>
+            <file name="org-netbeans-modules-openfile-RecentFileAction.shadow_hidden"/>
+            <file name="org-netbeans-modules-project-ui-CloseProject.shadow_hidden"/>
+            <file name="org-netbeans-modules-project-ui-CustomizeProject.shadow_hidden"/>
+            <file name="org-netbeans-modules-project-ui-NewFile.shadow_hidden"/>
+            <file name="org-netbeans-modules-project-ui-NewProject.shadow_hidden"/>
+            <file name="org-netbeans-modules-project-ui-OpenProject.shadow_hidden"/>
+            <file name="org-netbeans-modules-project-ui-RecentProjects.shadow_hidden"/>
+            <file name="org-netbeans-modules-project-ui-groups-GroupsMenu.shadow_hidden"/>
+        </folder>
+        <folder name="Edit_hidden"/>
+        <folder name="Tools_hidden">
+            <file name="com-edwin-my-Cost-OpenCost.shadow_hidden"/>
+            <file name="com-edwin-my-SFC-MPS.shadow_hidden"/>
+        </folder>
+        <folder name="View_hidden"/>
+        <folder name="Navigate_hidden"/>
+        <folder name="GoTo_hidden"/>
+        <folder name="Source_hidden"/>
+        <folder name="Refactor_hidden"/>
+        <folder name="Refactoring_hidden"/>
+        <folder name="BuildProject_hidden"/>
+        <folder name="Team_hidden"/>
+        <folder name="Versioning_hidden"/>
+        <folder name="Help_hidden"/>
+        <folder name="RunProject_hidden"/>
+        <folder name="财务">
+            <file name="com-edwin-my-Cost-OpenCost.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/com-edwin-my-Cost-OpenCost.instance"/>
+            </file>
+        </folder>
+        <folder name="生产">
+            <file name="com-edwin-my-SFC-MPS.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/com-edwin-my-SFC-MPS.instance"/>
+            </file>
+        </folder>
+        <folder name="系统管理"/>
+    </folder>
+    <folder name="Toolbars">
+        <folder name="Clipboard_hidden">
+            <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.core.ui.resources.Bundle"/>
+            <attr name="position" intvalue="200"/>
+            <file name="org-openide-actions-CopyAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-CopyAction.instance"/>
+                <attr name="position" intvalue="200"/>
+            </file>
+            <file name="org-openide-actions-CutAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-CutAction.instance"/>
+                <attr name="position" intvalue="100"/>
+            </file>
+            <file name="org-openide-actions-PasteAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-PasteAction.instance"/>
+                <attr name="position" intvalue="300"/>
+            </file>
+        </folder>
+        <folder name="File">
+            <file name="com-edwin-my-SFC-DepartNodeAction.shadow_hidden"/>
+            <file name="com-edwin-my-SFC-MPS.shadow_hidden"/>
+            <file name="com-edwin-my-sheets-ExcelCheckinTopComponent.instance">
+                <attr name="iconBase" stringvalue="ICONS/download.png"/>
+                <attr name="instanceCreate" methodvalue="org.openide.windows.TopComponent.openAction"/>
+                <attr name="preferredID" stringvalue="ExcelCheckinTopComponent"/>
+            </file>
+            <file name="org-openide-actions-SaveAllAction_hidden.shadow_hidden_hidden"/>
+        </folder>
+        <folder name="Memory">
+            <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.core.ui.resources.Bundle"/>
+            <attr name="position" intvalue="600"/>
+            <file name="org-netbeans-modules-profiler-actions-SelfSamplerAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Profile/org-netbeans-modules-profiler-actions-SelfSamplerAction.instance"/>
+                <attr name="position" intvalue="2000"/>
+            </file>
+            <file name="org-openide-actions-GarbageCollectAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/System/org-openide-actions-GarbageCollectAction.instance"/>
+                <attr name="position" intvalue="100"/>
+            </file>
+        </folder>
+        <folder name="UndoRedo_hidden">
+            <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.core.ui.resources.Bundle"/>
+            <attr name="position" intvalue="300"/>
+            <file name="org-openide-actions-RedoAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-RedoAction.instance"/>
+                <attr name="position" intvalue="500"/>
+            </file>
+            <file name="org-openide-actions-UndoAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-UndoAction.instance"/>
+                <attr name="position" intvalue="400"/>
+            </file>
+        </folder>
+    </folder>
+
+    <folder name="Windows2Local">
+        <file name="WindowManager.wswmgr" url="Cost/groups/WindowManagerWswmgr.xml"/>
+        <folder name="Modes">
+            <file name="anonymousMode_1.wsmode" url="Cost/groups/Modes/anonymousMode_1Wsmode.xml"/>
+            <folder name="anonymousMode_1">
+                <file name="OrderBriefTopComponent.wstcref" url="Cost/groups/Modes/anonymousMode_1/OrderBriefTopComponentWstcref.xml"/>
+            </folder>
+        </folder>
+    </folder>
+
+
+    <folder name="Windows2">
+        <folder name="Groups">
+            <file name="CostGroup.wsgrp" url="Cost/groups/CostGroupWsgrp.xml"/>
+            <folder name="CostGroup">
+                <file name="MainCostViewTopComponent.wstcgrp" url="Cost/groups/CostGroup/MainCostViewTopComponentWstcgrp.xml"/>
+                <file name="OrderBriefTopComponent.wstcgrp" url="Cost/groups/CostGroup/OrderBriefTopComponentWstcgrp.xml"/>
+                <file name="OrderDetailTopComponent.wstcgrp" url="Cost/groups/CostGroup/OrderDetailTopComponentWstcgrp.xml"/>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>

@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2013 1:39:36 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.edwin.SFC.Mocta" table="MOCTA" schema="dbo" >
+        <composite-id name="id" class="com.edwin.SFC.MoctaId">
+            <key-property name="ta001" type="string">
+                <column name="TA001" length="4" />
+            </key-property>
+            <key-property name="ta002" type="string">
+                <column name="TA002" length="11" />
+            </key-property>
+        </composite-id>
+        <property name="company" type="string">
+            <column name="COMPANY" length="10" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="10" />
+        </property>
+        <property name="usrGroup" type="string">
+            <column name="USR_GROUP" length="10" />
+        </property>
+        <property name="createDate" type="string">
+            <column name="CREATE_DATE" length="17" />
+        </property>
+        <property name="modifier" type="string">
+            <column name="MODIFIER" length="10" />
+        </property>
+        <property name="modiDate" type="string">
+            <column name="MODI_DATE" length="17" />
+        </property>
+        <property name="flag" type="java.lang.Short">
+            <column name="FLAG" precision="3" scale="0" />
+        </property>
+        <property name="ta003" type="string">
+            <column name="TA003" length="8" />
+        </property>
+        <property name="ta004" type="string">
+            <column name="TA004" length="8" />
+        </property>
+        <property name="ta005" type="string">
+            <column name="TA005" length="4" />
+        </property>
+        <property name="ta006" type="string">
+            <column name="TA006" length="20" />
+        </property>
+        <property name="ta007" type="string">
+            <column name="TA007" length="4" />
+        </property>
+        <property name="ta008" type="string">
+            <column name="TA008" length="4" />
+        </property>
+        <property name="ta009" type="string">
+            <column name="TA009" length="8" />
+        </property>
+        <property name="ta010" type="string">
+            <column name="TA010" length="8" />
+        </property>
+        <property name="ta011" type="java.lang.Character">
+            <column name="TA011" length="1" />
+        </property>
+        <property name="ta012" type="string">
+            <column name="TA012" length="8" />
+        </property>
+        <property name="ta013" type="java.lang.Character">
+            <column name="TA013" length="1" />
+        </property>
+        <property name="ta014" type="string">
+            <column name="TA014" length="8" />
+        </property>
+        <property name="ta015" type="big_decimal">
+            <column name="TA015" precision="16" scale="6" />
+        </property>
+        <property name="ta016" type="big_decimal">
+            <column name="TA016" precision="16" scale="6" />
+        </property>
+        <property name="ta017" type="big_decimal">
+            <column name="TA017" precision="16" scale="6" />
+        </property>
+        <property name="ta018" type="big_decimal">
+            <column name="TA018" precision="16" scale="6" />
+        </property>
+        <property name="ta019" type="string">
+            <column name="TA019" length="6" />
+        </property>
+        <property name="ta020" type="string">
+            <column name="TA020" length="10" />
+        </property>
+        <property name="ta021" type="string">
+            <column name="TA021" length="10" />
+        </property>
+        <property name="ta022" type="big_decimal">
+            <column name="TA022" precision="17" scale="8" />
+        </property>
+        <property name="ta023" type="string">
+            <column name="TA023" length="4" />
+        </property>
+        <property name="ta024" type="string">
+            <column name="TA024" length="4" />
+        </property>
+        <property name="ta025" type="string">
+            <column name="TA025" length="11" />
+        </property>
+        <property name="ta026" type="string">
+            <column name="TA026" length="4" />
+        </property>
+        <property name="ta027" type="string">
+            <column name="TA027" length="11" />
+        </property>
+        <property name="ta028" type="string">
+            <column name="TA028" length="4" />
+        </property>
+        <property name="ta029" type="string">
+            <column name="TA029" />
+        </property>
+        <property name="ta030" type="java.lang.Character">
+            <column name="TA030" length="1" />
+        </property>
+        <property name="ta031" type="java.lang.Boolean">
+            <column name="TA031" precision="1" scale="0" />
+        </property>
+        <property name="ta032" type="string">
+            <column name="TA032" length="10" />
+        </property>
+        <property name="ta033" type="string">
+            <column name="TA033" length="20" />
+        </property>
+        <property name="ta034" type="string">
+            <column name="TA034" length="60" />
+        </property>
+        <property name="ta035" type="string">
+            <column name="TA035" length="60" />
+        </property>
+        <property name="ta036" type="java.lang.Character">
+            <column name="TA036" length="1" />
+        </property>
+        <property name="ta037" type="java.lang.Character">
+            <column name="TA037" length="1" />
+        </property>
+        <property name="ta038" type="java.lang.Character">
+            <column name="TA038" length="1" />
+        </property>
+        <property name="ta039" type="java.lang.Character">
+            <column name="TA039" length="1" />
+        </property>
+        <property name="ta040" type="string">
+            <column name="TA040" length="8" />
+        </property>
+        <property name="ta041" type="string">
+            <column name="TA041" length="10" />
+        </property>
+        <property name="ta042" type="string">
+            <column name="TA042" length="4" />
+        </property>
+        <property name="ta043" type="big_decimal">
+            <column name="TA043" precision="10" scale="7" />
+        </property>
+        <property name="ta044" type="java.lang.Character">
+            <column name="TA044" length="1" />
+        </property>
+        <property name="ta045" type="big_decimal">
+            <column name="TA045" precision="16" scale="6" />
+        </property>
+        <property name="ta046" type="big_decimal">
+            <column name="TA046" precision="16" scale="6" />
+        </property>
+        <property name="ta047" type="big_decimal">
+            <column name="TA047" precision="16" scale="6" />
+        </property>
+        <property name="ta048" type="string">
+            <column name="TA048" length="4" />
+        </property>
+        <property name="ta049" type="java.lang.Character">
+            <column name="TA049" length="1" />
+        </property>
+        <property name="ta050" type="string">
+            <column name="TA050" />
+        </property>
+        <property name="ta051" type="string">
+            <column name="TA051" />
+        </property>
+        <property name="ta052" type="string">
+            <column name="TA052" />
+        </property>
+        <property name="ta053" type="string">
+            <column name="TA053" />
+        </property>
+        <property name="ta054" type="java.lang.Boolean">
+            <column name="TA054" precision="1" scale="0" />
+        </property>
+        <property name="ta055" type="java.lang.Character">
+            <column name="TA055" length="1" />
+        </property>
+        <property name="ta056" type="big_decimal">
+            <column name="TA056" precision="16" scale="6" />
+        </property>
+        <property name="ta057" type="string">
+            <column name="TA057" length="20" />
+        </property>
+        <property name="ta058" type="string">
+            <column name="TA058" length="80" />
+        </property>
+        <property name="ta059" type="java.lang.Character">
+            <column name="TA059" length="1" />
+        </property>
+        <property name="ta060" type="big_decimal">
+            <column name="TA060" precision="16" scale="6" />
+        </property>
+        <property name="ta061" type="big_decimal">
+            <column name="TA061" precision="16" scale="6" />
+        </property>
+        <property name="ta062" type="java.lang.Boolean">
+            <column name="TA062" precision="1" scale="0" />
+        </property>
+        <property name="ta063" type="string">
+            <column name="TA063" length="8" />
+        </property>
+        <property name="ta064" type="string">
+            <column name="TA064" length="6" />
+        </property>
+        <property name="ta065" type="java.lang.Character">
+            <column name="TA065" length="1" />
+        </property>
+        <property name="ta066" type="string">
+            <column name="TA066" length="8" />
+        </property>
+        <property name="ta067" type="string">
+            <column name="TA067" length="30" />
+        </property>
+        <property name="ta068" type="big_decimal">
+            <column name="TA068" precision="16" scale="6" />
+        </property>
+        <property name="ta069" type="big_decimal">
+            <column name="TA069" precision="16" scale="6" />
+        </property>
+        <property name="ta070" type="big_decimal">
+            <column name="TA070" precision="16" scale="6" />
+        </property>
+        <property name="ta071" type="string">
+            <column name="TA071" length="6" />
+        </property>
+        <property name="ta072" type="big_decimal">
+            <column name="TA072" precision="5" scale="4" />
+        </property>
+        <property name="ta073" type="string">
+            <column name="TA073" length="15" />
+        </property>
+        <property name="ta074" type="string">
+            <column name="TA074" length="4" />
+        </property>
+        <property name="tad01" type="big_decimal">
+            <column name="TAD01" precision="16" scale="6" />
+        </property>
+        <property name="tac01" type="java.lang.Character">
+            <column name="TAC01" length="1" />
+        </property>
+        <property name="tac02" type="big_decimal">
+            <column name="TAC02" precision="16" scale="6" />
+        </property>
+        <property name="tac03" type="big_decimal">
+            <column name="TAC03" precision="16" scale="6" />
+        </property>
+        <property name="ta075" type="string">
+            <column name="TA075" length="100" />
+        </property>
+        <property name="ta076" type="string">
+            <column name="TA076" length="4" />
+        </property>
+        <property name="ta077" type="string">
+            <column name="TA077" length="11" />
+        </property>
+        <property name="ta078" type="string">
+            <column name="TA078" length="4" />
+        </property>
+        <property name="ta079" type="string">
+            <column name="TA079" length="5" />
+        </property>
+        <property name="ta080" type="string">
+            <column name="TA080" length="4" />
+        </property>
+        <property name="ta081" type="big_decimal">
+            <column name="TA081" precision="16" scale="6" />
+        </property>
+        <property name="ta082" type="big_decimal">
+            <column name="TA082" precision="16" scale="6" />
+        </property>
+        <property name="ta083" type="string">
+            <column name="TA083" length="20" />
+        </property>
+        <property name="udf01" type="string">
+            <column name="UDF01" />
+        </property>
+        <property name="udf02" type="string">
+            <column name="UDF02" />
+        </property>
+        <property name="udf03" type="string">
+            <column name="UDF03" />
+        </property>
+        <property name="udf04" type="string">
+            <column name="UDF04" />
+        </property>
+        <property name="udf05" type="string">
+            <column name="UDF05" />
+        </property>
+        <property name="udf06" type="string">
+            <column name="UDF06" />
+        </property>
+        <property name="udf51" type="big_decimal">
+            <column name="UDF51" precision="16" scale="6" />
+        </property>
+        <property name="udf52" type="big_decimal">
+            <column name="UDF52" precision="16" scale="6" />
+        </property>
+        <property name="udf53" type="big_decimal">
+            <column name="UDF53" precision="16" scale="6" />
+        </property>
+        <property name="udf54" type="big_decimal">
+            <column name="UDF54" precision="16" scale="6" />
+        </property>
+        <property name="udf55" type="big_decimal">
+            <column name="UDF55" precision="16" scale="6" />
+        </property>
+        <property name="udf56" type="big_decimal">
+            <column name="UDF56" precision="16" scale="6" />
+        </property>
+        <property name="udf07" type="string">
+            <column name="UDF07" />
+        </property>
+        <property name="udf08" type="string">
+            <column name="UDF08" />
+        </property>
+        <property name="udf09" type="string">
+            <column name="UDF09" />
+        </property>
+        <property name="udf10" type="string">
+            <column name="UDF10" />
+        </property>
+        <property name="udf11" type="string">
+            <column name="UDF11" />
+        </property>
+        <property name="udf12" type="string">
+            <column name="UDF12" />
+        </property>
+        <property name="udf57" type="big_decimal">
+            <column name="UDF57" precision="16" scale="6" />
+        </property>
+        <property name="udf58" type="big_decimal">
+            <column name="UDF58" precision="16" scale="6" />
+        </property>
+        <property name="udf59" type="big_decimal">
+            <column name="UDF59" precision="16" scale="6" />
+        </property>
+        <property name="udf60" type="big_decimal">
+            <column name="UDF60" precision="16" scale="6" />
+        </property>
+        <property name="udf61" type="big_decimal">
+            <column name="UDF61" precision="16" scale="6" />
+        </property>
+        <property name="udf62" type="big_decimal">
+            <column name="UDF62" precision="16" scale="6" />
+        </property>
+    </class>
+</hibernate-mapping>

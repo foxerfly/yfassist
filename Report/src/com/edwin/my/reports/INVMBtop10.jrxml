@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fb71d722-1d14-4d52-ad0f-cd717c383e6b">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <queryString language="SQL">
+		<![CDATA[SELECT TOP 10 MB001,MB002,MB003,MB004 FROM INVMB]]>
+    </queryString>
+    <field name="MB001" class="java.lang.String"/>
+    <field name="MB002" class="java.lang.String"/>
+    <field name="MB003" class="java.lang.String"/>
+    <field name="MB004" class="java.lang.String"/>
+    <group name="MB001">
+        <groupExpression><![CDATA[$F{MB001}]]></groupExpression>
+    </group>
+    <group name="MB002">
+        <groupExpression><![CDATA[$F{MB002}]]></groupExpression>
+    </group>
+    <group name="MB003">
+        <groupExpression><![CDATA[$F{MB003}]]></groupExpression>
+    </group>
+    <group name="MB004">
+        <groupExpression><![CDATA[$F{MB004}]]></groupExpression>
+    </group>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="11" splitType="Stretch"/>
+    </title>
+    <pageHeader>
+        <band height="270" splitType="Stretch">
+            <elementGroup>
+                <bubbleChart>
+                    <chart>
+                        <reportElement uuid="595bca8e-af2e-47bd-a265-01eab1318a49" x="16" y="20" width="473" height="229"/>
+                        <box>
+                            <pen lineStyle="Dashed"/>
+                            <topPen lineStyle="Dashed"/>
+                            <leftPen lineStyle="Dashed"/>
+                            <bottomPen lineStyle="Dashed"/>
+                            <rightPen lineStyle="Dashed"/>
+                        </box>
+                        <chartTitle/>
+                        <chartSubtitle/>
+                        <chartLegend/>
+                    </chart>
+                    <xyzDataset/>
+                    <bubblePlot>
+                        <plot/>
+                    </bubblePlot>
+                </bubbleChart>
+            </elementGroup>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="125" splitType="Stretch">
+            <textField pattern="dd/MM/yyyy h.mm a">
+                <reportElement uuid="ec9d829a-bab6-47bc-8176-d89bec72afb9" x="698" y="14" width="100" height="20"/>
+                <textElement/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
+</jasperReport>

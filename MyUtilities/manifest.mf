@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.edwin.myswingx
+OpenIDE-Module-Localizing-Bundle: com/edwin/myswingx/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

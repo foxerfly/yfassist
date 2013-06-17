@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.edwin.my.lookandfeel
+OpenIDE-Module-Localizing-Bundle: com/edwin/my/lookandfeel/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

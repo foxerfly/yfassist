@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Window">
+            <file name="com-edwin-my-SFC-ErrorOutputTopComponent.instance_hidden"/>
+            <file name="com-edwin-my-SFC-MPSTopComponent.instance"/>
+        </folder>
+    </folder>
+    <folder name="Toolbars">
+        <folder name="File">
+            <file name="com-edwin-my-SFC-DepartNodeAction.shadow_hidden_hidden"/>
+            <file name="com-edwin-my-SFC-MPS.shadow_hidden_hidden"/>
+            <file name="com-edwin-my-bar-SFCsearchAction.shadow_hidden"/>
+            <file name="com-edwin-my-bar-SFCsearchAction_hidden.shadow_hidden">
+                <attr name="originalFile" stringvalue="Actions/Edit/com-edwin-my-bar-SFCsearchAction.instance"/>
+                <attr name="position" intvalue="100"/>
+            </file>
+            <file name="com-edwin-my-bom.shadow_hidden"/>
+            <file name="com-edwin-my-bom_hidden.shadow_hidden">
+                <attr name="originalFile" stringvalue="Actions/File/com-edwin-my-bom.instance"/>
+                <attr name="position" intvalue="200"/>
+            </file>
+            <file name="com-edwin-my-order-ShowMyGroupAction.shadow_hidden"/>
+            <file name="com-edwin-my-order-ShowMyGroupAction_hidden.shadow_hidden">
+                <attr name="originalFile" stringvalue="Actions/Edit/com-edwin-my-order-ShowMyGroupAction.instance"/>
+                <attr name="position" intvalue="0"/>
+            </file>
+            <file name="org-openide-actions-SaveAllAction.shadow_hidden"/>
+            <file name="org-openide-actions-SaveAllAction_hidden.shadow_hidden">
+                <attr name="originalFile" stringvalue="Actions/System/org-openide-actions-SaveAllAction.instance"/>
+                <attr name="position" intvalue="400"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+         <folder name="Groups">
+        <file name="MyGroup.wsgrp" url="order/groups/MyGroupWsgrp.xml"/>
+        <folder name="MyGroup">
+            <file name="OrderExceptionTopComponent.wstcgrp" url="order/groups/MyGroup/OrderExceptionTopComponentWstcgrp.xml"/>
+            <file name="OrderPurTopComponent.wstcgrp" url="order/groups/MyGroup/OrderPurTopComponentWstcgrp.xml"/>
+            <file name="OrderDetailTopComponent.wstcgrp" url="order/groups/MyGroup/OrderDetailTopComponentWstcgrp.xml"/>
+            <file name="OrderBriefTopComponent.wstcgrp" url="order/groups/MyGroup/OrderBriefTopComponentWstcgrp.xml"/>
+          </folder>
+
+        <file name="SFCGroups.wsgrp" url="SFC/groups/SFCGroupsWsgrp.xml"/>
+        <folder name="SFCGroups">
+            <file name="DepartTopComponent.wstcgrp" url="SFC/groups/SFCGroups/DepartTopComponentWstcgrp.xml"/>
+          </folder>
+
+
+    </folder>
+    </folder>
+</filesystem>

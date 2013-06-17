@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.edwin.log4j
+OpenIDE-Module-Localizing-Bundle: com/edwin/log4j/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

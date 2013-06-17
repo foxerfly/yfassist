@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.apisupport.project</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/nb-module-project/3">
+            <code-name-base>com.edwin.my.lookandfeel</code-name-base>
+            <standalone/>
+            <module-dependencies/>
+            <public-packages/>
+            <class-path-extension>
+                <runtime-relative-path>ext/nimrodlf-1.2.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/nimrodlf-1.2.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/smoothmetal.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/smoothmetal.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/quaqua.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/quaqua.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/swing-layout.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/swing-layout.jar</binary-origin>
+            </class-path-extension>
+        </data>
+    </configuration>
+</project>
