@@ -6,22 +6,17 @@
 package com.edwin.detail;
 
 import SqlImplements.MyJdbc;
-import java.awt.Dimension;
-import java.awt.Image;
-import java.io.File;
-import java.io.InputStream;
-import java.net.URLClassLoader;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Map;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperPrintManager;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.SimpleJasperReportsContext;
 import net.sf.jasperreports.view.JRViewer;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
+import org.openide.awt.HtmlBrowser;
 import org.openide.util.Exceptions;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
@@ -66,6 +61,7 @@ public final class AuthorizeDetailChartTopComponent extends TopComponent {
 
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
 
         org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(AuthorizeDetailChartTopComponent.class, "AuthorizeDetailChartTopComponent.jButton1.text")); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -74,15 +70,28 @@ public final class AuthorizeDetailChartTopComponent extends TopComponent {
             }
         });
 
+        org.openide.awt.Mnemonics.setLocalizedText(jButton2, org.openide.util.NbBundle.getMessage(AuthorizeDetailChartTopComponent.class, "AuthorizeDetailChartTopComponent.jButton2.text")); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(327, 327, 327))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 487, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jButton2)
+                .addContainerGap(420, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -110,31 +119,23 @@ public final class AuthorizeDetailChartTopComponent extends TopComponent {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            JasperPrint jp = JasperFillManager.fillReport("D:\\yfassist\\yfassist\\Admin\\src\\com\\edwin\\detail\\report2.jasper", this.params,MyJdbc.getConn());
-//            String str = this.getClass().getProtectionDomain().getCodeSource().getLocation().getFile();
-//            InputStream is = this.getClass().getResourceAsStream("src/com/edwin/detail/report1.jasper");
+        getReport();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-//            File reportFile = new File(this.getClass().getResource("src/com/edwin/detail/report1.jasper").getFile());
-//            JasperPrint jp = JasperFillManager.fillReport(str + "/report1.jasper", this.params, MyJdbc.getConn());
-//            System.out.println(is.getClass().getPackage());
-//            JasperPrint jp = JasperFillManager.fillReport(is, this.params, MyJdbc.getConn());
-//            Image im = JasperPrintManager.getInstance(new SimpleJasperReportsContext()).printToImage(jp, WIDTH, TOP_ALIGNMENT);
-//            Image im = JasperPrintManager.printPageToImage(jp, WIDTH, TOP_ALIGNMENT);
-//            jXImageView1.setImage(im);
-            JRViewer jr=new JRViewer (jp);
-            jr.setSize(749,487);
-//            jr.setPreferredSize(new Dimension(0, 487));
-//            jr.setMaximumSize(new Dimension(749, 487));
-            jPanel1.add(jr);
-        } catch (JRException ex) {
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            // TODO add your handling code here:
+
+            HtmlBrowser.URLDisplayer.getDefault().showURL(new URL("http://oa.fanski.com"));
+        } catch (MalformedURLException ex) {
             Exceptions.printStackTrace(ex);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private Map params;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
@@ -158,5 +159,28 @@ public final class AuthorizeDetailChartTopComponent extends TopComponent {
     void readProperties(java.util.Properties p) {
         String version = p.getProperty("version");
         // TODO read your settings according to their version
+    }
+
+    private void getReport() {
+        try {
+            JasperPrint jp = JasperFillManager.fillReport("D:\\yfassist\\yfassist\\Admin\\src\\com\\edwin\\detail\\report2.jasper", this.params, MyJdbc.getConn());
+//            String str = this.getClass().getProtectionDomain().getCodeSource().getLocation().getFile();
+//            InputStream is = this.getClass().getResourceAsStream("src/com/edwin/detail/report1.jasper");
+
+//            File reportFile = new File(this.getClass().getResource("src/com/edwin/detail/report1.jasper").getFile());
+//            JasperPrint jp = JasperFillManager.fillReport(str + "/report1.jasper", this.params, MyJdbc.getConn());
+//            System.out.println(is.getClass().getPackage());
+//            JasperPrint jp = JasperFillManager.fillReport(is, this.params, MyJdbc.getConn());
+//            Image im = JasperPrintManager.getInstance(new SimpleJasperReportsContext()).printToImage(jp, WIDTH, TOP_ALIGNMENT);
+//            Image im = JasperPrintManager.printPageToImage(jp, WIDTH, TOP_ALIGNMENT);
+//            jXImageView1.setImage(im);
+            JRViewer jr = new JRViewer(jp);
+            jr.setSize(749, 487);
+//            jr.setPreferredSize(new Dimension(0, 487));
+//            jr.setMaximumSize(new Dimension(749, 487));
+            jPanel1.add(jr);
+        } catch (JRException ex) {
+            Exceptions.printStackTrace(ex);
+        }
     }
 }
