@@ -7,9 +7,7 @@ package com.edwin.buliao;
 
 import PreVector.PreVectorInterface;
 import SqlInterface.QueryErp;
-import com.edwin.Depart.MaterialList;
 import com.edwin.myswingx.MyJTableModel;
-import com.edwin.myswingx.MyJXTable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -26,7 +24,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
-import javax.persistence.PersistenceContexts;
 import javax.swing.Action;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -51,8 +48,8 @@ import org.openide.util.NbBundle.Messages;
         iconBase = "com/edwin/Depart/application_view_tile.png",
         persistenceType = TopComponent.PERSISTENCE_ALWAYS)
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
-//@ActionID(category = "生产", id = "com.edwin.buliao.DepartAddMaterialTopComponent")
-//@ActionReference(path = "Menu/生产" /*, position = 333 */)
+@ActionID(category = "生产", id = "com.edwin.buliao.DepartAddMaterialTopComponent")
+@ActionReference(path = "Menu/生产" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
         displayName = "#CTL_DepartAddMaterialAction",
         preferredID = "DepartAddMaterialTopComponent")
@@ -65,7 +62,7 @@ import org.openide.util.NbBundle.Messages;
 public final class DepartAddMaterialTopComponent extends TopComponent {
 
     private List<Action> ca = null;
-    private MaterialList listPane;
+    private com.edwin.Depart.MaterialList listPane;
     private DialogDescriptor d = null;
     private ActionListener ac = new ActionListener() {
         @Override
@@ -177,6 +174,7 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
             }
         });
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONS/wand.png"))); // NOI18N
         org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.jButton1.text")); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,12 +205,21 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
                     .addComponent(jLabel1)
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+
+        try {
+
+            genericMocte();
+        } catch (SQLException ex) {
+            Exceptions.printStackTrace(ex);
+        } catch (ClassNotFoundException ex) {
+            Exceptions.printStackTrace(ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void materialNoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_materialNoKeyReleased
@@ -231,7 +238,7 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
 
     private void doGetMocta() throws ClassNotFoundException, SQLException {
 
-        this.listPane = new MaterialList(materialNo.getText().trim());
+        this.listPane = new com.edwin.Depart.MaterialList(materialNo.getText().trim());
 
         d = new DialogDescriptor(listPane, "选择物料", true, ac);
         d.setClosingOptions(new Object[]{});
@@ -281,7 +288,7 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
         Set<String> set = new HashSet<String>();
         int randomID = new Random().nextInt();
         PreVectorInterface prI = Lookup.getDefault().lookup(PreVectorInterface.class);
-        String insertSql = "INSERT INTO tmpDB(USERNAME,DEPARTMENT,GDate,randomID,PH,VVALUE) VALUES(" + prI.getLoginUserName() + "," + prI.getLoginUserDep() + ",CONVERT(VARCHAR(8),GETDATE(),112)," + randomID + ",?,?)";
+        String insertSql = "INSERT INTO tmpDB(USERNAME,DEPARTMENT,GDate,randomID,PH,VALUE) VALUES('" + prI.getLoginUserName() + "','" + prI.getLoginUserDep() + "',CONVERT(VARCHAR(8),GETDATE(),112)," + randomID + ",?,?)";
         String procedureSql = "{CALL me_procGeneratorMocte(?)}";
         ArrayList list = new ArrayList();
         Iterator<String> iterator;

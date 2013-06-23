@@ -82,7 +82,7 @@ public class QueryErpImp implements QueryErp {
 
         boolean status = false;
 //        String sql = "select RTRIM(MA001),RTRIM(UDF01) from DSCSYS..DSCMA WHERE MA001=? AND UDF01=?";
-        String sql = "select RTRIM(MA001) MA001,ISNULL(RTRIM(MV002),'') MV002,ISNULL(RTRIM(MV004),'') MV004,ISNULL(RTRIM(ME002),'') ME002,RTRIM(DSCSYS..DSCMA.UDF01) UDF01 from \n "
+        String sql = "select RTRIM(MA001) MA001,ISNULL(RTRIM(MV002),'未知') MV002,ISNULL(RTRIM(MV004),'未知') MV004,ISNULL(RTRIM(ME002),'未知') ME002,RTRIM(DSCSYS..DSCMA.UDF01) UDF01 from \n "
                 + "DSCSYS..DSCMA LEFT JOIN fanski..CMSMV ON MV001=MA001 LEFT JOIN CMSME ON ME001=MV004 WHERE MA001=? AND DSCSYS..DSCMA.UDF01=?\n";
 
         ResultSet rs = null;
@@ -111,7 +111,9 @@ public class QueryErpImp implements QueryErp {
         String sql = "SELECT DISTINCT RTRIM(MB001) MB001,MB002,MB003,RTRIM(MB110) MB110\n"
                 + "FROM MOCTB \n"
                 + "LEFT JOIN MOCTA ON TA001=TB001 AND TA002=TB002 \n"
-                + "LEFT JOIN INVMB ON MB001=TB003 WHERE TA011 IN ('2','3') AND MOCTA.TA006 LIKE ? OR MOCTA.UDF03 LIKE  ? ";
+                + "LEFT JOIN INVMB ON MB001=TB003\n"
+                + "WHERE TA011 IN ('2','3') AND (MOCTA.TA006 LIKE ? OR MOCTA.UDF03 LIKE ? )\n"
+                + "AND MOCTA.TA001+MOCTA.TA002  IN(SELECT TC004+TC005 FROM SFCTC WHERE TC004=MOCTA.TA001 AND TC005=MOCTA.TA002) ";
 
         PreparedStatement pstmt = null;
         pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -167,6 +169,8 @@ public class QueryErpImp implements QueryErp {
             listLength++;
         }
 
+//        System.out.println(sql);
+//        System.out.println(list.iterator().next().toString());
         int i = pstmt.executeUpdate();
         if (i == 1) {
             return true;

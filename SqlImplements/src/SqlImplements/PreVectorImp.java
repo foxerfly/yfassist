@@ -16,7 +16,7 @@ import org.openide.util.lookup.ServiceProvider;
 public class PreVectorImp implements PreVectorInterface {
 
     private static String loginUserName = "";
-    private static String loginUserDep = "";
+    private static String loginUserDep = "nil";
 
     @Override
     public String getLoginUserName() {
@@ -35,7 +35,11 @@ public class PreVectorImp implements PreVectorInterface {
 
     @Override
     public void setLoginUserDep(String loginUserDep) {
-        this.loginUserDep = loginUserDep;
+        if (loginUserDep.equals(null)) {
+            this.loginUserDep = "nil";
+        } else {
+            this.loginUserDep = loginUserDep;
+        }
     }
 
 }

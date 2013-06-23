@@ -57,7 +57,6 @@ public class MaterialList extends javax.swing.JPanel {
 
     private void cellVauleChangedListener(TableModelEvent e) {
 
-
         BigDecimal i = BigDecimal.valueOf((Double) mList.getValueAt(mList.getSelectedRow(), 1));
         if (i.compareTo(BigDecimal.ZERO) > 0) {
             if (e.getType() == TableModelEvent.UPDATE) {
@@ -100,7 +99,7 @@ public class MaterialList extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        mList = new javax.swing.JTable();
+        mList = new org.jdesktop.swingx.JXTable();
 
         mList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -140,28 +139,24 @@ public class MaterialList extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 852, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable mList;
+    private org.jdesktop.swingx.JXTable mList;
     // End of variables declaration//GEN-END:variables
 
     public void setMlist(String s) throws ClassNotFoundException, SQLException {
-
 
         ResultSet rs = null;
         Collection<? extends QueryErp> c = Lookup.getDefault().lookupAll(QueryErp.class);
         Object[] rowData = {false, 0.0, "", "", "", ""};
         int row = 0;
-
 
         ((DefaultTableModel) mList.getModel()).setRowCount(0);
 
