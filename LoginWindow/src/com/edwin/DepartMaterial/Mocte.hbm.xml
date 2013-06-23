@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 23, 2013 8:44:31 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.edwin.DepartMaterial.Mocte" table="MOCTE" schema="dbo"  >
+        <composite-id name="id" class="com.edwin.DepartMaterial.MocteId">
+            <key-property name="te001" type="string">
+                <column name="TE001" length="4" />
+            </key-property>
+            <key-property name="te002" type="string">
+                <column name="TE002" length="11" />
+            </key-property>
+            <key-property name="te003" type="string">
+                <column name="TE003" length="4" />
+            </key-property>
+        </composite-id>
+        <property name="company" type="string">
+            <column name="COMPANY" length="10" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="10" />
+        </property>
+        <property name="usrGroup" type="string">
+            <column name="USR_GROUP" length="10" />
+        </property>
+        <property name="createDate" type="string">
+            <column name="CREATE_DATE" length="17" />
+        </property>
+        <property name="modifier" type="string">
+            <column name="MODIFIER" length="10" />
+        </property>
+        <property name="modiDate" type="string">
+            <column name="MODI_DATE" length="17" />
+        </property>
+        <property name="flag" type="java.lang.Short">
+            <column name="FLAG" precision="3" scale="0" />
+        </property>
+        <property name="te004" type="string">
+            <column name="TE004" length="20" />
+        </property>
+        <property name="te005" type="big_decimal">
+            <column name="TE005" precision="16" scale="6" />
+        </property>
+        <property name="te006" type="string">
+            <column name="TE006" length="4" />
+        </property>
+        <property name="te007" type="string">
+            <column name="TE007" length="4" />
+        </property>
+        <property name="te008" type="string">
+            <column name="TE008" length="10" />
+        </property>
+        <property name="te009" type="string">
+            <column name="TE009" length="4" />
+        </property>
+        <property name="te010" type="string">
+            <column name="TE010" length="20" />
+        </property>
+        <property name="te011" type="string">
+            <column name="TE011" length="4" />
+        </property>
+        <property name="te012" type="string">
+            <column name="TE012" length="11" />
+        </property>
+        <property name="te013" type="string">
+            <column name="TE013" length="60" />
+        </property>
+        <property name="te014" type="string">
+            <column name="TE014" />
+        </property>
+        <property name="te015" type="string">
+            <column name="TE015" length="20" />
+        </property>
+        <property name="te016" type="java.lang.Character">
+            <column name="TE016" length="1" />
+        </property>
+        <property name="te017" type="string">
+            <column name="TE017" length="60" />
+        </property>
+        <property name="te018" type="string">
+            <column name="TE018" length="60" />
+        </property>
+        <property name="te019" type="java.lang.Character">
+            <column name="TE019" length="1" />
+        </property>
+        <property name="te020" type="string">
+            <column name="TE020" length="20" />
+        </property>
+        <property name="te021" type="big_decimal">
+            <column name="TE021" precision="16" scale="6" />
+        </property>
+        <property name="te022" type="string">
+            <column name="TE022" length="4" />
+        </property>
+        <property name="te023" type="string">
+            <column name="TE023" length="80" />
+        </property>
+        <property name="te024" type="big_decimal">
+            <column name="TE024" precision="5" scale="4" />
+        </property>
+        <property name="te025" type="string">
+            <column name="TE025" length="10" />
+        </property>
+        <property name="te026" type="string">
+            <column name="TE026" length="4" />
+        </property>
+        <property name="te027" type="big_decimal">
+            <column name="TE027" precision="16" scale="6" />
+        </property>
+        <property name="te028" type="java.lang.Character">
+            <column name="TE028" length="1" />
+        </property>
+        <property name="te029" type="string">
+            <column name="TE029" length="8" />
+        </property>
+        <property name="te030" type="string">
+            <column name="TE030" length="30" />
+        </property>
+        <property name="te031" type="big_decimal">
+            <column name="TE031" precision="16" scale="6" />
+        </property>
+        <property name="te032" type="big_decimal">
+            <column name="TE032" precision="16" scale="6" />
+        </property>
+        <property name="te033" type="big_decimal">
+            <column name="TE033" precision="16" scale="6" />
+        </property>
+        <property name="tec01" type="java.lang.Character">
+            <column name="TEC01" length="1" />
+        </property>
+        <property name="teh01" type="java.lang.Character">
+            <column name="TEH01" length="1" />
+        </property>
+        <property name="udf01" type="string">
+            <column name="UDF01" />
+        </property>
+        <property name="udf02" type="string">
+            <column name="UDF02" />
+        </property>
+        <property name="udf03" type="string">
+            <column name="UDF03" />
+        </property>
+        <property name="udf04" type="string">
+            <column name="UDF04" />
+        </property>
+        <property name="udf05" type="string">
+            <column name="UDF05" />
+        </property>
+        <property name="udf06" type="string">
+            <column name="UDF06" />
+        </property>
+        <property name="udf51" type="big_decimal">
+            <column name="UDF51" precision="16" scale="6" />
+        </property>
+        <property name="udf52" type="big_decimal">
+            <column name="UDF52" precision="16" scale="6" />
+        </property>
+        <property name="udf53" type="big_decimal">
+            <column name="UDF53" precision="16" scale="6" />
+        </property>
+        <property name="udf54" type="big_decimal">
+            <column name="UDF54" precision="16" scale="6" />
+        </property>
+        <property name="udf55" type="big_decimal">
+            <column name="UDF55" precision="16" scale="6" />
+        </property>
+        <property name="udf56" type="big_decimal">
+            <column name="UDF56" precision="16" scale="6" />
+        </property>
+        <property name="udf07" type="string">
+            <column name="UDF07" />
+        </property>
+        <property name="udf08" type="string">
+            <column name="UDF08" />
+        </property>
+        <property name="udf09" type="string">
+            <column name="UDF09" />
+        </property>
+        <property name="udf10" type="string">
+            <column name="UDF10" />
+        </property>
+        <property name="udf11" type="string">
+            <column name="UDF11" />
+        </property>
+        <property name="udf12" type="string">
+            <column name="UDF12" />
+        </property>
+        <property name="udf57" type="big_decimal">
+            <column name="UDF57" precision="16" scale="6" />
+        </property>
+        <property name="udf58" type="big_decimal">
+            <column name="UDF58" precision="16" scale="6" />
+        </property>
+        <property name="udf59" type="big_decimal">
+            <column name="UDF59" precision="16" scale="6" />
+        </property>
+        <property name="udf60" type="big_decimal">
+            <column name="UDF60" precision="16" scale="6" />
+        </property>
+        <property name="udf61" type="big_decimal">
+            <column name="UDF61" precision="16" scale="6" />
+        </property>
+        <property name="udf62" type="big_decimal">
+            <column name="UDF62" precision="16" scale="6" />
+        </property>
+        <property name="te034" type="string">
+            <column name="TE034" length="4" />
+        </property>
+        <property name="te035" type="string">
+            <column name="TE035" length="11" />
+        </property>
+        <property name="te036" type="string">
+            <column name="TE036" length="4" />
+        </property>
+    </class>
+</hibernate-mapping>

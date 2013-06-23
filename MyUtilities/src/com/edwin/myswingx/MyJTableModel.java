@@ -6,6 +6,7 @@
 package com.edwin.myswingx;
 
 import java.util.Arrays;
+import java.util.Map;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  * @author EDWIN
  */
 //输入字符串组即可以返回加好列名的modle
-public class MyJTableModel  {
+public class MyJTableModel {
 
     private Vector vcColumnNames = null;
     protected Vector vcData = null;
@@ -22,6 +23,16 @@ public class MyJTableModel  {
     public MyJTableModel(String... columnNames) {
 //        vcColumnNames.clear();
         setColumnNames(columnNames);
+    }
+
+    /**
+     *
+     * @param columnNames
+     */
+    public MyJTableModel(String[] columnNames, Map mp) {
+//        vcColumnNames.clear();
+        setColumnNames(columnNames);
+
     }
 
     public Vector setColumnNames(String... columnNames) {
@@ -34,6 +45,11 @@ public class MyJTableModel  {
     }
 
     public DefaultTableModel buildModel() {
+//        setColumnNames(columnNames);
+        return new DefaultTableModel(vcData, vcColumnNames);
+    }
+
+    public DefaultTableModel buildSpecModel() {
 //        setColumnNames(columnNames);
         return new DefaultTableModel(vcData, vcColumnNames);
     }

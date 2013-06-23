@@ -42,5 +42,14 @@
         <mapping resource="com/edwin/SFC/Sfctc.hbm.xml"/>
         <mapping resource="com/edwin/SFC/Cmsme.hbm.xml"/>
         <!--MyUtilities module-->
+
+
+        <!--departmaterial-->
+
+        <!--<mapping resource="com/edwin/DepartMaterial/Moctb.hbm.xml"/>-->
+        <mapping resource="com/edwin/DepartMaterial/Moctc.hbm.xml"/>
+        <mapping resource="com/edwin/DepartMaterial/Moctd.hbm.xml"/>
+        <mapping resource="com/edwin/DepartMaterial/Mocte.hbm.xml"/>
+        <!--<mapping resource="com/edwin/DepartMaterial/Mocta.hbm.xml"/>-->
     </session-factory>
 </hibernate-configuration>

@@ -1,10 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
 <filesystem>
+    <folder name="Actions">
+        <folder name="Window">
+            <file name="com-edwin-Depart-DepartMaterialTopComponent.instance_hidden"/>
+        </folder>
+        <folder name="生产">
+            <file name="com-edwin-Depart-DepartMaterialTopComponent.instance_hidden"/>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <file name="Window_hidden"/>
+        <folder name="生产">
+            <file name="com-edwin-Depart-DepartMaterialTopComponent.shadow_hidden"/>
+        </folder>
+    </folder>
     <folder name="Toolbars">
+        <folder name="Build_hidden">
+            <attr name="displayName" stringvalue="\u0026Run"/>
+            <attr name="position" intvalue="400"/>
+            <file name="org-netbeans-modules-debugger-ui-actions-DebugMainProjectAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Debug/org-netbeans-modules-debugger-ui-actions-DebugMainProjectAction.instance"/>
+                <attr name="position" intvalue="350"/>
+            </file>
+            <file name="org-netbeans-modules-project-ui-BuildMainProject.shadow">
+                <attr name="originalFile" stringvalue="Actions/Project/org-netbeans-modules-project-ui-BuildMainProject.instance"/>
+                <attr name="position" intvalue="100"/>
+            </file>
+            <file name="org-netbeans-modules-project-ui-RebuildMainProject.shadow">
+                <attr name="originalFile" stringvalue="Actions/Project/org-netbeans-modules-project-ui-RebuildMainProject.instance"/>
+                <attr name="position" intvalue="200"/>
+            </file>
+            <file name="org-netbeans-modules-project-ui-RunMainProject.shadow">
+                <attr name="originalFile" stringvalue="Actions/Project/org-netbeans-modules-project-ui-RunMainProject.instance"/>
+                <attr name="position" intvalue="300"/>
+            </file>
+            <file name="org-netbeans-modules-project-ui-actions-ActiveConfigAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Project/org-netbeans-modules-project-ui-actions-ActiveConfigAction.instance"/>
+                <attr name="position" intvalue="80"/>
+            </file>
+        </folder>
+        <folder name="Debug_hidden">
+            <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.modules.debugger.resources.Bundle"/>
+            <attr name="position" intvalue="500"/>
+            <file name="org-netbeans-modules-debugger-ui-actions-ContinueAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Debug/org-netbeans-modules-debugger-ui-actions-ContinueAction.instance"/>
+                <attr name="position" intvalue="300"/>
+            </file>
+            <file name="org-netbeans-modules-debugger-ui-actions-FixAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Debug/org-netbeans-modules-debugger-ui-actions-FixAction.instance"/>
+                <attr name="position" intvalue="900"/>
+            </file>
+            <file name="org-netbeans-modules-debugger-ui-actions-KillAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Debug/org-netbeans-modules-debugger-ui-actions-KillAction.instance"/>
+                <attr name="position" intvalue="100"/>
+            </file>
+            <file name="org-netbeans-modules-debugger-ui-actions-PauseAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Debug/org-netbeans-modules-debugger-ui-actions-PauseAction.instance"/>
+                <attr name="position" intvalue="200"/>
+            </file>
+            <file name="org-netbeans-modules-debugger-ui-actions-RunToCursorAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Debug/org-netbeans-modules-debugger-ui-actions-RunToCursorAction.instance"/>
+                <attr name="position" intvalue="800"/>
+            </file>
+            <file name="org-netbeans-modules-debugger-ui-actions-StepIntoAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Debug/org-netbeans-modules-debugger-ui-actions-StepIntoAction.instance"/>
+                <attr name="position" intvalue="600"/>
+            </file>
+            <file name="org-netbeans-modules-debugger-ui-actions-StepOperationAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Debug/org-netbeans-modules-debugger-ui-actions-StepOperationAction.instance"/>
+                <attr name="position" intvalue="500"/>
+            </file>
+            <file name="org-netbeans-modules-debugger-ui-actions-StepOutAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Debug/org-netbeans-modules-debugger-ui-actions-StepOutAction.instance"/>
+                <attr name="position" intvalue="700"/>
+            </file>
+            <file name="org-netbeans-modules-debugger-ui-actions-StepOverAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Debug/org-netbeans-modules-debugger-ui-actions-StepOverAction.instance"/>
+                <attr name="position" intvalue="400"/>
+            </file>
+        </folder>
         <folder name="File">
-            <file name="com-edwin-Depart-DepartMaterialTopComponent.shadow">
-                <attr name="originalFile" stringvalue="Actions/Window/com-edwin-Depart-DepartMaterialTopComponent.instance"/>
+            <file name="com-edwin-Depart-DepartMaterialTopComponent.instance_hidden"/>
+            <file name="com-edwin-Depart-DepartMaterialTopComponent.shadow_hidden"/>
+            <file name="com-edwin-admin-AuthorizeTopComponent.shadow_hidden"/>
+            <file name="com-edwin-my-SFC-DepartNodeAction.shadow_hidden"/>
+            <file name="com-edwin-my-SFC-DepartNodeAction.shadow_hidden">
+                <attr name="originalFile" stringvalue="Actions/Edit/com-edwin-my-SFC-DepartNodeAction.instance"/>
+                <attr name="position" intvalue="3233"/>
+            </file>
+        </folder>
+        <folder name="Memory_hidden">
+            <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.core.ui.resources.Bundle"/>
+            <attr name="position" intvalue="600"/>
+            <file name="org-netbeans-modules-profiler-actions-SelfSamplerAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Profile/org-netbeans-modules-profiler-actions-SelfSamplerAction.instance"/>
+                <attr name="position" intvalue="2000"/>
+            </file>
+            <file name="org-openide-actions-GarbageCollectAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/System/org-openide-actions-GarbageCollectAction.instance"/>
+                <attr name="position" intvalue="100"/>
             </file>
         </folder>
     </folder>

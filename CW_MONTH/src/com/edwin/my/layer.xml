@@ -79,7 +79,6 @@
             </file>
         </folder>
         <folder name="File">
-            <file name="com-edwin-my-SFC-DepartNodeAction.shadow_hidden"/>
             <file name="com-edwin-my-SFC-MPS.shadow_hidden"/>
             <file name="com-edwin-my-sheets-ExcelCheckinTopComponent.instance">
                 <attr name="iconBase" stringvalue="ICONS/download.png"/>

@@ -20,6 +20,7 @@
             </file>
         </folder>
         <folder name="File">
+            <file name="com-edwin-Depart-DepartMaterialTopComponent.shadow" url="com-edwin-Depart-DepartMaterialTopComponent.shadow"/>
             <file name="com-edwin-admin-AuthorizeTopComponent.shadow">
                 <attr name="originalFile" stringvalue="Actions/Window/com-edwin-admin-AuthorizeTopComponent.instance"/>
             </file>

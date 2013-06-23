@@ -47,14 +47,14 @@ import org.openide.util.lookup.Lookups;
         iconBase = "com/edwin/Depart/application_view_tile.png",
         persistenceType = TopComponent.PERSISTENCE_ALWAYS)
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
-@ActionID(category = "Window", id = "com.edwin.Depart.DepartMaterialTopComponent")
-@ActionReference(path = "Menu/Window/SUBMENU" /*, position = 333 */)
+@ActionID(category = "生产", id = "com.edwin.Depart.DepartMaterialTopComponent")
+@ActionReference(path = "Menu/生产" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
         displayName = "#CTL_DepartMaterialAction",
         preferredID = "DepartMaterialTopComponent")
 @Messages({
-    "CTL_DepartMaterialAction=DepartMaterial",
-    "CTL_DepartMaterialTopComponent=DepartMaterial Window",
+    "CTL_DepartMaterialAction=生成车间备料单",
+    "CTL_DepartMaterialTopComponent=生成车间备料单",
     "HINT_DepartMaterialTopComponent=This is a DepartMaterial window"
 })
 public final class DepartMaterialTopComponent extends TopComponent {
@@ -242,6 +242,7 @@ public final class DepartMaterialTopComponent extends TopComponent {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
                     .addComponent(resultsOfMocte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -251,8 +252,7 @@ public final class DepartMaterialTopComponent extends TopComponent {
                         .addComponent(generateMocte, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -267,7 +267,7 @@ public final class DepartMaterialTopComponent extends TopComponent {
                     .addComponent(generateMocte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -311,15 +311,12 @@ public final class DepartMaterialTopComponent extends TopComponent {
 
         }
 
-
-
-
     }//GEN-LAST:event_materialNoKeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-         MaterialList listPane2=new MaterialList();
-         listPane2.setVisible(true);
+        MaterialList listPane2 = new MaterialList();
+        listPane2.setVisible(true);
 
     }//GEN-LAST:event_jButton1ActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -361,7 +358,6 @@ public final class DepartMaterialTopComponent extends TopComponent {
 
     private void doGetMocta() throws ClassNotFoundException, SQLException {
 
-
         this.listPane = new MaterialList(materialNo.getText().trim());
 
         d = new DialogDescriptor(listPane, "选择物料", true, ac);
@@ -376,8 +372,6 @@ public final class DepartMaterialTopComponent extends TopComponent {
                 }
             }
         });
-
-
 
         DialogDisplayer.getDefault().notifyLater(d);
 //                d.setModal(true);
@@ -413,7 +407,7 @@ public final class DepartMaterialTopComponent extends TopComponent {
         Collection<? extends QueryErp> c = Lookup.getDefault().lookupAll(QueryErp.class);
         Set<String> set = new HashSet<String>();
         int randomID = new Random().nextInt();
-        PreVectorInterface prI=Lookup.getDefault().lookup(PreVectorInterface.class);
+        PreVectorInterface prI = Lookup.getDefault().lookup(PreVectorInterface.class);
         String insertSql = "INSERT INTO tmpDB(USERNAME,DEPARTMENT,GDate,randomID,PH,VVALUE) VALUES(" + prI.getLoginUserName() + "," + prI.getLoginUserDep() + ",CONVERT(VARCHAR(8),GETDATE(),112)," + randomID + ",?,?)";
         String procedureSql = "{CALL me_procGeneratorMocte(?)}";
         ArrayList list = new ArrayList();
