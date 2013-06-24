@@ -1,7 +1,33 @@
-     create table tmpDB(
-     USERNAME CHAR(20),
-     DEPARTMENT CHAR(10),
-     GDate char(10),
-     randomID int,
-     PH	char(20),
-     VVALUE decimal(20,4) )
+USE [mytest]
+GO
+
+/****** Object:  Table [dbo].[tmpDB]    Script Date: 06/24/2013 08:33:23 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[tmpDB](
+	[USERNAME] [char](20) NULL,
+	[DEPARTMENT] [char](10) NULL,
+	[GDate] [char](10) NULL,
+	[randomID] [int] NOT NULL,
+	[PH] [char](20) NOT NULL,
+	[VALUE] [decimal](20, 4) NULL,
+ CONSTRAINT [PK_tmpDB] PRIMARY KEY CLUSTERED
+(
+	[randomID] ASC,
+	[PH] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

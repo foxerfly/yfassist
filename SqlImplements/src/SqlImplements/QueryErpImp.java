@@ -33,7 +33,7 @@ public class QueryErpImp implements QueryErp {
 
     private static final String forname = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 
-    private static final String c_url = "jdbc:sqlserver://192.168.1.4:1433;databasename=fanski";
+    private static final String c_url = "jdbc:sqlserver://192.168.1.4:1433;databasename=mytest";
     private static final String c_name = "sa";
     private static final String c_password = "fanski=123";
 

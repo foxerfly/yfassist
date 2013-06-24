@@ -133,7 +133,7 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_DepartAddMaterialTopComponent());
         setToolTipText(Bundle.HINT_DepartAddMaterialTopComponent());
-        tableList.setModel(new MyJTableModel("品号", "品名", "规格", "快捷码", "单位", "补料数量").buildModel());
+        tableList.setModel(new MyJTableModel("品号", "品名", "规格", "单位", "快捷码", "补料数量").buildModel());
         tableList.setDragEnabled(false);
 
     }
