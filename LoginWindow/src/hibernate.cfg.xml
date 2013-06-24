@@ -50,6 +50,11 @@
         <mapping resource="com/edwin/DepartMaterial/Moctc.hbm.xml"/>
         <mapping resource="com/edwin/DepartMaterial/Moctd.hbm.xml"/>
         <mapping resource="com/edwin/DepartMaterial/Mocte.hbm.xml"/>
+        <mapping resource="com/edwin/DepartMaterial/TmpDb.hbm.xml"/>
         <!--<mapping resource="com/edwin/DepartMaterial/Mocta.hbm.xml"/>-->
+
+        <!--        <mapping resource="com/edwin/DepartMaterial/Procedure.hbm.xml"/>-->
+
+
     </session-factory>
 </hibernate-configuration>

@@ -1,7 +1,7 @@
-USE [mytest]
+USE [fanski]
 GO
 
-/****** Object:  Table [dbo].[tmpDB]    Script Date: 06/24/2013 08:33:23 ******/
+/****** Object:  Table [dbo].[tmpDB]    Script Date: 2013/6/24 22:56:27 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -12,17 +12,17 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[tmpDB](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
 	[USERNAME] [char](20) NULL,
 	[DEPARTMENT] [char](10) NULL,
 	[GDate] [char](10) NULL,
-	[randomID] [int] NOT NULL,
-	[PH] [char](20) NOT NULL,
+	[randomID] [int] NULL,
+	[PH] [char](20) NULL,
 	[VALUE] [decimal](20, 4) NULL,
  CONSTRAINT [PK_tmpDB] PRIMARY KEY CLUSTERED
 (
-	[randomID] ASC,
-	[PH] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO

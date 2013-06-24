@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 24, 2013 10:45:01 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <sql-query name="me_procGeneratorMocte" callable="true">
+        <return alias="emp" class="Employment">
+            <return-property name="employee" column="EMPLOYEE"/>
+            <return-property name="employer" column="EMPLOYER"/>
+            <return-property name="startDate" column="STARTDATE"/>
+            <return-property name="endDate" column="ENDDATE"/>
+            <return-property name="regionCode" column="REGIONCODE"/>
+            <return-property name="id" column="EID"/>
+            <return-property name="salary">
+                <return-column name="VALUE"/>
+                <return-column name="CURRENCY"/>
+            </return-property>
+        </return>
+        { ? = call me_procGeneratorMocte(?) }
+</sql-query>
+
+</hibernate-mapping>

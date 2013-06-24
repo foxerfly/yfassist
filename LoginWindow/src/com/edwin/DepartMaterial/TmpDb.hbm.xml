@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 24, 2013 10:45:01 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.edwin.DepartMaterial.TmpDb" table="tmpDB" schema="dbo" >
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="USERNAME" length="20" />
+        </property>
+        <property name="department" type="string">
+            <column name="DEPARTMENT" length="10" />
+        </property>
+        <property name="gdate" type="string">
+            <column name="GDate" length="10" />
+        </property>
+        <property name="randomId" type="java.lang.Integer">
+            <column name="randomID" />
+        </property>
+        <property name="ph" type="string">
+            <column name="PH" length="20" />
+        </property>
+        <property name="value" type="big_decimal">
+            <column name="VALUE" precision="20" scale="4" />
+        </property>
+    </class>
+
+    
+</hibernate-mapping>

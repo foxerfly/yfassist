@@ -7,7 +7,8 @@ package com.edwin.buliao;
 
 import PreVector.PreVectorInterface;
 import SqlInterface.QueryErp;
-import com.edwin.myswingx.MyJTableModel;
+import com.edwin.DepartMaterial.TmpDb;
+import com.edwin.my.RCPSessionFactory;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -16,7 +17,9 @@ import java.beans.PropertyChangeListener;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -27,6 +30,9 @@ import java.util.Set;
 import javax.swing.Action;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.DialogDescriptor;
 import org.openide.DialogDisplayer;
@@ -133,8 +139,8 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_DepartAddMaterialTopComponent());
         setToolTipText(Bundle.HINT_DepartAddMaterialTopComponent());
-        tableList.setModel(new MyJTableModel("品号", "品名", "规格", "单位", "快捷码", "补料数量").buildModel());
-        tableList.setDragEnabled(false);
+//        tableList.setModel(new MyJTableModel("品号", "品名", "规格", "单位", "快捷码", "补料数量").buildModel());
+//        tableList.setDragEnabled(false);
 
     }
 
@@ -146,24 +152,11 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableList = new org.jdesktop.swingx.JXTable();
         jLabel1 = new javax.swing.JLabel();
         materialNo = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-
-        tableList.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2"
-            }
-        ));
-        jScrollPane1.setViewportView(tableList);
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableList = new javax.swing.JTable();
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.jLabel1.text")); // NOI18N
 
@@ -182,19 +175,57 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
             }
         });
 
+        tableList.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "材料品号", "材料品名", "材料规格", "单位", "快捷码", "需补数量"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableList.setRowHeight(25);
+        tableList.setSelectionBackground(new java.awt.Color(102, 255, 102));
+        tableList.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        tableList.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tableList);
+        tableList.getColumnModel().getColumn(0).setHeaderValue(org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.tableList.columnModel.title0")); // NOI18N
+        tableList.getColumnModel().getColumn(1).setHeaderValue(org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.tableList.columnModel.title1")); // NOI18N
+        tableList.getColumnModel().getColumn(2).setHeaderValue(org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.tableList.columnModel.title2")); // NOI18N
+        tableList.getColumnModel().getColumn(3).setHeaderValue(org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.tableList.columnModel.title3")); // NOI18N
+        tableList.getColumnModel().getColumn(4).setHeaderValue(org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.tableList.columnModel.title4")); // NOI18N
+        tableList.getColumnModel().getColumn(5).setHeaderValue(org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.tableList.columnModel.title5")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 980, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(materialNo, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(materialNo, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,19 +236,27 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
                     .addComponent(jLabel1)
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE))
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-
+        int randomID = new Random().nextInt();
         try {
-
-            genericMocte();
-        } catch (SQLException ex) {
-            Exceptions.printStackTrace(ex);
+            genericMocteHibernate(randomID);
+            //        try {
+            //            int randomID = new Random().nextInt();
+            //            genericMocte(randomID);
+            //        } catch (SQLException ex) {
+            //            Exceptions.printStackTrace(ex);
+            //        } catch (ClassNotFoundException ex) {
+            //        }
+            //        }
         } catch (ClassNotFoundException ex) {
+            Exceptions.printStackTrace(ex);
+        } catch (SQLException ex) {
             Exceptions.printStackTrace(ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -272,21 +311,77 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
 
     //获取选择的品号，及数量
     public HashMap<String, BigDecimal> getTableList() {
+        BigDecimal b = BigDecimal.ZERO;
         HashMap<String, BigDecimal> mPH = new HashMap<String, BigDecimal>();
         int rowCount = tableList.getRowCount();
 
         for (int row = 0; row < rowCount; row++) {
-            mPH.put((String) tableList.getValueAt(row, 0), (BigDecimal) tableList.getValueAt(row, 5));
+            b = new BigDecimal(tableList.getValueAt(row, 5).toString());
+            mPH.put((String) tableList.getValueAt(row, 0), b);
         }
         return mPH;
     }
 
-    protected void genericMocte() throws SQLException, ClassNotFoundException {
+    protected void genericMocteHibernate(int randomID) throws ClassNotFoundException, SQLException {
+        Session s = RCPSessionFactory.openSession();
+        Transaction tx = s.beginTransaction();
+        HashMap<String, BigDecimal> mPH = new HashMap<String, BigDecimal>();
+        Set<String> set = new HashSet<String>();
+
+        PreVectorInterface prI = Lookup.getDefault().lookup(PreVectorInterface.class);
+        QueryErp qr = Lookup.getDefault().lookup(QueryErp.class);
+        String procedureSql = "{CALL me_procGeneratorMocte(?)}";
+        ResultSet rs = null;
+        Iterator<String> iterator;
+        mPH = getTableList();
+        set = mPH.keySet();  //获取K
+        if (!set.isEmpty()) {    //如果Set不为空
+            iterator = set.iterator();
+            while (iterator.hasNext()) {
+                String key = iterator.next();
+                TmpDb tdb = new TmpDb();
+                tdb.setPh(key);
+                tdb.setRandomId(randomID);
+                tdb.setDepartment(prI.getLoginUserDep());
+                tdb.setUsername(prI.getLoginUserName());
+                tdb.setValue(mPH.get(key));
+                tdb.setGdate(new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance().getTime()));
+                s.save(tdb);
+
+            }
+        }
+        tx.commit();
+
+//        SQLQuery query = s.createSQLQuery("{ call me_procGeneratorMocte (?) }");
+//        query.setParameter(0, randomID);
+//        List list = query.list();
+        s.close();
+
+//        for (Iterator it = list.iterator(); it.hasNext();) {
+//            Object ss = it.next();
+//            JOptionPane.showMessageDialog(this, "生成补料单号为：  " + ss.toString());
+//
+//        }
+        rs = qr.rsErpProc(procedureSql, randomID);
+        String sss = "";
+        int i = 1;
+        while (rs.next()) {
+
+            sss = sss + "   【" + rs.getString(i) + "】   ";
+//                resultNO.append(rs.getString(i) + "          ");
+        }
+
+        JOptionPane.showMessageDialog(this, "生成补料单号为：  " + sss);
+        rs.close();
+
+    }
+
+    protected void genericMocte(int randomID) throws SQLException, ClassNotFoundException {
         // TODO add your handling code here:
         HashMap<String, BigDecimal> mPH = new HashMap<String, BigDecimal>();
         Collection<? extends QueryErp> c = Lookup.getDefault().lookupAll(QueryErp.class);
         Set<String> set = new HashSet<String>();
-        int randomID = new Random().nextInt();
+//        int randomID = new Random().nextInt();
         PreVectorInterface prI = Lookup.getDefault().lookup(PreVectorInterface.class);
         String insertSql = "INSERT INTO tmpDB(USERNAME,DEPARTMENT,GDate,randomID,PH,VALUE) VALUES('" + prI.getLoginUserName() + "','" + prI.getLoginUserDep() + "',CONVERT(VARCHAR(8),GETDATE(),112)," + randomID + ",?,?)";
         String procedureSql = "{CALL me_procGeneratorMocte(?)}";
@@ -311,16 +406,17 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
                 }
             }
             rs = qr.rsErpProc(procedureSql, randomID);
-            int i = 0;
+            int i = 1;
             while (rs.next()) {
-                resultNO.append(rs.getString(i) + "          ");
-                i++;
+                JOptionPane.showMessageDialog(this, "生成补料单号为：  " + rs.getString(i));
+//                resultNO.append(rs.getString(i) + "          ");
             }
         }
 
-        JOptionPane.showConfirmDialog(this, "生成补料单号为：  " + resultNO.toString());
-//        resultsOfMocte.setText("生成补料单号为：  " + resultNO.toString());
+        rs.close();
 
+//        JOptionPane.showConfirmDialog(this, "生成补料单号为：  " + resultNO.toString());
+//        resultsOfMocte.setText("生成补料单号为：  " + resultNO.toString());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -328,7 +424,7 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField materialNo;
-    private org.jdesktop.swingx.JXTable tableList;
+    private javax.swing.JTable tableList;
     // End of variables declaration//GEN-END:variables
 
     @Override
