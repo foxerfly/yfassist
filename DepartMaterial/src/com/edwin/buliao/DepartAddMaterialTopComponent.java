@@ -352,7 +352,7 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
         }
         tx.commit();
 
-//        SQLQuery query = s.createSQLQuery("{ call me_procGeneratorMocte (?) }");
+//        SQLQuery query = s.createSQLQuery("{ ? = call me_procGeneratorMocte(?)}");
 //        query.setParameter(0, randomID);
 //        List list = query.list();
         s.close();
@@ -366,12 +366,10 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
         String sss = "";
         int i = 1;
         while (rs.next()) {
-
-            sss = sss + "   【" + rs.getString(i) + "】   ";
-//                resultNO.append(rs.getString(i) + "          ");
         }
 
         JOptionPane.showMessageDialog(this, "生成补料单号为：  " + sss);
+
         rs.close();
 
     }
