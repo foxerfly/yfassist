@@ -9,9 +9,11 @@ import PreVector.PreVectorInterface;
 import SqlInterface.QueryErp;
 import com.edwin.DepartMaterial.TmpDb;
 import com.edwin.my.RCPSessionFactory;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.math.BigDecimal;
@@ -29,6 +31,7 @@ import java.util.Random;
 import java.util.Set;
 import javax.swing.Action;
 import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
@@ -69,7 +72,9 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
 
     private List<Action> ca = null;
     private com.edwin.Depart.MaterialList listPane;
+    private Point currentMousePoint = null;
     private DialogDescriptor d = null;
+    private DialogDescriptor dlgBuliaoDetail = null;
     private ActionListener ac = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -91,6 +96,14 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
                 }
                 d.setClosingOptions(null);
             }
+        }
+    };
+
+    private ActionListener acBuliaoDetail = new ActionListener() {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            dlgBuliaoDetail.setClosingOptions(null);
         }
     };
 
@@ -152,11 +165,21 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popmenu = new javax.swing.JPopupMenu();
+        buliaoDetail = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         materialNo = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableList = new javax.swing.JTable();
+
+        org.openide.awt.Mnemonics.setLocalizedText(buliaoDetail, org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.buliaoDetail.text")); // NOI18N
+        buliaoDetail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buliaoDetailActionPerformed(evt);
+            }
+        });
+        popmenu.add(buliaoDetail);
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.jLabel1.text")); // NOI18N
 
@@ -202,6 +225,16 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
         tableList.setSelectionBackground(new java.awt.Color(102, 255, 102));
         tableList.setSelectionForeground(new java.awt.Color(0, 0, 0));
         tableList.getTableHeader().setReorderingAllowed(false);
+        tableList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tableListMouseReleased(evt);
+            }
+        });
+        tableList.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                tableListMouseMoved(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableList);
         tableList.getColumnModel().getColumn(0).setHeaderValue(org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.tableList.columnModel.title0")); // NOI18N
         tableList.getColumnModel().getColumn(1).setHeaderValue(org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.tableList.columnModel.title1")); // NOI18N
@@ -209,6 +242,7 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
         tableList.getColumnModel().getColumn(3).setHeaderValue(org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.tableList.columnModel.title3")); // NOI18N
         tableList.getColumnModel().getColumn(4).setHeaderValue(org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.tableList.columnModel.title4")); // NOI18N
         tableList.getColumnModel().getColumn(5).setHeaderValue(org.openide.util.NbBundle.getMessage(DepartAddMaterialTopComponent.class, "DepartAddMaterialTopComponent.tableList.columnModel.title5")); // NOI18N
+        tableList.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -274,6 +308,44 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
         }
 
     }//GEN-LAST:event_materialNoKeyReleased
+
+    private void tableListMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableListMouseReleased
+        // TODO add your handling code here:
+//        this.getActions();
+
+//
+        if (evt.getButton() == MouseEvent.BUTTON3) {
+            popmenu.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_tableListMouseReleased
+
+    private void buliaoDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buliaoDetailActionPerformed
+        // TODO add your handling code here:
+//        JOptionPane.showMessageDialog(tableList, "good", "提示", JOptionPane.OK_OPTION);
+
+        dlgBuliaoDetail = new DialogDescriptor(new BuliaoDetail((String) tableList.getValueAt(tableList.rowAtPoint(getCurrentMousePoint()), 0)), "补料信息详情", true, acBuliaoDetail);
+        DialogDisplayer.getDefault().notifyLater(dlgBuliaoDetail);
+
+    }//GEN-LAST:event_buliaoDetailActionPerformed
+
+    private void tableListMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableListMouseMoved
+        // TODO add your handling code here:
+//
+//        int row = tableList.rowAtPoint(evt.getPoint());
+//        int col = tableList.rowAtPoint(evt.getPoint());
+        setCurrentMousePoint(evt.getPoint());
+
+    }//GEN-LAST:event_tableListMouseMoved
+
+    private void setCurrentMousePoint(Point point) {
+
+        this.currentMousePoint = point;
+    }
+
+    private Point getCurrentMousePoint() {
+
+        return this.currentMousePoint;
+    }
 
     private void doGetMocta() throws ClassNotFoundException, SQLException {
 
@@ -422,10 +494,12 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem buliaoDetail;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField materialNo;
+    private javax.swing.JPopupMenu popmenu;
     private javax.swing.JTable tableList;
     // End of variables declaration//GEN-END:variables
 

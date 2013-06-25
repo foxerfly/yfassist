@@ -22,6 +22,9 @@
               <ResourceString bundle="com/edwin/Depart/Bundle.properties" key="DepartMaterialTopComponent.jCheckBoxMenuItem1.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxMenuItem1ActionPerformed"/>
+          </Events>
         </MenuItem>
         <MenuItem class="javax.swing.JRadioButtonMenuItem" name="jRadioButtonMenuItem1">
           <Properties>
@@ -204,6 +207,9 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableListMouseReleased"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

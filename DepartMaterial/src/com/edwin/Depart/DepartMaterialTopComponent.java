@@ -161,6 +161,11 @@ public final class DepartMaterialTopComponent extends TopComponent {
 
         jCheckBoxMenuItem1.setSelected(true);
         org.openide.awt.Mnemonics.setLocalizedText(jCheckBoxMenuItem1, org.openide.util.NbBundle.getMessage(DepartMaterialTopComponent.class, "DepartMaterialTopComponent.jCheckBoxMenuItem1.text")); // NOI18N
+        jCheckBoxMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem1ActionPerformed(evt);
+            }
+        });
         jPopupMenu1.add(jCheckBoxMenuItem1);
 
         jRadioButtonMenuItem1.setSelected(true);
@@ -217,6 +222,11 @@ public final class DepartMaterialTopComponent extends TopComponent {
         tableList.setRowHeight(25);
         tableList.setSelectionBackground(new java.awt.Color(102, 255, 102));
         tableList.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        tableList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tableListMouseReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableList);
         tableList.getColumnModel().getColumn(0).setHeaderValue(org.openide.util.NbBundle.getMessage(DepartMaterialTopComponent.class, "DepartMaterialTopComponent.tableList.columnModel.title0")); // NOI18N
         tableList.getColumnModel().getColumn(1).setHeaderValue(org.openide.util.NbBundle.getMessage(DepartMaterialTopComponent.class, "DepartMaterialTopComponent.tableList.columnModel.title1")); // NOI18N
@@ -319,6 +329,15 @@ public final class DepartMaterialTopComponent extends TopComponent {
         listPane2.setVisible(true);
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
+
+    private void tableListMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableListMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableListMouseReleased
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton generateMocte;
     private javax.swing.JButton jButton1;
