@@ -236,7 +236,7 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
                     .addComponent(jLabel1)
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -364,11 +364,15 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
 //        }
         rs = qr.rsErpProc(procedureSql, randomID);
         String sss = "";
-        int i = 1;
         while (rs.next()) {
+            sss = sss + "  【" + rs.getString(1).trim() + "】  ";
+//            System.out.println(rs.getString(1));
         }
-
-        JOptionPane.showMessageDialog(this, "生成补料单号为：  " + sss);
+        if (sss.equals("")) {
+            JOptionPane.showMessageDialog(this, "无可补工单及可补量，未生成任何单据");
+        } else {
+            JOptionPane.showMessageDialog(this, "生成补料单号为：  " + sss);
+        }
 
         rs.close();
 

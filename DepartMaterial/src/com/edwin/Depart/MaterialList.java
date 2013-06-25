@@ -56,7 +56,6 @@ public class MaterialList extends javax.swing.JPanel {
 
     private void cellVauleChangedListener(TableModelEvent e) {
 
-
         BigDecimal i = BigDecimal.valueOf((Double) mList.getValueAt(mList.getSelectedRow(), 1));
         if (i.compareTo(BigDecimal.ZERO) > 0) {
             if (e.getType() == TableModelEvent.UPDATE) {
@@ -106,7 +105,7 @@ public class MaterialList extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "选中", "数量 ", "品号", "品名", "规格", "快捷码"
+                "选中", "数量", "品号", "品名", "规格", "快捷码"
             }
         ) {
             Class[] types = new Class [] {
@@ -127,6 +126,7 @@ public class MaterialList extends javax.swing.JPanel {
         mList.setRowHeight(25);
         mList.setSelectionBackground(new java.awt.Color(102, 255, 102));
         mList.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        mList.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(mList);
         mList.getColumnModel().getColumn(0).setHeaderValue(org.openide.util.NbBundle.getMessage(MaterialList.class, "MaterialList.mList.columnModel.title0")); // NOI18N
         mList.getColumnModel().getColumn(1).setHeaderValue(org.openide.util.NbBundle.getMessage(MaterialList.class, "MaterialList.mList.columnModel.title1")); // NOI18N
@@ -155,12 +155,10 @@ public class MaterialList extends javax.swing.JPanel {
 
     public void setMlist(String s) throws ClassNotFoundException, SQLException {
 
-
         ResultSet rs = null;
         Collection<? extends QueryErp> c = Lookup.getDefault().lookupAll(QueryErp.class);
         Object[] rowData = {false, 0.0, "", "", "", ""};
         int row = 0;
-
 
         ((DefaultTableModel) mList.getModel()).setRowCount(0);
 

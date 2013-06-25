@@ -127,6 +127,8 @@ public class MaterialList extends javax.swing.JPanel {
         mList.setRowHeight(25);
         mList.setSelectionBackground(new java.awt.Color(102, 255, 102));
         mList.setSelectionForeground(new java.awt.Color(0, 0, 0));
+
+        mList.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(mList);
         mList.getColumnModel().getColumn(0).setHeaderValue(org.openide.util.NbBundle.getMessage(MaterialList.class, "MaterialList.mList.columnModel.title0")); // NOI18N
         mList.getColumnModel().getColumn(1).setHeaderValue(org.openide.util.NbBundle.getMessage(MaterialList.class, "MaterialList.mList.columnModel.title1")); // NOI18N
