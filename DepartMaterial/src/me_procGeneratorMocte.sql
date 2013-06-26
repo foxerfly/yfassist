@@ -1,6 +1,6 @@
 USE [fanski]
 GO
-/****** Object:  StoredProcedure [dbo].[me_procGeneratorMocte]    Script Date: 06/25/2013 23:36:00 ******/
+/****** Object:  StoredProcedure [dbo].[me_procGeneratorMocte]    Script Date: 2013/6/26 21:37:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -287,15 +287,31 @@ SET @CCC='noone'
 							   'N',0,'N','1','N',SUBSTRING(CONVERT(VARCHAR(8),GETDATE(),112),1,8),'','N',0,'0','','',@BM,'','','',0,0,0,'',0,0,'',
 							   '','','','','','',0,0,0,0,0,0,'','','','','','',0,0,0,0,0,0
 
+						--插入MOCTD  当补料的多个品号同属一张工单时，只需插入一次MOCTD,多次插入会提示KEY值重复错误
 						--插入MOCTD
-						INSERT INTO MOCTD
-						SELECT  'fanski',@USERNAME,@ZHU,SUBSTRING(CONVERT(VARCHAR(8),GETDATE(),112),1,8),'','',1,@BLDB,@BLDH,#V_MOCTE.TA001,#V_MOCTE.TA002,'1',1,
-						@CK,'1','','','','','N','','1','','1','','N','','','',0,0,0,'2','',
-						'','','','','','',0,0,0,0,0,0,'','','','','','',0,0,0,0,0,0
-						FROM #V_MOCTE
-						LEFT JOIN INVMB ON INVMB.MB001=#V_MOCTE.MB001
-						LEFT JOIN MOCTB ON TB001=#V_MOCTE.TA001 AND TB002=#V_MOCTE.TA002 AND TB003=#V_MOCTE.MB001
-						WHERE   VALUE>0  AND OVERPICK=@CLFLAG AND MOCTB.TB009=@CK
+						IF NOT EXISTS (SELECT TD001
+									   FROM MOCTD
+									   RIGHT JOIN(SELECT #V_MOCTE.TA001,#V_MOCTE.TA002
+												  FROM #V_MOCTE
+												  LEFT JOIN MOCTB ON TB001=#V_MOCTE.TA001 AND TB002=#V_MOCTE.TA002 AND TB003=#V_MOCTE.MB001
+												  WHERE   VALUE>0  AND OVERPICK=@CLFLAG AND MOCTB.TB009=@CK) AS A ON TD003=A.TA001 AND TD004=A.TA002
+												  WHERE  TD001=@BLDB AND TD002=@BLDH )
+						BEGIN
+						    INSERT INTO MOCTD
+							SELECT  DISTINCT 'fanski',@USERNAME,@ZHU,SUBSTRING(CONVERT(VARCHAR(8),GETDATE(),112),1,8),'','',1,@BLDB,@BLDH,#V_MOCTE.TA001,#V_MOCTE.TA002,'1',1,
+							@CK,'1','','','','','N','','1','','1','','N','','','',0,0,0,'2','',
+							'','','','','','',0,0,0,0,0,0,'','','','','','',0,0,0,0,0,0
+							FROM #V_MOCTE
+							LEFT JOIN INVMB ON INVMB.MB001=#V_MOCTE.MB001
+							LEFT JOIN MOCTB ON TB001=#V_MOCTE.TA001 AND TB002=#V_MOCTE.TA002 AND TB003=#V_MOCTE.MB001
+							WHERE   VALUE>0  AND OVERPICK=@CLFLAG AND MOCTB.TB009=@CK
+						END
+
+						 --   SELECT @BLDB,@BLDH,#V_MOCTE.TA001,#V_MOCTE.TA002,@CK
+							--FROM #V_MOCTE
+							--LEFT JOIN INVMB ON INVMB.MB001=#V_MOCTE.MB001
+							--LEFT JOIN MOCTB ON TB001=#V_MOCTE.TA001 AND TB002=#V_MOCTE.TA002 AND TB003=#V_MOCTE.MB001
+							--WHERE   VALUE>0  AND OVERPICK=@CLFLAG AND MOCTB.TB009=@CK
 
 
 						--插入MOCTE
