@@ -195,6 +195,13 @@ public final class AddAuthorizeIDTopComponent extends TopComponent {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Session s = RCPSessionFactory.openSession();
+        Transaction tx = null;
+        tx = s.beginTransaction();
+
+        tx.commit();
+        s.close();
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

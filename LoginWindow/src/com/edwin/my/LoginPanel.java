@@ -55,8 +55,8 @@ public class LoginPanel extends ImagePanel {
 
 //        System.out.println(s);
         attention.setText(s);
-//        attention.setName(s);
 
+//        attention.setName(s);
     }
 
     /**
@@ -85,6 +85,7 @@ public class LoginPanel extends ImagePanel {
 
         passWord.setText(org.openide.util.NbBundle.getMessage(LoginPanel.class, "LoginPanel.passWord.text")); // NOI18N
 
+        attention.setForeground(new java.awt.Color(255, 17, 0));
         org.openide.awt.Mnemonics.setLocalizedText(attention, org.openide.util.NbBundle.getMessage(LoginPanel.class, "LoginPanel.attention.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
