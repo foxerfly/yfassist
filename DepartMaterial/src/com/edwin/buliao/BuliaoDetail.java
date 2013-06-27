@@ -175,12 +175,12 @@ public class BuliaoDetail extends javax.swing.JPanel {
         Session s = RCPSessionFactory.openSession();
         Transaction tx = null;
         tx = s.beginTransaction();
-        Query query = s.createSQLQuery("select ISNULL(SUM((TB004-TB005)-ISNULL(TE005,0)),0)  GDKBL\n"
+        Query query = s.createSQLQuery("SELECT SUM( CASE WHEN TB005-TB027>=0 THEN (TB004-TB005)-ISNULL(TE005,0) WHEN TB005-TB027<0 THEN (TB004-TB027)-ISNULL(TE005,0) ELSE 0 END ) as TTE\n"
                 + "FROM  MOCTB\n"
                 + "LEFT JOIN MOCTA ON TB001=TA001 AND TB002=TA002\n"
                 + "LEFT JOIN(SELECT ISNULL(SUM(TE005),0) TE005 ,TE004,TE011,TE012 FROM MOCTE  LEFT JOIN MOCTC ON TC001=TE001 AND TC002=TE002 WHERE TC009='N' GROUP BY TE011,TE012,TE004) AS A  ON TE011=MOCTA.TA001 AND TE012=TA002 AND TE004=TB003\n"
-                + "WHERE TA013='Y' AND TA011<>'Y' AND TA011<>'y' AND TA011<>'1' AND MOCTA.TA001+MOCTA.TA002 IN(SELECT TC004+TC005 FROM SFCTC WHERE TC004=MOCTA.TA001 AND TC005=MOCTA.TA002)\n"
-                + "AND TB003=? and (TB004-TB005)-ISNULL(TE005,0) >0  ");
+                + "WHERE TA013='Y' AND TA011<>'Y' AND TA011<>'y' AND TA011<>'1' AND MOCTA.TA001+MOCTA.TA002 IN(SELECT TC004+TC005 FROM SFCTC WHERE TC004=MOCTA.TA001 AND TC005=MOCTA.TA002 AND TC022='Y')\n"
+                + "AND TB003=?  AND TB005<=TB004");
         query.setParameter(0, this.ph);
         result = query.list();
         for (Iterator it = result.iterator(); it.hasNext();) {
@@ -214,13 +214,13 @@ public class BuliaoDetail extends javax.swing.JPanel {
         tx.commit();
         s.close();
 
-        String kbgdsql = "SELECT TB001,TB002, (TB004-TB005)-ISNULL(TE005,0) GDKL,TA009\n"
+        String kbgdsql = "SELECT TB001,TB002, CASE WHEN TB005-TB027>=0 THEN (TB004-TB005)-ISNULL(TE005,0) WHEN TB005-TB027<0 THEN (TB004-TB027)-ISNULL(TE005,0) ELSE 0 END GDKBL,TA009\n"
                 + "FROM  MOCTB\n"
                 + "LEFT JOIN MOCTA ON TB001=TA001 AND TB002=TA002\n"
                 + "LEFT JOIN(SELECT ISNULL(SUM(TE005),0) TE005 ,TE004,TE011,TE012 FROM MOCTE  LEFT JOIN MOCTC ON TC001=TE001 AND TC002=TE002 WHERE TC009='N' GROUP BY TE011,TE012,TE004) AS A  ON TE011=MOCTA.TA001 AND TE012=TA002 AND TE004=TB003\n"
-                + "WHERE TA013='Y' AND TA011<>'Y' AND TA011<>'y' AND TA011<>'1' AND MOCTA.TA001+MOCTA.TA002 IN(SELECT TC004+TC005 FROM SFCTC WHERE TC004=MOCTA.TA001 AND TC005=MOCTA.TA002)\n"
-                + "AND TB003=? \n"
-                + "ORDER BY TA009 ";
+                + "WHERE TA013='Y' AND TA011<>'Y' AND TA011<>'y' AND TA011<>'1' AND MOCTA.TA001+MOCTA.TA002 IN(SELECT TC004+TC005 FROM SFCTC WHERE TC004=MOCTA.TA001 AND TC005=MOCTA.TA002 AND TC022='Y')\n"
+                + "AND TB003=?  \n"
+                + "ORDER BY TA009";
 
         String wslldsql = " SELECT TE001,TE002,TE003,TE004,TE005,TE011,TE012 \n"
                 + "	    FROM MOCTE \n"
@@ -244,7 +244,7 @@ public class BuliaoDetail extends javax.swing.JPanel {
                 ArrayList alist = new ArrayList();
                 alist.add(rs.getString("TB001"));
                 alist.add(rs.getString("TB002"));
-                alist.add(rs.getBigDecimal("GDKL"));
+                alist.add(rs.getBigDecimal("GDKBL"));
                 alist.add(rs.getString("TA009"));
 
                 int column = 0;
