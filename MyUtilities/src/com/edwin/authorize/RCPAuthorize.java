@@ -24,16 +24,17 @@ public class RCPAuthorize extends PreVectorImp {
     public Boolean oAuth(String key) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         this.getKeyName(key);
+
         NotifyDescriptor d = new NotifyDescriptor.Message("【" + super.getLoginUserName().trim() + "】你没有" + this.keyName + "权限");
         DialogDisplayer.getDefault().notify(d);
         return false;
+
     }
 
     public String getKeyName(String key) {
 
         Session s = RCPSessionFactory.openSession();
         Transaction tx = s.beginTransaction();
-
         Query qr = s.createQuery("from AuthorizeDetail as a where a.authorizeId=?");
         qr.setParameter(0, key);
         AuthorizeDetail ad = (AuthorizeDetail) qr.list().iterator().next();

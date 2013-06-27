@@ -45,7 +45,7 @@ public final class OpenCostAction extends AbstractAction {
 //            System.out.println("error");
             return;
         } else if (accessControl == true) {
-            StatusDisplayer.getDefault().setStatusText("欢迎：" + ar.getLoginUserName(), 65535);
+//            StatusDisplayer.getDefault().setStatusText("欢迎：" + ar.getLoginUserName(), 65535);
             tg.open();
         }
 //            else if (accessControl == false) {
