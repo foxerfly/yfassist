@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -192,8 +192,7 @@ public class BuliaoDetail extends javax.swing.JPanel {
         query = s.createSQLQuery(" SELECT ISNULL(SUM(TE005),0)\n"
                 + "FROM MOCTE \n"
                 + "LEFT JOIN MOCTC ON TC001=TE001 AND TC002=TE002 \n"
-                + "WHERE TC009='N' AND TE004=?\n"
-                + "GROUP BY TE011,TE012,TE004");
+                + "WHERE TC009='N' AND TE004=?\n");
         query.setParameter(0, this.ph);
         result = query.list();
         for (Iterator it = result.iterator(); it.hasNext();) {

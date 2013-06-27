@@ -62,21 +62,21 @@ public class Activator extends ModuleInstall {
     public void restored() {
         // schedule refresh providers
         // install update checker when UI is ready (main window shown)
-        WindowManager.getDefault().invokeWhenUIReady(new Runnable () {
+        WindowManager.getDefault().invokeWhenUIReady(new Runnable() {
             @Override
-            public void run () {
-              RequestProcessor.getDefault ().post (doCheck, 10000);
+            public void run() {
+                RequestProcessor.getDefault().post(doCheck, 10000);
             }
         });
     }
-    private static Runnable doCheck = new Runnable () {
+    private static Runnable doCheck = new Runnable() {
         @Override
         public void run() {
-            if (SwingUtilities.isEventDispatchThread ()) {
-                RequestProcessor.getDefault ().post (doCheck);
-                return ;
+            if (SwingUtilities.isEventDispatchThread()) {
+                RequestProcessor.getDefault().post(doCheck);
+                return;
             }
-            if (UpdateHandler.timeToCheck ()) {
+            if (UpdateHandler.timeToCheck()) {
                 UpdateHandler.checkAndHandleUpdates();
             }
         }
