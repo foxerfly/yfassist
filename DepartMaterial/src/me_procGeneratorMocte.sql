@@ -1,6 +1,6 @@
 USE [fanski]
 GO
-/****** Object:  StoredProcedure [dbo].[me_procGeneratorMocte]    Script Date: 06/27/2013 09:01:14 ******/
+/****** Object:  StoredProcedure [dbo].[me_procGeneratorMocte]    Script Date: 06/27/2013 17:22:12 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
