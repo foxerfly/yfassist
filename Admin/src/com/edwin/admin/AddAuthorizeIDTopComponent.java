@@ -8,6 +8,7 @@ package com.edwin.admin;
 import com.edwin.authorize.AuthorizeDetail;
 import com.edwin.my.RCPSessionFactory;
 import com.edwin.myswingx.MyJTableModel;
+import javax.swing.JOptionPane;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.netbeans.api.settings.ConvertAsProperties;
@@ -40,6 +41,9 @@ import org.openide.util.NbBundle.Messages;
 public final class AddAuthorizeIDTopComponent extends TopComponent {
 
     public AddAuthorizeIDTopComponent() {
+//        JOptionPane.showMessageDialog(null, "good");
+//        this.close();
+
         initComponents();
         setName(Bundle.CTL_AddAuthorizeIDTopComponent());
         setToolTipText(Bundle.HINT_AddAuthorizeIDTopComponent());
