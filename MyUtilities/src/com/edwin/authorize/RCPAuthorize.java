@@ -24,6 +24,11 @@ public class RCPAuthorize extends PreVectorImp {
     public Boolean oAuth(String key) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         this.getKeyName(key);
+        Session s = RCPSessionFactory.openSession();
+        Transaction tx = s.beginTransaction();
+
+        tx.commit();
+        s.close();
 
         NotifyDescriptor d = new NotifyDescriptor.Message("【" + super.getLoginUserName().trim() + "】你没有" + this.keyName + "权限");
         DialogDisplayer.getDefault().notify(d);

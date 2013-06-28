@@ -16,6 +16,7 @@ import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
+import org.openide.windows.WindowManager;
 
 /**
  * Top component which displays something.
@@ -41,9 +42,6 @@ import org.openide.util.NbBundle.Messages;
 public final class AddAuthorizeIDTopComponent extends TopComponent {
 
     public AddAuthorizeIDTopComponent() {
-//        JOptionPane.showMessageDialog(null, "good");
-//        this.close();
-
         initComponents();
         setName(Bundle.CTL_AddAuthorizeIDTopComponent());
         setToolTipText(Bundle.HINT_AddAuthorizeIDTopComponent());
@@ -250,6 +248,10 @@ public final class AddAuthorizeIDTopComponent extends TopComponent {
     @Override
     public void componentOpened() {
         // TODO add custom code on component opening
+
+        if (JOptionPane.showConfirmDialog(this, "hahahaha") == 0) {
+            super.close();
+        }
     }
 
     @Override
