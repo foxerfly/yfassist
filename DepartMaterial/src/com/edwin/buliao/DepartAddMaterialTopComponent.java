@@ -8,6 +8,7 @@ package com.edwin.buliao;
 import PreVector.PreVectorInterface;
 import SqlInterface.QueryErp;
 import com.edwin.DepartMaterial.TmpDb;
+import com.edwin.authorize.RCPAuthorize;
 import com.edwin.my.RCPSessionFactory;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
@@ -313,7 +314,6 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
         // TODO add your handling code here:
 //        this.getActions();
 
-//
         if (evt.getButton() == MouseEvent.BUTTON3) {
             popmenu.show(evt.getComponent(), evt.getX(), evt.getY());
         }
@@ -493,6 +493,7 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
 //        resultsOfMocte.setText("生成补料单号为：  " + resultNO.toString());
     }
 
+    private RCPAuthorize ar = new RCPAuthorize();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem buliaoDetail;
     private javax.swing.JButton jButton1;
@@ -506,6 +507,9 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
     @Override
     public void componentOpened() {
         // TODO add custom code on component opening
+        if (!ar.oAuth("DepartAddMaterial")) {
+            super.close();
+        }
     }
 
     @Override

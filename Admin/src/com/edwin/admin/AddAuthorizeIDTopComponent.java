@@ -6,6 +6,7 @@
 package com.edwin.admin;
 
 import com.edwin.authorize.AuthorizeDetail;
+import com.edwin.authorize.RCPAuthorize;
 import com.edwin.my.RCPSessionFactory;
 import com.edwin.myswingx.MyJTableModel;
 import javax.swing.JOptionPane;
@@ -228,6 +229,7 @@ public final class AddAuthorizeIDTopComponent extends TopComponent {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private RCPAuthorize ar = new RCPAuthorize();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -249,14 +251,16 @@ public final class AddAuthorizeIDTopComponent extends TopComponent {
     public void componentOpened() {
         // TODO add custom code on component opening
 
-        if (JOptionPane.showConfirmDialog(this, "hahahaha") == 0) {
+        if (!ar.oAuth("AddAuthorizeID")) {
             super.close();
         }
+
     }
 
     @Override
     public void componentClosed() {
         // TODO add custom code on component closing
+        super.close();
     }
 
     void writeProperties(java.util.Properties p) {

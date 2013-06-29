@@ -16,7 +16,7 @@ import org.openide.util.lookup.ServiceProvider;
         service = HibernateCFG.class)
 public class HibernateCFGImp implements HibernateCFG {
 
-    private static String defaultCFG = "hibernate.cfg.xml";
+    private static String defaultCFG = "Chibernate.cfg.xml";
 
     @Override
     public void SetconfigurationCFG(String key) {

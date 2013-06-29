@@ -11,12 +11,10 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.Collection;
-import javax.swing.JOptionPane;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.netbeans.core.spi.multiview.MultiViewElementCallback;
 import org.openide.DialogDescriptor;
 import org.openide.DialogDisplayer;
-import org.openide.NotifyDescriptor;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.explorer.ExplorerManager;
@@ -27,9 +25,6 @@ import org.openide.util.LookupListener;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 import org.openide.util.Utilities;
-import org.openide.nodes.AbstractNode;
-import org.openide.nodes.Node;
-import org.openide.explorer.view.OutlineView;
 
 /**
  * Top component which displays something.
@@ -40,7 +35,7 @@ import org.openide.explorer.view.OutlineView;
 @TopComponent.Description(
         preferredID = "MainCostViewTopComponent",
         //iconBase="SET/PATH/TO/ICON/HERE",
-        persistenceType = TopComponent.PERSISTENCE_ALWAYS)
+        persistenceType = TopComponent.PERSISTENCE_NEVER)
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "com.edwin.my.Cost.MainCostViewTopComponent")
 @ActionReference(path = "Menu/Window/财务" /*, position = 333 */)
@@ -58,6 +53,8 @@ public final class MainCostViewTopComponent extends TopComponent implements Expl
         initComponents();
         setName(Bundle.CTL_MainCostViewTopComponent());
         setToolTipText(Bundle.HINT_MainCostViewTopComponent());
+        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, true);
+
         adjustCost.setVisible(false);
         jButton1.setVisible(false);
 //        treeTable.getOutline().setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
@@ -114,6 +111,8 @@ public final class MainCostViewTopComponent extends TopComponent implements Expl
         adjustCost = new javax.swing.JButton();
         treeTable = new org.openide.explorer.view.OutlineView();
         jButton1 = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(247, 236, 220));
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(MainCostViewTopComponent.class, "MainCostViewTopComponent.jLabel1.text")); // NOI18N
 
@@ -426,6 +425,7 @@ public final class MainCostViewTopComponent extends TopComponent implements Expl
     private javax.swing.JTextField sumPrice;
     private org.openide.explorer.view.OutlineView treeTable;
     // End of variables declaration//GEN-END:variables
+
     @Override
     public void componentOpened() {
         // TODO add custom code on component opening
@@ -435,7 +435,7 @@ public final class MainCostViewTopComponent extends TopComponent implements Expl
         resultDetail = Utilities.actionsGlobalContext().lookupResult(MaterialNODetail.class);
         resultDetail.addLookupListener(this);
 
-
+        requestActive();
 //        result = Utilities.actionsGlobalContext().lookupResult(Node.class);
 //        result.addLookupListener(this);
     }
@@ -446,6 +446,7 @@ public final class MainCostViewTopComponent extends TopComponent implements Expl
         results.removeLookupListener(this);
         resultDetail.removeLookupListener(this);
 //        result.removeLookupListener(this);
+        super.close();
     }
 
     void writeProperties(java.util.Properties p) {
@@ -525,7 +526,6 @@ public final class MainCostViewTopComponent extends TopComponent implements Expl
 //        Collection< ?  extends  Node> pp = result.allInstances();
 //        while(!pp.isEmpty())
 //        Out(pp.iterator().next().getDisplayName());
-
 //        Collection< ? extends PreVector> lgs = resultPreVector.allInstances();
 //        System.out.println(lgs);
 //        if (!lgs.isEmpty()) {
@@ -544,7 +544,6 @@ public final class MainCostViewTopComponent extends TopComponent implements Expl
 //            }
 //
 //        }
-
     }
 
     private void adjustCost() {

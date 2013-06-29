@@ -38,7 +38,7 @@ import org.openide.util.lookup.ProxyLookup;
 @TopComponent.Description(
         preferredID = "OrderDetailTopComponent",
         //iconBase="SET/PATH/TO/ICON/HERE",
-        persistenceType = TopComponent.PERSISTENCE_ALWAYS)
+        persistenceType = TopComponent.PERSISTENCE_NEVER)
 @TopComponent.Registration(mode = "explorer", openAtStartup = false)
 @ActionID(category = "Window", id = "com.edwin.my.Cost.OrderDetailTopComponent")
 @ActionReference(path = "Menu/Window/财务" /*, position = 333 */)
@@ -57,14 +57,15 @@ public final class OrderDetailTopComponent extends TopComponent implements Explo
         initComponents();
         setName(Bundle.CTL_OrderDetailTopComponent());
         setToolTipText(Bundle.HINT_OrderDetailTopComponent());
-
-        //  initTree();
-//        ActionMap map = this.getActionMap();
-//        map.put(DefaultEditorKit.copyAction, ExplorerUtils.actionCopy(em));
-//        map.put(DefaultEditorKit.cutAction, ExplorerUtils.actionCut(em));
-//        map.put(DefaultEditorKit.pasteAction, ExplorerUtils.actionPaste(em));
-//        map.put("delete", ExplorerUtils.actionDelete(em, true)); // or false
-        associateLookup(new ProxyLookup(ExplorerUtils.createLookup(em, getActionMap()), new AbstractLookup(content)));  //getActionMap() replaced by map
+        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, true);
+        this.
+                //  initTree();
+                //        ActionMap map = this.getActionMap();
+                //        map.put(DefaultEditorKit.copyAction, ExplorerUtils.actionCopy(em));
+                //        map.put(DefaultEditorKit.cutAction, ExplorerUtils.actionCut(em));
+                //        map.put(DefaultEditorKit.pasteAction, ExplorerUtils.actionPaste(em));
+                //        map.put("delete", ExplorerUtils.actionDelete(em, true)); // or false
+                associateLookup(new ProxyLookup(ExplorerUtils.createLookup(em, getActionMap()), new AbstractLookup(content)));  //getActionMap() replaced by map
         em.addPropertyChangeListener(this);
 
 //        beanTreeView1.addMouseListener(this);
@@ -110,6 +111,7 @@ public final class OrderDetailTopComponent extends TopComponent implements Explo
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.openide.explorer.view.BeanTreeView beanTreeView1;
     // End of variables declaration//GEN-END:variables
+
     @Override
     public void componentOpened() {
         // TODO add custom code on component opening
@@ -123,6 +125,7 @@ public final class OrderDetailTopComponent extends TopComponent implements Explo
     public void componentClosed() {
         // TODO add custom code on component closing
         result.removeLookupListener(this);
+        super.close();
 
 //        ExplorerUtils.activateActions(em, false);
     }

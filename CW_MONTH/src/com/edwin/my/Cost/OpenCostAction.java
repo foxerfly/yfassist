@@ -26,7 +26,7 @@ import org.openide.windows.WindowManager;
     @ActionReference(path = "Menu/Tools", position = -150),
     @ActionReference(path = "Toolbars/File", position = 3433)
 })
-@Messages("CTL_OpenCost=OpenCost")
+@Messages("CTL_OpenCost=成本计算")
 public final class OpenCostAction extends AbstractAction {
 
 //    private Lookup.Result<PreVector> results = Utilities.actionsGlobalContext().lookupResult(PreVector.class);
@@ -41,12 +41,14 @@ public final class OpenCostAction extends AbstractAction {
         RCPAuthorize ar = new RCPAuthorize();
         accessControl = ar.oAuth("OpenCostAction");
         TopComponentGroup tg = WindowManager.getDefault().findTopComponentGroup("CostGroup");
-        if (tg == null) {
+        if (accessControl == false) {
 //            System.out.println("error");
             return;
         } else if (accessControl == true) {
 //            StatusDisplayer.getDefault().setStatusText("欢迎：" + ar.getLoginUserName(), 65535);
+            tg.close();
             tg.open();
+
         }
 //            else if (accessControl == false) {
 //

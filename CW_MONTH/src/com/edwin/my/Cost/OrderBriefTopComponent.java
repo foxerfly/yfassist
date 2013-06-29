@@ -33,7 +33,7 @@ import org.openide.util.lookup.InstanceContent;
 @TopComponent.Description(
         preferredID = "OrderBriefTopComponent",
         //iconBase="SET/PATH/TO/ICON/HERE",
-        persistenceType = TopComponent.PERSISTENCE_ALWAYS)
+        persistenceType = TopComponent.PERSISTENCE_NEVER)
 @TopComponent.Registration(mode = "explorer", openAtStartup = false)
 @ActionID(category = "Window", id = "com.edwin.my.Cost.OrderBriefTopComponent")
 @ActionReference(path = "Menu/Window/财务" /*, position = 333 */)
@@ -51,6 +51,7 @@ public final class OrderBriefTopComponent extends TopComponent implements ListSe
         initComponents();
         setName(Bundle.CTL_OrderBriefTopComponent());
         setToolTipText(Bundle.HINT_OrderBriefTopComponent());
+        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, true);
         jTable1.getSelectionModel().addListSelectionListener(this);
         jTable1.getTableHeader().setReorderingAllowed(false);
         associateLookup(new AbstractLookup(content));
@@ -197,6 +198,7 @@ public final class OrderBriefTopComponent extends TopComponent implements ListSe
     @Override
     public void componentClosed() {
         // TODO add custom code on component closing
+        super.close();
     }
 
     void writeProperties(java.util.Properties p) {
