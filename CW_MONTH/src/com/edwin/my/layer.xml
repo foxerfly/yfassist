@@ -115,12 +115,7 @@
 
     <folder name="Windows2Local">
         <file name="WindowManager.wswmgr" url="Cost/groups/WindowManagerWswmgr.xml"/>
-        <folder name="Modes">
-            <file name="anonymousMode_1.wsmode" url="Cost/groups/Modes/anonymousMode_1Wsmode.xml"/>
-            <folder name="anonymousMode_1">
-                <file name="OrderBriefTopComponent.wstcref" url="Cost/groups/Modes/anonymousMode_1/OrderBriefTopComponentWstcref.xml"/>
-            </folder>
-        </folder>
+        <folder name="Modes"/>
     </folder>
 
 
@@ -133,5 +128,16 @@
                 <file name="OrderDetailTopComponent.wstcgrp" url="Cost/groups/CostGroup/OrderDetailTopComponentWstcgrp.xml"/>
             </folder>
         </folder>
+        <folder name="Modes">
+            <folder name="anonymousMode_2">
+                <file name="OrderBriefTopComponent.wstcref" url="OrderBriefTopComponentWstcref_2.xml"/>
+            </folder>
+            <file name="anonymousMode_2.wsmode" url="anonymousMode_2Wsmode_2.xml"/>
+            <folder name="anonymousMode_3">
+                <file name="OrderDetailTopComponent.wstcref" url="OrderDetailTopComponentWstcref_2.xml"/>
+            </folder>
+            <file name="anonymousMode_3.wsmode" url="anonymousMode_3Wsmode_1.xml"/>
+        </folder>
+        <file name="WindowManager.wswmgr" url="WindowManager.wswmgr"/>
     </folder>
 </filesystem>

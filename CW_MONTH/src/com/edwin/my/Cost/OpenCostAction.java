@@ -5,16 +5,25 @@
 package com.edwin.my.Cost;
 
 import com.edwin.authorize.RCPAuthorize;
+import java.awt.Frame;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
+import java.beans.PropertyChangeListener;
+import java.util.Set;
 import javax.swing.AbstractAction;
+import javax.swing.Action;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
 import org.openide.awt.ActionRegistration;
 import org.openide.awt.StatusDisplayer;
+import org.openide.nodes.Node;
 import org.openide.util.NbBundle.Messages;
+import org.openide.windows.Mode;
+import org.openide.windows.TopComponent;
 import org.openide.windows.TopComponentGroup;
 import org.openide.windows.WindowManager;
+import org.openide.windows.Workspace;
 
 @ActionID(
         category = "Tools",
@@ -46,8 +55,19 @@ public final class OpenCostAction extends AbstractAction {
             return;
         } else if (accessControl == true) {
 //            StatusDisplayer.getDefault().setStatusText("欢迎：" + ar.getLoginUserName(), 65535);
+//            System.out.println(tg);
             tg.close();
             tg.open();
+            Mode brief = WindowManager.getDefault().findMode("anonymousMode_2");
+            Mode detail = WindowManager.getDefault().findMode("anonymousMode_3");
+            brief.dockInto(WindowManager.getDefault().findTopComponent("OrderBriefTopComponent"));
+            detail.dockInto(WindowManager.getDefault().findTopComponent("OrderDetailTopComponent"));
+            WindowManager.getDefault().findTopComponent("MainCostViewTopComponent").open();
+            WindowManager.getDefault().findTopComponent("OrderBriefTopComponent").open();
+            WindowManager.getDefault().findTopComponent("OrderDetailTopComponent").open();
+            WindowManager.getDefault().findTopComponent("MainCostViewTopComponent").requestActive();
+//            WindowManager.getDefault().findTopComponent("OrderBriefTopComponent").requestActive();
+//            WindowManager.getDefault().findTopComponent("OrderDetailTopComponent").requestActive();
 
         }
 //            else if (accessControl == false) {

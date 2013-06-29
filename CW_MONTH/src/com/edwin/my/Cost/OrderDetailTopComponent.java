@@ -38,7 +38,7 @@ import org.openide.util.lookup.ProxyLookup;
 @TopComponent.Description(
         preferredID = "OrderDetailTopComponent",
         //iconBase="SET/PATH/TO/ICON/HERE",
-        persistenceType = TopComponent.PERSISTENCE_NEVER)
+        persistenceType = TopComponent.PERSISTENCE_ALWAYS)
 @TopComponent.Registration(mode = "explorer", openAtStartup = false)
 @ActionID(category = "Window", id = "com.edwin.my.Cost.OrderDetailTopComponent")
 @ActionReference(path = "Menu/Window/财务" /*, position = 333 */)

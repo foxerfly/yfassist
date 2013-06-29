@@ -35,7 +35,7 @@ import org.openide.util.Utilities;
 @TopComponent.Description(
         preferredID = "MainCostViewTopComponent",
         //iconBase="SET/PATH/TO/ICON/HERE",
-        persistenceType = TopComponent.PERSISTENCE_NEVER)
+        persistenceType = TopComponent.PERSISTENCE_ALWAYS)
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "com.edwin.my.Cost.MainCostViewTopComponent")
 @ActionReference(path = "Menu/Window/财务" /*, position = 333 */)
