@@ -53,7 +53,7 @@ public final class MainCostViewTopComponent extends TopComponent implements Expl
         initComponents();
         setName(Bundle.CTL_MainCostViewTopComponent());
         setToolTipText(Bundle.HINT_MainCostViewTopComponent());
-        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, true);
+//        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, true);
 
         adjustCost.setVisible(false);
         jButton1.setVisible(false);
