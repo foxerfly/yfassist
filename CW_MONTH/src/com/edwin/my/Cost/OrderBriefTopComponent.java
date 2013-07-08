@@ -51,7 +51,7 @@ public final class OrderBriefTopComponent extends TopComponent implements ListSe
         initComponents();
         setName(Bundle.CTL_OrderBriefTopComponent());
         setToolTipText(Bundle.HINT_OrderBriefTopComponent());
-        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, true);
+//        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, true);
         jTable1.getSelectionModel().addListSelectionListener(this);
         jTable1.getTableHeader().setReorderingAllowed(false);
         associateLookup(new AbstractLookup(content));

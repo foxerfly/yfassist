@@ -57,7 +57,7 @@ public final class OrderDetailTopComponent extends TopComponent implements Explo
         initComponents();
         setName(Bundle.CTL_OrderDetailTopComponent());
         setToolTipText(Bundle.HINT_OrderDetailTopComponent());
-        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, true);
+//        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, true);
         this.
                 //  initTree();
                 //        ActionMap map = this.getActionMap();
