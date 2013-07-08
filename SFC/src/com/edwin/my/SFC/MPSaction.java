@@ -38,9 +38,9 @@ public final class MPSaction extends AbstractAction {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-//        TopComponent[] findTopComponents = WindowManager.getDefault().getOpenedTopComponents(WindowManager.getDefault().findMode("editor"));
-//        for (TopComponent topComponent : findTopComponents) {
-//            if (!topComponent.getClass().getAnnotation(TopComponent.Description.class).preferredID().equals("主排程计划")||!topComponent.getClass().getAnnotation(TopComponent.Description.class).preferredID().equals("物料需求状况")) {
+//      TopComponent[] findTopComponents = WindowManager.getDefault().getOpenedTopComponents(WindowManager.getDefault().findMode("editor"));
+//      for (TopComponent topComponent : findTopComponents) {
+//      if (!topComponent.getClass().getAnnotation(TopComponent.Description.class).preferredID().equals("主排程计划")||!topComponent.getClass().getAnnotation(TopComponent.Description.class).preferredID().equals("物料需求状况")) {
         MPSViewPanelDescription mps1 = new MPSViewPanelDescription();  //主生产计划
         MPSmaterialReqDescription mps2 = new MPSmaterialReqDescription(); //物料需求
         MultiViewDescription[] descArry = {mps1, mps2};
@@ -54,6 +54,5 @@ public final class MPSaction extends AbstractAction {
             group.open();
             otc.open();
         }
-
     }
 }
