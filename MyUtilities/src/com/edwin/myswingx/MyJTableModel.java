@@ -5,6 +5,8 @@
  */
 package com.edwin.myswingx;
 
+import POI.Excel;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -49,6 +51,8 @@ public class MyJTableModel {
     //获取EXCEL表格列名数据
     public Vector setExcelToTableColumnNames(String filePath) {
 
+        Excel xls = new Excel(filePath);
+        vcColumnNames = new Vector(Arrays.asList(xls.getSheet(0).getColumnNames()));
         return vcColumnNames;
     }
 
@@ -74,7 +78,7 @@ public class MyJTableModel {
     //返回构建好数据和列名的tablemodel
     public DefaultTableModel buildExcelToTableModel() {
 //        setColumnNames(columnNames);
-        return new DefaultTableModel(setData(this.filePath), setExcelToTableColumnNames(this.filePath));
+        return new DefaultTableModel(setData(), setExcelToTableColumnNames(this.filePath));
     }
 
 }

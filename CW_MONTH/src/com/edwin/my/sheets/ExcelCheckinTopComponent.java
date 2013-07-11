@@ -43,7 +43,6 @@ public final class ExcelCheckinTopComponent extends TopComponent {
         setName(Bundle.CTL_ExcelCheckinTopComponent());
         setToolTipText(Bundle.HINT_ExcelCheckinTopComponent());
 //        inputTable.setModel(new SheetTableModel());
-        inputTable.setModel(new MyJTableModel("品号", "材料成本", "人工成本", "制造费用", "委外加工费用").buildModel());
 
     }
 
@@ -143,6 +142,7 @@ public final class ExcelCheckinTopComponent extends TopComponent {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             jTextField1.setText(fc.getSelectedFile().getAbsolutePath());
         }
+        inputTable.setModel(new MyJTableModel(fc.getSelectedFile().getAbsolutePath()).buildExcelToTableModel());
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
