@@ -6,6 +6,7 @@
 package com.edwin.myswingx;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
@@ -19,10 +20,15 @@ public class MyJTableModel {
 
     private Vector vcColumnNames = null;
     protected Vector vcData = null;
+    private String filePath = "";
 
     public MyJTableModel(String... columnNames) {
 //        vcColumnNames.clear();
         setColumnNames(columnNames);
+    }
+
+    public MyJTableModel(String filePath) {
+        this.filePath = filePath;
     }
 
     /**
@@ -40,7 +46,18 @@ public class MyJTableModel {
         return vcColumnNames;
     }
 
+    //获取EXCEL表格列名数据
+    public Vector setExcelToTableColumnNames(String filePath) {
+
+        return vcColumnNames;
+    }
+
     public Vector setData() {
+        return vcData;
+    }
+
+    //获取EXCEL表格中的list数据
+    public Vector setData(String filePath) {
         return vcData;
     }
 
@@ -52,6 +69,12 @@ public class MyJTableModel {
     public DefaultTableModel buildSpecModel() {
 //        setColumnNames(columnNames);
         return new DefaultTableModel(vcData, vcColumnNames);
+    }
+
+    //返回构建好数据和列名的tablemodel
+    public DefaultTableModel buildExcelToTableModel() {
+//        setColumnNames(columnNames);
+        return new DefaultTableModel(setData(this.filePath), setExcelToTableColumnNames(this.filePath));
     }
 
 }

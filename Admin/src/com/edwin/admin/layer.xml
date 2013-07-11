@@ -7,6 +7,7 @@
         </folder>
     </folder>
     <folder name="Toolbars">
+        <file name="Clipboard_hidden_hidden"/>
         <folder name="Memory">
             <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.core.ui.resources.Bundle"/>
             <attr name="position" intvalue="600"/>
@@ -20,9 +21,35 @@
             </file>
         </folder>
         <folder name="File">
+            <folder name="Clipboard_hidden">
+                <file name="org-openide-actions-CopyAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-CopyAction.instance"/>
+                </file>
+                <file name="org-openide-actions-CutAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-CutAction.instance"/>
+                </file>
+                <file name="org-openide-actions-PasteAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-PasteAction.instance"/>
+                </file>
+            </folder>
             <file name="com-edwin-Depart-DepartMaterialTopComponent.shadow" url="com-edwin-Depart-DepartMaterialTopComponent.shadow"/>
             <file name="com-edwin-admin-AuthorizeTopComponent.shadow">
                 <attr name="originalFile" stringvalue="Actions/Window/com-edwin-admin-AuthorizeTopComponent.instance"/>
+            </file>
+            <file name="org-netbeans-modules-project-ui-NewFile.shadow_hidden"/>
+            <file name="org-netbeans-modules-project-ui-NewFile_hidden.shadow_hidden">
+                <attr name="originalFile" stringvalue="Actions/Project/org-netbeans-modules-project-ui-NewFile.instance"/>
+                <attr name="position" intvalue="100"/>
+            </file>
+            <file name="org-netbeans-modules-project-ui-NewProject.shadow_hidden"/>
+            <file name="org-netbeans-modules-project-ui-NewProject_hidden.shadow_hidden">
+                <attr name="originalFile" stringvalue="Actions/Project/org-netbeans-modules-project-ui-NewProject.instance"/>
+                <attr name="position" intvalue="200"/>
+            </file>
+            <file name="org-netbeans-modules-project-ui-OpenProject.shadow_hidden"/>
+            <file name="org-netbeans-modules-project-ui-OpenProject_hidden.shadow_hidden">
+                <attr name="originalFile" stringvalue="Actions/Project/org-netbeans-modules-project-ui-OpenProject.instance"/>
+                <attr name="position" intvalue="300"/>
             </file>
         </folder>
     </folder>

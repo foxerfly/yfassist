@@ -6,6 +6,7 @@
 package com.edwin.my.sheets;
 
 import POI.SheetTableModel;
+import com.edwin.myswingx.MyJTableModel;
 import javax.swing.JFileChooser;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
@@ -34,13 +35,15 @@ import org.openide.util.NbBundle.Messages;
     "CTL_ExcelCheckinTopComponent=ExcelCheckin Window",
     "HINT_ExcelCheckinTopComponent=This is a ExcelCheckin window"
 })
+
 public final class ExcelCheckinTopComponent extends TopComponent {
 
     public ExcelCheckinTopComponent() {
         initComponents();
         setName(Bundle.CTL_ExcelCheckinTopComponent());
         setToolTipText(Bundle.HINT_ExcelCheckinTopComponent());
-        inputTable.setModel(new SheetTableModel());
+//        inputTable.setModel(new SheetTableModel());
+        inputTable.setModel(new MyJTableModel("品号", "材料成本", "人工成本", "制造费用", "委外加工费用").buildModel());
 
     }
 
@@ -78,6 +81,11 @@ public final class ExcelCheckinTopComponent extends TopComponent {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONS/commit.png"))); // NOI18N
         org.openide.awt.Mnemonics.setLocalizedText(jButton2, org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.jButton2.text")); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         inputTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -134,9 +142,13 @@ public final class ExcelCheckinTopComponent extends TopComponent {
         int returnVal = fc.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             jTextField1.setText(fc.getSelectedFile().getAbsolutePath());
+        }
 
     }//GEN-LAST:event_jButton1ActionPerformed
-    }
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.jdesktop.swingx.JXTable inputTable;
