@@ -98,6 +98,7 @@
                 </dependency>
             </module-dependencies>
             <public-packages>
+                <package>com.edwin.CWMONTH</package>
                 <package>com.edwin.my</package>
                 <package>com.xzq.osc</package>
                 <package>com.xzq.osc.about</package>

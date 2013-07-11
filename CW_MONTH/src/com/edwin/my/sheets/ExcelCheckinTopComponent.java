@@ -6,8 +6,11 @@
 package com.edwin.my.sheets;
 
 import POI.SheetTableModel;
+import com.edwin.my.RCPSessionFactory;
 import com.edwin.myswingx.MyJTableModel;
 import javax.swing.JFileChooser;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -94,7 +97,10 @@ public final class ExcelCheckinTopComponent extends TopComponent {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        inputTable.setColumnSelectionAllowed(true);
+        inputTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(inputTable);
+        inputTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         inputTable.getColumnModel().getColumn(0).setHeaderValue(org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.inputTable.columnModel.title0")); // NOI18N
         inputTable.getColumnModel().getColumn(1).setHeaderValue(org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.inputTable.columnModel.title1")); // NOI18N
         inputTable.getColumnModel().getColumn(2).setHeaderValue(org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.inputTable.columnModel.title2")); // NOI18N
@@ -148,6 +154,23 @@ public final class ExcelCheckinTopComponent extends TopComponent {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        int rowsize = inputTable.getRowCount();
+        int columnsize = inputTable.getColumnCount();
+        Session s = RCPSessionFactory.openSession();
+        Transaction tx = null;
+        s.beginTransaction();
+
+        for (int i = 0; i < rowsize; i++) {
+
+            if (!s.createQuery(TOOL_TIP_TEXT_KEY).list().isEmpty()) {
+            } else {
+            }
+
+        }
+
+        tx.commit();
+        s.close();
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -167,6 +190,7 @@ public final class ExcelCheckinTopComponent extends TopComponent {
     @Override
     public void componentClosed() {
         // TODO add custom code on component closing
+        super.close();
     }
 
     void writeProperties(java.util.Properties p) {

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 11, 2013 10:12:58 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.edwin.CWMONTH.Invmbc" table="INVMBC" schema="dbo" >
+        <composite-id name="id" class="com.edwin.CWMONTH.InvmbcId">
+            <key-property name="mb001" type="string">
+                <column name="MB001" length="40" />
+            </key-property>
+            <key-property name="mb002" type="string">
+                <column name="MB002" length="60" />
+            </key-property>
+            <key-property name="mb003" type="string">
+                <column name="MB003" length="60" />
+            </key-property>
+            <key-property name="mb110" type="string">
+                <column name="MB110" length="60" />
+            </key-property>
+            <key-property name="mb004" type="string">
+                <column name="MB004" length="10" />
+            </key-property>
+            <key-property name="mb025" type="string">
+                <column name="MB025" length="10" />
+            </key-property>
+            <key-property name="materialPrice" type="big_decimal">
+                <column name="materialPrice" precision="16" scale="4" />
+            </key-property>
+            <key-property name="laborePrice" type="big_decimal">
+                <column name="laborePrice" precision="16" scale="4" />
+            </key-property>
+            <key-property name="madePrice" type="big_decimal">
+                <column name="madePrice" precision="16" scale="4" />
+            </key-property>
+            <key-property name="cooperationPrice" type="big_decimal">
+                <column name="cooperationPrice" precision="16" scale="4" />
+            </key-property>
+            <key-property name="dh" type="string">
+                <column name="DH" length="20" />
+            </key-property>
+            <key-property name="orderno" type="string">
+                <column name="ORDERNO" length="20" />
+            </key-property>
+            <key-property name="udf01" type="string">
+                <column name="UDF01" />
+            </key-property>
+            <key-property name="udf02" type="string">
+                <column name="UDF02" />
+            </key-property>
+            <key-property name="udf03" type="string">
+                <column name="UDF03" />
+            </key-property>
+            <key-property name="udf04" type="string">
+                <column name="UDF04" />
+            </key-property>
+            <key-property name="udf05" type="string">
+                <column name="UDF05" />
+            </key-property>
+            <key-property name="udf06" type="string">
+                <column name="UDF06" />
+            </key-property>
+            <key-property name="udf07" type="big_decimal">
+                <column name="UDF07" precision="16" scale="4" />
+            </key-property>
+            <key-property name="udf08" type="big_decimal">
+                <column name="UDF08" precision="16" scale="4" />
+            </key-property>
+            <key-property name="udf09" type="big_decimal">
+                <column name="UDF09" precision="16" scale="4" />
+            </key-property>
+            <key-property name="udf010" type="big_decimal">
+                <column name="UDF010" precision="16" scale="4" />
+            </key-property>
+            <key-property name="udf011" type="big_decimal">
+                <column name="UDF011" precision="16" scale="4" />
+            </key-property>
+            <key-property name="udf012" type="big_decimal">
+                <column name="UDF012" precision="16" scale="4" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

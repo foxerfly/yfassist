@@ -8,6 +8,7 @@ package com.edwin.myswingx;
 import POI.Excel;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
@@ -23,6 +24,7 @@ public class MyJTableModel {
     private Vector vcColumnNames = null;
     protected Vector vcData = null;
     private String filePath = "";
+    private Excel xls;
 
     public MyJTableModel(String... columnNames) {
 //        vcColumnNames.clear();
@@ -31,6 +33,9 @@ public class MyJTableModel {
 
     public MyJTableModel(String filePath) {
         this.filePath = filePath;
+        xls = new Excel(filePath);
+        setExcelToTableColumnNames();
+        setExcelData();
     }
 
     /**
@@ -49,10 +54,10 @@ public class MyJTableModel {
     }
 
     //获取EXCEL表格列名数据
-    public Vector setExcelToTableColumnNames(String filePath) {
+    public Vector setExcelToTableColumnNames() {
 
-        Excel xls = new Excel(filePath);
         vcColumnNames = new Vector(Arrays.asList(xls.getSheet(0).getColumnNames()));
+//        System.out.println(vcColumnNames);
         return vcColumnNames;
     }
 
@@ -61,7 +66,10 @@ public class MyJTableModel {
     }
 
     //获取EXCEL表格中的list数据
-    public Vector setData(String filePath) {
+    public Vector setExcelData() {
+        Collection c = new ArrayList<ArrayList>();
+        c = xls.getSheet(0).getAllRow();
+        vcData = new Vector(c);
         return vcData;
     }
 
@@ -77,8 +85,8 @@ public class MyJTableModel {
 
     //返回构建好数据和列名的tablemodel
     public DefaultTableModel buildExcelToTableModel() {
-//        setColumnNames(columnNames);
-        return new DefaultTableModel(setData(), setExcelToTableColumnNames(this.filePath));
+
+        return new DefaultTableModel(xls.getSheet(0).getObjectAllRow(), xls.getSheet(0).getColumnNames());
     }
 
 }

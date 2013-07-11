@@ -56,5 +56,9 @@
         <!--        <mapping resource="com/edwin/DepartMaterial/Procedure.hbm.xml"/>-->
 
 
+        <!--    CWMONTH-->
+
+        <mapping resource="com/edwin/CWMONTH/Invmbc.hbm.xml"/>
+
     </session-factory>
 </hibernate-configuration>

@@ -10,6 +10,7 @@ package POI;
  * @author John
  */
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -97,7 +98,9 @@ public class Sheet {
         String[] head = new String[h.size()];
         int i = 0;
         for (String o : h) {
-            head[i++] = String.valueOf(o);
+            if (!o.equals("") || !o.equals(null)) {
+                head[i++] = String.valueOf(o);
+            }
         }
         return head;
     }
@@ -142,6 +145,39 @@ public class Sheet {
         return cells;
     }
 
+    public Object[] getObjectRowAt(int index) {
+
+        return getRowAt(index).toArray();
+
+    }
+
+    public Object[][] getObjectAllRow() {
+
+        Object[][] ooDate = new Object[getRowSize()][];
+
+        for (int i = 0; i < getRowSize(); i++) {
+            ooDate[i] = getObjectRowAt(i + 1);
+        }
+
+        return ooDate;
+
+    }
+
+    public ArrayList<ArrayList> getAllRow() {
+        ArrayList<ArrayList> aalist = new ArrayList<ArrayList>();
+        ArrayList alist = new ArrayList();
+
+        int maxRowSize = getRowSize();
+        for (int i = 1; i <= maxRowSize; i++) {
+            alist.add(getRowAt(i));
+            aalist.add((ArrayList) alist.clone());
+            alist.removeAll(alist);
+        }
+        return aalist;
+    }
+
+//    public Object[][] getAllRowToArray() {
+//    }
     /**
      * 返回表的Table视图
      *
