@@ -86,7 +86,8 @@ public class MyJTableModel {
     //返回构建好数据和列名的tablemodel
     public DefaultTableModel buildExcelToTableModel() {
 
-        return new DefaultTableModel(xls.getSheet(0).getObjectAllRow(), xls.getSheet(0).getColumnNames());
+        DefaultTableModel dd = new DefaultTableModel(xls.getSheet(0).getObjectAllRow(), xls.getSheet(0).getColumnNames());
+        return dd;
     }
 
 }
