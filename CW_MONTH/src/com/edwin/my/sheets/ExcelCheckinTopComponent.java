@@ -5,15 +5,23 @@
  */
 package com.edwin.my.sheets;
 
-import POI.SheetTableModel;
+import com.edwin.CWMONTH.Invmbc;
+import com.edwin.CWMONTH.InvmbcId;
 import com.edwin.my.RCPSessionFactory;
 import com.edwin.myswingx.MyJTableModel;
+import com.edwin.myswingx.MyJXTable;
+import java.awt.Color;
+import java.math.BigDecimal;
 import javax.swing.JFileChooser;
+import javax.swing.table.DefaultTableModel;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.netbeans.api.progress.ProgressHandle;
+import org.netbeans.api.progress.ProgressHandleFactory;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
+import org.openide.util.Cancellable;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 
@@ -45,6 +53,7 @@ public final class ExcelCheckinTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_ExcelCheckinTopComponent());
         setToolTipText(Bundle.HINT_ExcelCheckinTopComponent());
+        ((DefaultTableModel) inputTable.getModel()).setRowCount(0);
 //        inputTable.setModel(new SheetTableModel());
 
     }
@@ -64,28 +73,28 @@ public final class ExcelCheckinTopComponent extends TopComponent {
 
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnChoose = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        inputTable = new org.jdesktop.swingx.JXTable();
+        inputTable = new MyJXTable();
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.jLabel1.text")); // NOI18N
 
         jTextField1.setText(org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.jTextField1.text")); // NOI18N
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONS/callhierarchy.png"))); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.jButton1.text")); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnChoose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONS/callhierarchy.png"))); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(btnChoose, org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.btnChoose.text")); // NOI18N
+        btnChoose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnChooseActionPerformed(evt);
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONS/commit.png"))); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jButton2, org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.jButton2.text")); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONS/commit.png"))); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(btnUpdate, org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.btnUpdate.text")); // NOI18N
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnUpdateActionPerformed(evt);
             }
         });
 
@@ -97,6 +106,7 @@ public final class ExcelCheckinTopComponent extends TopComponent {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        inputTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         inputTable.setColumnSelectionAllowed(true);
         inputTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(inputTable);
@@ -119,9 +129,9 @@ public final class ExcelCheckinTopComponent extends TopComponent {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
+                        .addComponent(btnChoose)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(btnUpdate)
                         .addGap(0, 50, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -132,27 +142,40 @@ public final class ExcelCheckinTopComponent extends TopComponent {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnChoose)
+                    .addComponent(btnUpdate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnChooseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChooseActionPerformed
         // TODO add your handling code here:
         JFileChooser fc = new JFileChooser();
 //        JocFolderChooser jf = new JocFolderChooser();
+        ProgressHandle ph = ProgressHandleFactory.createHandle("正在导入excel", new Cancellable() {
+            @Override
+            public boolean cancel() {
+                return true;
+            }
+        });
+        ph.start();
         int returnVal = fc.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             jTextField1.setText(fc.getSelectedFile().getAbsolutePath());
+
+            inputTable.setModel(new MyJTableModel(fc.getSelectedFile().getAbsolutePath()).buildExcelToTableModel());
+//            for (int i = 0; i < inputTable.getRowCount(); i++) {
+//                inputTable.setBackground(i % 2 == 0 ? this.ROW_COLOR : this.ALTERNATE_ROW_COLOR);
+//            }
+
         }
-        inputTable.setModel(new MyJTableModel(fc.getSelectedFile().getAbsolutePath()).buildExcelToTableModel());
+        ph.finish();
+//        inputTable.setBackground(Color.red);
+    }//GEN-LAST:event_btnChooseActionPerformed
 
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
         int rowsize = inputTable.getRowCount();
         int columnsize = inputTable.getColumnCount();
@@ -160,23 +183,35 @@ public final class ExcelCheckinTopComponent extends TopComponent {
         Transaction tx = null;
         s.beginTransaction();
 
-        for (int i = 0; i < rowsize; i++) {
+//        for (int i = 0; i < rowsize; i++) {
+//
+//
+//
+//            if (!s.createQuery(TOOL_TIP_TEXT_KEY).list().isEmpty()) {
+//            } else {
+//            }
+//
+//        }
+        InvmbcId iid = new InvmbcId();
+        iid.setMb001("450032");
+        iid.setLaborePrice(new BigDecimal(11));
+        Invmbc ic = new Invmbc();
+        ic.setId(iid);
+//        s.update(iid);
+        s.update(ic);
+        s.getTransaction().commit();
 
-            if (!s.createQuery(TOOL_TIP_TEXT_KEY).list().isEmpty()) {
-            } else {
-            }
-
-        }
-
-        tx.commit();
+//        tx.commit();
         s.close();
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
+    public static final Color ROW_COLOR = Color.WHITE;
+    public static final Color ALTERNATE_ROW_COLOR = new Color(0.92F, 0.95F, 0.99F);
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnChoose;
+    private javax.swing.JButton btnUpdate;
     private org.jdesktop.swingx.JXTable inputTable;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
@@ -190,6 +225,8 @@ public final class ExcelCheckinTopComponent extends TopComponent {
     @Override
     public void componentClosed() {
         // TODO add custom code on component closing
+        jTextField1.setText("");
+        ((DefaultTableModel) inputTable.getModel()).setRowCount(0);
         super.close();
     }
 
