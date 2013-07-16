@@ -8,6 +8,7 @@ package com.edwin.my.sheets;
 import POI.SheetTableModel;
 import com.edwin.my.RCPSessionFactory;
 import com.edwin.myswingx.MyJTableModel;
+import java.awt.Color;
 import javax.swing.JFileChooser;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -97,6 +98,7 @@ public final class ExcelCheckinTopComponent extends TopComponent {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        inputTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         inputTable.setColumnSelectionAllowed(true);
         inputTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(inputTable);
@@ -149,6 +151,7 @@ public final class ExcelCheckinTopComponent extends TopComponent {
             jTextField1.setText(fc.getSelectedFile().getAbsolutePath());
         }
         inputTable.setModel(new MyJTableModel(fc.getSelectedFile().getAbsolutePath()).buildExcelToTableModel());
+//        inputTable.setBackground(Color.red);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
