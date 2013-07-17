@@ -8,6 +8,43 @@
             <module-dependencies/>
             <public-packages>
                 <package>POI</package>
+                <package>javax.xml</package>
+                <package>javax.xml.namespace</package>
+                <package>javax.xml.stream</package>
+                <package>javax.xml.stream.events</package>
+                <package>javax.xml.stream.util</package>
+                <package>junit.awtui</package>
+                <package>junit.extensions</package>
+                <package>junit.framework</package>
+                <package>junit.runner</package>
+                <package>junit.swingui</package>
+                <package>junit.textui</package>
+                <package>org.apache.commons.codec</package>
+                <package>org.apache.commons.codec.binary</package>
+                <package>org.apache.commons.codec.digest</package>
+                <package>org.apache.commons.codec.language</package>
+                <package>org.apache.commons.codec.net</package>
+                <package>org.apache.commons.logging</package>
+                <package>org.apache.commons.logging.impl</package>
+                <package>org.apache.log4j</package>
+                <package>org.apache.log4j.chainsaw</package>
+                <package>org.apache.log4j.config</package>
+                <package>org.apache.log4j.helpers</package>
+                <package>org.apache.log4j.jdbc</package>
+                <package>org.apache.log4j.jmx</package>
+                <package>org.apache.log4j.lf5</package>
+                <package>org.apache.log4j.lf5.util</package>
+                <package>org.apache.log4j.lf5.viewer</package>
+                <package>org.apache.log4j.lf5.viewer.categoryexplorer</package>
+                <package>org.apache.log4j.lf5.viewer.configure</package>
+                <package>org.apache.log4j.net</package>
+                <package>org.apache.log4j.nt</package>
+                <package>org.apache.log4j.or</package>
+                <package>org.apache.log4j.or.jms</package>
+                <package>org.apache.log4j.or.sax</package>
+                <package>org.apache.log4j.spi</package>
+                <package>org.apache.log4j.varia</package>
+                <package>org.apache.log4j.xml</package>
                 <package>org.apache.poi</package>
                 <package>org.apache.poi.common.usermodel</package>
                 <package>org.apache.poi.ddf</package>
@@ -152,6 +189,66 @@
                 <package>org.apache.poi.xwpf.extractor</package>
                 <package>org.apache.poi.xwpf.model</package>
                 <package>org.apache.poi.xwpf.usermodel</package>
+                <package>org.apache.xmlbeans</package>
+                <package>org.apache.xmlbeans.impl.common</package>
+                <package>org.apache.xmlbeans.impl.config</package>
+                <package>org.apache.xmlbeans.impl.inst2xsd</package>
+                <package>org.apache.xmlbeans.impl.inst2xsd.util</package>
+                <package>org.apache.xmlbeans.impl.jam</package>
+                <package>org.apache.xmlbeans.impl.jam.annotation</package>
+                <package>org.apache.xmlbeans.impl.jam.internal</package>
+                <package>org.apache.xmlbeans.impl.jam.internal.classrefs</package>
+                <package>org.apache.xmlbeans.impl.jam.internal.elements</package>
+                <package>org.apache.xmlbeans.impl.jam.internal.javadoc</package>
+                <package>org.apache.xmlbeans.impl.jam.internal.parser</package>
+                <package>org.apache.xmlbeans.impl.jam.internal.reflect</package>
+                <package>org.apache.xmlbeans.impl.jam.mutable</package>
+                <package>org.apache.xmlbeans.impl.jam.provider</package>
+                <package>org.apache.xmlbeans.impl.jam.visitor</package>
+                <package>org.apache.xmlbeans.impl.jam.xml</package>
+                <package>org.apache.xmlbeans.impl.piccolo.io</package>
+                <package>org.apache.xmlbeans.impl.piccolo.util</package>
+                <package>org.apache.xmlbeans.impl.piccolo.xml</package>
+                <package>org.apache.xmlbeans.impl.regex</package>
+                <package>org.apache.xmlbeans.impl.richParser</package>
+                <package>org.apache.xmlbeans.impl.schema</package>
+                <package>org.apache.xmlbeans.impl.soap</package>
+                <package>org.apache.xmlbeans.impl.store</package>
+                <package>org.apache.xmlbeans.impl.tool</package>
+                <package>org.apache.xmlbeans.impl.util</package>
+                <package>org.apache.xmlbeans.impl.validator</package>
+                <package>org.apache.xmlbeans.impl.values</package>
+                <package>org.apache.xmlbeans.impl.xb.ltgfmt</package>
+                <package>org.apache.xmlbeans.impl.xb.ltgfmt.impl</package>
+                <package>org.apache.xmlbeans.impl.xb.substwsdl</package>
+                <package>org.apache.xmlbeans.impl.xb.substwsdl.impl</package>
+                <package>org.apache.xmlbeans.impl.xb.xmlconfig</package>
+                <package>org.apache.xmlbeans.impl.xb.xmlconfig.impl</package>
+                <package>org.apache.xmlbeans.impl.xb.xmlschema</package>
+                <package>org.apache.xmlbeans.impl.xb.xmlschema.impl</package>
+                <package>org.apache.xmlbeans.impl.xb.xsdownload</package>
+                <package>org.apache.xmlbeans.impl.xb.xsdownload.impl</package>
+                <package>org.apache.xmlbeans.impl.xb.xsdschema</package>
+                <package>org.apache.xmlbeans.impl.xb.xsdschema.impl</package>
+                <package>org.apache.xmlbeans.impl.xsd2inst</package>
+                <package>org.apache.xmlbeans.soap</package>
+                <package>org.apache.xmlbeans.xml.stream</package>
+                <package>org.apache.xmlbeans.xml.stream.events</package>
+                <package>org.apache.xmlbeans.xml.stream.utils</package>
+                <package>org.dom4j</package>
+                <package>org.dom4j.bean</package>
+                <package>org.dom4j.datatype</package>
+                <package>org.dom4j.dom</package>
+                <package>org.dom4j.dtd</package>
+                <package>org.dom4j.io</package>
+                <package>org.dom4j.jaxb</package>
+                <package>org.dom4j.rule</package>
+                <package>org.dom4j.rule.pattern</package>
+                <package>org.dom4j.swing</package>
+                <package>org.dom4j.tree</package>
+                <package>org.dom4j.util</package>
+                <package>org.dom4j.xpath</package>
+                <package>org.dom4j.xpp</package>
                 <package>org.openxmlformats.schemas.drawingml.x2006.chart</package>
                 <package>org.openxmlformats.schemas.drawingml.x2006.chart.impl</package>
                 <package>org.openxmlformats.schemas.drawingml.x2006.main</package>
@@ -176,7 +273,13 @@
                 <package>org.openxmlformats.schemas.spreadsheetml.x2006.main.impl</package>
                 <package>org.openxmlformats.schemas.wordprocessingml.x2006.main</package>
                 <package>org.openxmlformats.schemas.wordprocessingml.x2006.main.impl</package>
+                <package>org.w3c.dom</package>
+                <package>repackage</package>
                 <package>schemaorg_apache_xmlbeans.system.sE130CAA0A01A7CDE5A2B4FEB8B311707</package>
+                <package>schemaorg_apache_xmlbeans.system.sXMLCONFIG</package>
+                <package>schemaorg_apache_xmlbeans.system.sXMLLANG</package>
+                <package>schemaorg_apache_xmlbeans.system.sXMLSCHEMA</package>
+                <package>schemaorg_apache_xmlbeans.system.sXMLTOOLS</package>
                 <package>schemasMicrosoftComOfficeExcel</package>
                 <package>schemasMicrosoftComOfficeExcel.impl</package>
                 <package>schemasMicrosoftComOfficeOffice</package>
@@ -193,6 +296,22 @@
                 <binary-origin>release/modules/ext/poi-3.9-20121203.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
+                <runtime-relative-path>ext/commons-codec-1.5.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/commons-codec-1.5.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/dom4j-1.6.1.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/dom4j-1.6.1.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/junit-3.8.1.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/junit-3.8.1.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/stax-api-1.0.1.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/stax-api-1.0.1.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
                 <runtime-relative-path>ext/poi-scratchpad-3.9-20121203.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/poi-scratchpad-3.9-20121203.jar</binary-origin>
             </class-path-extension>
@@ -201,8 +320,20 @@
                 <binary-origin>release/modules/ext/poi-examples-3.9-20121203.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
+                <runtime-relative-path>ext/commons-logging-1.1.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/commons-logging-1.1.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/log4j-1.2.13.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/log4j-1.2.13.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
                 <runtime-relative-path>ext/poi-ooxml-3.9-20121203.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/poi-ooxml-3.9-20121203.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/xmlbeans-2.3.0.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/xmlbeans-2.3.0.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
                 <runtime-relative-path>ext/poi-excelant-3.9-20121203.jar</runtime-relative-path>

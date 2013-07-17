@@ -152,12 +152,20 @@
                 <binary-origin>release/modules/ext/orchid-2.2.0b.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
+                <runtime-relative-path>ext/swingx-all-1.6.4.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/swingx-all-1.6.4.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/org-netbeans-api-visual.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/org-netbeans-api-visual.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
                 <runtime-relative-path>ext/orchid-beaninfo-2.2.0b.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/orchid-beaninfo-2.2.0b.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
-                <runtime-relative-path>ext/swingx-all-1.6.4.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/swingx-all-1.6.4.jar</binary-origin>
+                <runtime-relative-path>ext/org-netbeans-modules-progress-ui.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/org-netbeans-modules-progress-ui.jar</binary-origin>
             </class-path-extension>
         </data>
     </configuration>

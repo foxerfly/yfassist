@@ -11,13 +11,10 @@ import com.edwin.CWMONTH.InvmbcId;
 import com.edwin.my.RCPSessionFactory;
 import com.edwin.myswingx.MyJTableModel;
 import com.edwin.myswingx.MyJXTable;
-import com.edwin.myswingx.TableCellColor;
 import java.awt.Color;
 import java.math.BigDecimal;
-import java.util.Vector;
 import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -223,13 +220,31 @@ public final class ExcelCheckinTopComponent extends TopComponent {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if (ExportExcel.ExportStandardExcel()) {
-//            JOptionPane.showMessageDialog(this, "导出模板成功!");
-            NotifyDescriptor d
-                    = new NotifyDescriptor.Message("导出模板成功!", NotifyDescriptor.INFORMATION_MESSAGE);
-            DialogDisplayer.getDefault().notify(d);
 
-        };
+        ProgressHandle ph = ProgressHandleFactory.createHandle("模板另存为...", new Cancellable() {
+            @Override
+            public boolean cancel() {
+                return true;
+            }
+        });
+        ph.start();
+        JFileChooser fc = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("xls文件",
+                "xls");
+        fc.setFileFilter(filter);
+        fc.setName("文件另存为...");
+        int returnVal = fc.showSaveDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            String s = fc.getSelectedFile().getAbsolutePath()+".xls";
+            if (ExportExcel.ExportStandardExcel(s)) {
+//            JOptionPane.showMessageDialog(this, "导出模板成功!");
+                NotifyDescriptor d
+                        = new NotifyDescriptor.Message("导出模板成功!", NotifyDescriptor.INFORMATION_MESSAGE);
+                DialogDisplayer.getDefault().notify(d);
+
+            };
+        }
+        ph.finish();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static final Color ROW_COLOR = Color.WHITE;
