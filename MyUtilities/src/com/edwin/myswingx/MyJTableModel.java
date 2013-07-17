@@ -87,6 +87,7 @@ public class MyJTableModel {
     public DefaultTableModel buildExcelToTableModel() {
 
         DefaultTableModel dd = new DefaultTableModel(xls.getSheet(0).getObjectAllRow(), xls.getSheet(0).getColumnNames());
+
         return dd;
     }
 

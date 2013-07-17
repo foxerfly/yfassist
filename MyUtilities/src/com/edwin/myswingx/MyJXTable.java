@@ -5,14 +5,21 @@
  */
 package com.edwin.myswingx;
 
+import static com.edwin.myswingx.MyJXTable.ALTERNATE_ROW_COLOR;
+import static com.edwin.myswingx.MyJXTable.GRID_COLOR;
+import static com.edwin.myswingx.MyJXTable.ROLLOVER_ROW_COLOR;
+import static com.edwin.myswingx.MyJXTable.ROW_COLOR;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import javax.swing.JTable;
-import javax.swing.UIManager;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
-import org.hibernate.context.internal.JTASessionContext;
+import javax.swing.table.TableModel;
 import org.jdesktop.swingx.JXTable;
 
 /**
@@ -30,14 +37,46 @@ public class MyJXTable extends JXTable {
     public static final Color GRID_COLOR = new Color(14277081);
     public static final Color ROLLOVER_ROW_COLOR = new Color(0.94F, 0.96F, 0.96F);
 
-    public MyJXTable(MyJTableModel mj) {
+    public MyJXTable(TableModel tb) {
+        super(tb);
+        this.setGridColor(GRID_COLOR);
+        this.setRowHeight(rowHeight);
+        ((DefaultTableModel) super.getModel()).setRowCount(0);
         this.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         this.setDragEnabled(false);
     }
 
     public MyJXTable() {
+        this.setGridColor(GRID_COLOR);
+        this.setRowHeight(rowHeight);
+        ((DefaultTableModel) super.getModel()).setRowCount(0);
         this.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         this.setDragEnabled(false);
+    }
+
+    public TableCellRenderer getCellRenderer(int row, int column) {
+        return new MyJXTable.MyCellRenderer();
+    }
+
+    class MyCellRenderer extends DefaultTableCellRenderer {
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            Component cell = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+            this.setColor(cell, table, isSelected, hasFocus, row, column);
+            return cell;
+        }
+        /*
+         * 设置颜色
+         */
+
+        private void setColor(Component component, JTable table, boolean isSelected, boolean hasFocus, int row, int column) {
+            if (isSelected) {
+//                component.setBackground(ROLLOVER_ROW_COLOR);
+                setBorder(null);//去掉边
+            } else {
+                component.setBackground((row % 2 == 0) ? ROW_COLOR : ALTERNATE_ROW_COLOR);
+            }
+        }
     }
 
     @Override

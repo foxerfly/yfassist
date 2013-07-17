@@ -10,9 +10,12 @@ import com.edwin.CWMONTH.InvmbcId;
 import com.edwin.my.RCPSessionFactory;
 import com.edwin.myswingx.MyJTableModel;
 import com.edwin.myswingx.MyJXTable;
+import com.edwin.myswingx.TableCellColor;
 import java.awt.Color;
 import java.math.BigDecimal;
+import java.util.Vector;
 import javax.swing.JFileChooser;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -53,9 +56,9 @@ public final class ExcelCheckinTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_ExcelCheckinTopComponent());
         setToolTipText(Bundle.HINT_ExcelCheckinTopComponent());
-        ((DefaultTableModel) inputTable.getModel()).setRowCount(0);
-//        inputTable.setModel(new SheetTableModel());
 
+//        ((DefaultTableModel) inputTable.getModel()).setRowCount(0);
+//        inputTable.setModel(new SheetTableModel());
     }
 
 //    public DefaultTableModel getTableModel() {
@@ -122,17 +125,17 @@ public final class ExcelCheckinTopComponent extends TopComponent {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btnChoose)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnUpdate)
-                        .addGap(0, 50, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -144,8 +147,8 @@ public final class ExcelCheckinTopComponent extends TopComponent {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnChoose)
                     .addComponent(btnUpdate))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -164,11 +167,8 @@ public final class ExcelCheckinTopComponent extends TopComponent {
         int returnVal = fc.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             jTextField1.setText(fc.getSelectedFile().getAbsolutePath());
-
             inputTable.setModel(new MyJTableModel(fc.getSelectedFile().getAbsolutePath()).buildExcelToTableModel());
-//            for (int i = 0; i < inputTable.getRowCount(); i++) {
-//                inputTable.setBackground(i % 2 == 0 ? this.ROW_COLOR : this.ALTERNATE_ROW_COLOR);
-//            }
+//            inputTable.setDefaultRenderer(Object.class, TableCellColor.getDefaultTableCellRenderer());
 
         }
         ph.finish();
