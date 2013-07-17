@@ -5,6 +5,7 @@
  */
 package com.edwin.my.sheets;
 
+import POI.ExportExcel;
 import com.edwin.CWMONTH.Invmbc;
 import com.edwin.CWMONTH.InvmbcId;
 import com.edwin.my.RCPSessionFactory;
@@ -15,6 +16,7 @@ import java.awt.Color;
 import java.math.BigDecimal;
 import java.util.Vector;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import org.hibernate.Session;
@@ -22,6 +24,8 @@ import org.hibernate.Transaction;
 import org.netbeans.api.progress.ProgressHandle;
 import org.netbeans.api.progress.ProgressHandleFactory;
 import org.netbeans.api.settings.ConvertAsProperties;
+import org.openide.DialogDisplayer;
+import org.openide.NotifyDescriptor;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.util.Cancellable;
@@ -80,6 +84,7 @@ public final class ExcelCheckinTopComponent extends TopComponent {
         btnUpdate = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         inputTable = new MyJXTable();
+        jButton1 = new javax.swing.JButton();
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.jLabel1.text")); // NOI18N
 
@@ -119,6 +124,14 @@ public final class ExcelCheckinTopComponent extends TopComponent {
         inputTable.getColumnModel().getColumn(2).setHeaderValue(org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.inputTable.columnModel.title2")); // NOI18N
         inputTable.getColumnModel().getColumn(3).setHeaderValue(org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.inputTable.columnModel.title3")); // NOI18N
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONS/If16.png"))); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(ExcelCheckinTopComponent.class, "ExcelCheckinTopComponent.jButton1.text")); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -130,23 +143,25 @@ public final class ExcelCheckinTopComponent extends TopComponent {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnChoose)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnUpdate)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(btnChoose)
-                    .addComponent(btnUpdate))
+                    .addComponent(btnUpdate)
+                    .addComponent(jButton1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1)
                 .addContainerGap())
@@ -206,12 +221,24 @@ public final class ExcelCheckinTopComponent extends TopComponent {
 
     }//GEN-LAST:event_btnUpdateActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if (ExportExcel.ExportStandardExcel()) {
+//            JOptionPane.showMessageDialog(this, "导出模板成功!");
+            NotifyDescriptor d
+                    = new NotifyDescriptor.Message("导出模板成功!", NotifyDescriptor.INFORMATION_MESSAGE);
+            DialogDisplayer.getDefault().notify(d);
+
+        };
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public static final Color ROW_COLOR = Color.WHITE;
     public static final Color ALTERNATE_ROW_COLOR = new Color(0.92F, 0.95F, 0.99F);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChoose;
     private javax.swing.JButton btnUpdate;
     private org.jdesktop.swingx.JXTable inputTable;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;

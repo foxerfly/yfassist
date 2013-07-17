@@ -59,7 +59,7 @@ public final class OpenCostAction extends AbstractAction {
             tg.close();
             tg.open();
             Mode brief = WindowManager.getDefault().findMode("anonymousMode_2");
-            Mode detail = WindowManager.getDefault().findMode("anonymousMode_3");
+            Mode detail = WindowManager.getDefault().findMode("anonymousMode_1");
             brief.dockInto(WindowManager.getDefault().findTopComponent("OrderBriefTopComponent"));
             detail.dockInto(WindowManager.getDefault().findTopComponent("OrderDetailTopComponent"));
             WindowManager.getDefault().findTopComponent("MainCostViewTopComponent").open();
