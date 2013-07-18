@@ -13,9 +13,11 @@ import com.edwin.myswingx.MyJTableModel;
 import com.edwin.myswingx.MyJXTable;
 import java.awt.Color;
 import java.math.BigDecimal;
+import java.util.Random;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.netbeans.api.progress.ProgressHandle;
@@ -191,30 +193,38 @@ public final class ExcelCheckinTopComponent extends TopComponent {
         // TODO add your handling code here:
         int rowsize = inputTable.getRowCount();
         int columnsize = inputTable.getColumnCount();
-        Session s = RCPSessionFactory.openSession();
-        Transaction tx = null;
-        s.beginTransaction();
 
+        Session s = RCPSessionFactory.openSession();
+        Transaction tx = s.beginTransaction();
+        try {
 //        for (int i = 0; i < rowsize; i++) {
 //
 //
 //
 //            if (!s.createQuery(TOOL_TIP_TEXT_KEY).list().isEmpty()) {
+            
 //            } else {
+            
 //            }
 //
 //        }
-        InvmbcId iid = new InvmbcId();
-        iid.setMb001("450032");
-        iid.setLaborePrice(new BigDecimal(11));
-        Invmbc ic = new Invmbc();
-        ic.setId(iid);
+            InvmbcId iid = new InvmbcId();
+            iid.setMb001("4500321");
+            iid.setLaborePrice(new BigDecimal(new Random().nextInt(10)));
+            Invmbc ic = new Invmbc();
+            ic.setId(iid);
 //        s.update(iid);
-        s.update(ic);
-        s.getTransaction().commit();
-
-//        tx.commit();
-        s.close();
+            s.saveOrUpdate(ic);
+            tx.commit();
+        } catch (HibernateException hibernateException) {
+            NotifyDescriptor nd = new NotifyDescriptor.Message("更新错误！", NotifyDescriptor.INFORMATION_MESSAGE);
+            DialogDisplayer.getDefault().notifyLater(nd);
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            s.close();
+        }
 
     }//GEN-LAST:event_btnUpdateActionPerformed
 
@@ -235,7 +245,7 @@ public final class ExcelCheckinTopComponent extends TopComponent {
         fc.setName("文件另存为...");
         int returnVal = fc.showSaveDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-            String s = fc.getSelectedFile().getAbsolutePath()+".xls";
+            String s = fc.getSelectedFile().getAbsolutePath() + ".xls";
             if (ExportExcel.ExportStandardExcel(s)) {
 //            JOptionPane.showMessageDialog(this, "导出模板成功!");
                 NotifyDescriptor d
