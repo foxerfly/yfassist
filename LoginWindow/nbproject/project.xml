@@ -98,7 +98,6 @@
                 </dependency>
             </module-dependencies>
             <public-packages>
-                <package>com.edwin.CWMONTH</package>
                 <package>com.edwin.my</package>
                 <package>com.xzq.osc</package>
                 <package>com.xzq.osc.about</package>
@@ -116,6 +115,53 @@
                 <package>com.xzq.osc.trayicon</package>
                 <package>com.xzq.osc.tree</package>
                 <package>com.xzq.osc.treetable</package>
+                <package>fi.mmm.yhteinen.swing.core</package>
+                <package>fi.mmm.yhteinen.swing.core.action</package>
+                <package>fi.mmm.yhteinen.swing.core.component</package>
+                <package>fi.mmm.yhteinen.swing.core.component.buttongroup</package>
+                <package>fi.mmm.yhteinen.swing.core.component.field</package>
+                <package>fi.mmm.yhteinen.swing.core.component.label</package>
+                <package>fi.mmm.yhteinen.swing.core.component.list</package>
+                <package>fi.mmm.yhteinen.swing.core.component.menu</package>
+                <package>fi.mmm.yhteinen.swing.core.component.piechart</package>
+                <package>fi.mmm.yhteinen.swing.core.component.table</package>
+                <package>fi.mmm.yhteinen.swing.core.component.text</package>
+                <package>fi.mmm.yhteinen.swing.core.component.tree</package>
+                <package>fi.mmm.yhteinen.swing.core.error</package>
+                <package>fi.mmm.yhteinen.swing.core.savechanges</package>
+                <package>fi.mmm.yhteinen.swing.core.tools</package>
+                <package>fi.mmm.yhteinen.swing.core.worker</package>
+                <package>org.apache.commons.beanutils</package>
+                <package>org.apache.commons.beanutils.converters</package>
+                <package>org.apache.commons.beanutils.locale</package>
+                <package>org.apache.commons.beanutils.locale.converters</package>
+                <package>org.apache.commons.collections</package>
+                <package>org.apache.commons.lang</package>
+                <package>org.apache.commons.lang.builder</package>
+                <package>org.apache.commons.lang.exception</package>
+                <package>org.apache.commons.lang.math</package>
+                <package>org.apache.commons.lang.time</package>
+                <package>org.apache.commons.logging</package>
+                <package>org.apache.commons.logging.impl</package>
+                <package>org.apache.log4j</package>
+                <package>org.apache.log4j.chainsaw</package>
+                <package>org.apache.log4j.config</package>
+                <package>org.apache.log4j.helpers</package>
+                <package>org.apache.log4j.jdbc</package>
+                <package>org.apache.log4j.jmx</package>
+                <package>org.apache.log4j.lf5</package>
+                <package>org.apache.log4j.lf5.util</package>
+                <package>org.apache.log4j.lf5.viewer</package>
+                <package>org.apache.log4j.lf5.viewer.categoryexplorer</package>
+                <package>org.apache.log4j.lf5.viewer.configure</package>
+                <package>org.apache.log4j.net</package>
+                <package>org.apache.log4j.nt</package>
+                <package>org.apache.log4j.or</package>
+                <package>org.apache.log4j.or.jms</package>
+                <package>org.apache.log4j.or.sax</package>
+                <package>org.apache.log4j.spi</package>
+                <package>org.apache.log4j.varia</package>
+                <package>org.apache.log4j.xml</package>
                 <package>org.jdesktop.beans</package>
                 <package>org.jdesktop.swingx</package>
                 <package>org.jdesktop.swingx.action</package>
@@ -162,16 +208,36 @@
                 <package>org.jdesktop.swingx.util</package>
             </public-packages>
             <class-path-extension>
+                <runtime-relative-path>ext/commons-lang-2.0.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/commons-lang-2.0.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/log4j-1.2.4.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/log4j-1.2.4.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/commons-beanutils-1.7.0.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/commons-beanutils-1.7.0.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
                 <runtime-relative-path>ext/orchid-2.2.0b.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/orchid-2.2.0b.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
-                <runtime-relative-path>ext/orchid-beaninfo-2.2.0b.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/orchid-beaninfo-2.2.0b.jar</binary-origin>
+                <runtime-relative-path>ext/commons-logging-1.0.4.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/commons-logging-1.0.4.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
                 <runtime-relative-path>ext/swingx-all-1.6.4.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/swingx-all-1.6.4.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/tikeswing.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/tikeswing.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/orchid-beaninfo-2.2.0b.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/orchid-beaninfo-2.2.0b.jar</binary-origin>
             </class-path-extension>
         </data>
     </configuration>

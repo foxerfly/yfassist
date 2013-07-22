@@ -50,7 +50,7 @@ public final class JavaFXWidgetTestTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_JavaFXWidgetTestTopComponent());
         setToolTipText(Bundle.HINT_JavaFXWidgetTestTopComponent());
-        
+
 //        setLayout(new BorderLayout());
 //        add(scrollPane, BorderLayout.CENTER);
         //Setup visual library scene
@@ -68,7 +68,6 @@ public final class JavaFXWidgetTestTopComponent extends TopComponent {
 //
 //        scene.getSceneAnimator().animatePreferredLocation(widget, getMousePosition(true));
 //        scene.validate(); //Make sure you validate the scene so that everything renders nicely
-
     }
 
     /**
@@ -78,6 +77,8 @@ public final class JavaFXWidgetTestTopComponent extends TopComponent {
      */
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
+        yController1 = new fi.mmm.yhteinen.swing.core.YController();
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -92,6 +93,7 @@ public final class JavaFXWidgetTestTopComponent extends TopComponent {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private fi.mmm.yhteinen.swing.core.YController yController1;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {

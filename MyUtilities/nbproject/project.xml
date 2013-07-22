@@ -144,10 +144,6 @@
                 <binary-origin>release/modules/ext/serveros.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
-                <runtime-relative-path>ext/log4j-1.2.4.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/log4j-1.2.4.jar</binary-origin>
-            </class-path-extension>
-            <class-path-extension>
                 <runtime-relative-path>ext/commons-beanutils-1.7.0.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/commons-beanutils-1.7.0.jar</binary-origin>
             </class-path-extension>
