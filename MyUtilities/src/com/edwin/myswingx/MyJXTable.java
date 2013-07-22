@@ -122,7 +122,7 @@ public class MyJXTable extends JXTable {
     }
 
     protected Color backgroundColorForRow(int row) {
-        return (row % 2 == 0) ? this.ROW_COLOR : this.ALTERNATE_ROW_COLOR;
+        return (row % 2 == 0) ? MyJXTable.ROW_COLOR : MyJXTable.ALTERNATE_ROW_COLOR;
     }
 
 }
