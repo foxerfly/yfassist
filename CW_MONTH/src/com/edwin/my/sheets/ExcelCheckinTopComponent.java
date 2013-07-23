@@ -7,7 +7,6 @@ package com.edwin.my.sheets;
 
 import POI.ExportExcel;
 import com.edwin.CWMONTH.Invmbc;
-import com.edwin.CWMONTH.InvmbcId;
 import com.edwin.my.RCPSessionFactory;
 import com.edwin.myswingx.MyJTableModel;
 import com.edwin.myswingx.MyJXTable;
@@ -191,41 +190,24 @@ public final class ExcelCheckinTopComponent extends TopComponent {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
-        int rowsize = inputTable.getRowCount();
-        int columnsize = inputTable.getColumnCount();
+        NotifyDescriptor d = new NotifyDescriptor.Confirmation("请确认表格依次顺序为：品号；原材料成本；人工成本；制造费用；加工费", NotifyDescriptor.OK_CANCEL_OPTION);
 
-        Session s = RCPSessionFactory.openSession();
-        Transaction tx = s.beginTransaction();
-        try {
-//        for (int i = 0; i < rowsize; i++) {
-//
-//
-//
-//            if (!s.createQuery(TOOL_TIP_TEXT_KEY).list().isEmpty()) {
-            
-//            } else {
-            
-//            }
-//
-//        }
-            InvmbcId iid = new InvmbcId();
-            iid.setMb001("4500321");
-            iid.setLaborePrice(new BigDecimal(new Random().nextInt(10)));
-            Invmbc ic = new Invmbc();
-            ic.setId(iid);
-//        s.update(iid);
-            s.saveOrUpdate(ic);
-            tx.commit();
-        } catch (HibernateException hibernateException) {
-            NotifyDescriptor nd = new NotifyDescriptor.Message("更新错误！", NotifyDescriptor.INFORMATION_MESSAGE);
-            DialogDisplayer.getDefault().notifyLater(nd);
-            if (tx != null) {
-                tx.rollback();
+        if (DialogDisplayer.getDefault().notify(d) == NotifyDescriptor.OK_OPTION) {
+            int rowsize = inputTable.getRowCount();
+            int columnsize = inputTable.getColumnCount();
+            UpdateInvmbcModle updateinvmbc = new UpdateInvmbcModle();
+            for (int i = 0; i < rowsize; i++) {
+                updateinvmbc.setPh((String) inputTable.getValueAt(i, 0));
+                updateinvmbc.setMaterialPrice(new BigDecimal((String) inputTable.getValueAt(i, 1)));
+                updateinvmbc.setLaborePrice(new BigDecimal((String) inputTable.getValueAt(i, 2)));
+                updateinvmbc.setMadePrice(new BigDecimal((String) inputTable.getValueAt(i, 3)));
+                updateinvmbc.setCooperationPrice(new BigDecimal((String) inputTable.getValueAt(i, 4)));
+                if (!updateinvmbc.insertOrUpdate()) {
+                    i = rowsize;
+                };
+
             }
-        } finally {
-            s.close();
         }
-
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
