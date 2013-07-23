@@ -4,6 +4,10 @@
     <folder name="Menu">
         <folder name="系统管理">
 
+            <file name="com-edwin-javafx-JavaFXWidgetTestTopComponent.shadow_hidden"/>
+            <file name="com-edwin-javafx-JavaFXWidgetTestTopComponent.shadow_hidden">
+                <attr name="originalFile" stringvalue="Actions/系统管理/com-edwin-javafx-JavaFXWidgetTestTopComponent.instance"/>
+            </file>
         </folder>
     </folder>
     <folder name="Toolbars">

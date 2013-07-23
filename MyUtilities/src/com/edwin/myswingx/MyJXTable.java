@@ -45,6 +45,15 @@ public class MyJXTable extends JXTable {
         this.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         this.setDragEnabled(false);
     }
+    
+    public MyJXTable(DefaultTableModel tb) {
+        super(tb);
+        this.setGridColor(GRID_COLOR);
+        this.setRowHeight(rowHeight);
+        ((DefaultTableModel) super.getModel()).setRowCount(0);
+        this.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        this.setDragEnabled(false);
+    }
 
     public MyJXTable() {
         this.setGridColor(GRID_COLOR);

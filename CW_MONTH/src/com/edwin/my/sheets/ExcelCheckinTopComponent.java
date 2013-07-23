@@ -53,7 +53,7 @@ import org.openide.util.NbBundle.Messages;
 })
 
 public final class ExcelCheckinTopComponent extends TopComponent {
-    
+
     public ExcelCheckinTopComponent() {
         initComponents();
         setName(Bundle.CTL_ExcelCheckinTopComponent());
@@ -187,26 +187,25 @@ public final class ExcelCheckinTopComponent extends TopComponent {
         ph.finish();
 //        inputTable.setBackground(Color.red);
     }//GEN-LAST:event_btnChooseActionPerformed
-    
+
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
         NotifyDescriptor d = new NotifyDescriptor.Confirmation("请确认表格依次顺序为：品号；原材料成本；人工成本；制造费用；加工费", NotifyDescriptor.OK_CANCEL_OPTION);
-        
+
         if (DialogDisplayer.getDefault().notify(d) == NotifyDescriptor.OK_OPTION) {
             int rowsize = inputTable.getRowCount();
             int columnsize = inputTable.getColumnCount();
             UpdateInvmbcModle updateinvmbc = new UpdateInvmbcModle();
-            
+
             ProgressHandle ph = ProgressHandleFactory.createHandle("正在更新成本档案...", new Cancellable() {
                 @Override
                 public boolean cancel() {
                     return true;
                 }
             });
-            
-            ph.start(0, rowsize);
+
+            ph.start(rowsize);
             for (int i = 0; i < rowsize; i++) {
-                ph.progress(i);
                 updateinvmbc.setPh((String) inputTable.getValueAt(i, 0));
                 updateinvmbc.setMaterialPrice(new BigDecimal((String) inputTable.getValueAt(i, 1)));
                 updateinvmbc.setLaborePrice(new BigDecimal((String) inputTable.getValueAt(i, 2)));
@@ -215,13 +214,13 @@ public final class ExcelCheckinTopComponent extends TopComponent {
                 if (!updateinvmbc.insertOrUpdate()) {
                     i = rowsize;
                 };
-                
+                ph.progress(i);
             }
             ph.finish();
-            
+
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
-    
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
 
@@ -245,12 +244,12 @@ public final class ExcelCheckinTopComponent extends TopComponent {
                 NotifyDescriptor d
                         = new NotifyDescriptor.Message("导出模板成功!", NotifyDescriptor.INFORMATION_MESSAGE);
                 DialogDisplayer.getDefault().notify(d);
-                
+
             };
         }
         ph.finish();
     }//GEN-LAST:event_jButton1ActionPerformed
-    
+
     public static final Color ROW_COLOR = Color.WHITE;
     public static final Color ALTERNATE_ROW_COLOR = new Color(0.92F, 0.95F, 0.99F);
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -267,7 +266,7 @@ public final class ExcelCheckinTopComponent extends TopComponent {
     public void componentOpened() {
         // TODO add custom code on component opening
     }
-    
+
     @Override
     public void componentClosed() {
         // TODO add custom code on component closing
@@ -275,14 +274,14 @@ public final class ExcelCheckinTopComponent extends TopComponent {
         ((DefaultTableModel) inputTable.getModel()).setRowCount(0);
         super.close();
     }
-    
+
     void writeProperties(java.util.Properties p) {
         // better to version settings since initial version as advocated at
         // http://wiki.apidesign.org/wiki/PropertyFiles
         p.setProperty("version", "1.0");
         // TODO store your settings
     }
-    
+
     void readProperties(java.util.Properties p) {
         String version = p.getProperty("version");
         // TODO read your settings according to their version
