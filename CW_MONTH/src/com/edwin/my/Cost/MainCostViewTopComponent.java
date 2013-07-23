@@ -43,8 +43,8 @@ import org.openide.util.Utilities;
         displayName = "#CTL_MainCostViewAction",
         preferredID = "MainCostViewTopComponent")
 @Messages({
-    "CTL_MainCostViewAction=MainCostView",
-    "CTL_MainCostViewTopComponent=MainCostView Window",
+    "CTL_MainCostViewAction=成本计算",
+    "CTL_MainCostViewTopComponent=成本计算",
     "HINT_MainCostViewTopComponent=This is a MainCostView window"
 })
 public final class MainCostViewTopComponent extends TopComponent implements ExplorerManager.Provider, LookupListener {

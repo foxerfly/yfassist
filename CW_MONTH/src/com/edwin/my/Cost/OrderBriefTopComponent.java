@@ -41,8 +41,8 @@ import org.openide.util.lookup.InstanceContent;
         displayName = "#CTL_OrderBriefAction",
         preferredID = "OrderBriefTopComponent")
 @Messages({
-    "CTL_OrderBriefAction=OrderBrief",
-    "CTL_OrderBriefTopComponent=OrderBrief Window",
+    "CTL_OrderBriefAction=单据窗口",
+    "CTL_OrderBriefTopComponent=单据窗口",
     "HINT_OrderBriefTopComponent=This is a OrderBrief window"
 })
 public final class OrderBriefTopComponent extends TopComponent implements ListSelectionListener {

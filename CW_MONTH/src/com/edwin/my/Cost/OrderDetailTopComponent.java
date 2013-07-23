@@ -46,8 +46,8 @@ import org.openide.util.lookup.ProxyLookup;
         displayName = "#CTL_OrderDetailAction",
         preferredID = "OrderDetailTopComponent")
 @Messages({
-    "CTL_OrderDetailAction=OrderDetail",
-    "CTL_OrderDetailTopComponent=OrderDetail Window",
+    "CTL_OrderDetailAction=BOM详细窗口",
+    "CTL_OrderDetailTopComponent=BOM详细窗口",
     "HINT_OrderDetailTopComponent=This is a OrderDetail window"
 })
 public final class OrderDetailTopComponent extends TopComponent implements ExplorerManager.Provider, LookupListener,

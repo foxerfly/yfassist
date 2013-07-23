@@ -74,6 +74,7 @@ public class Sheet {
      * @see HSSFSheet
      */
     public int getRowSize() {
+//        System.out.println(sheet.getLastRowNum());
         return sheet.getLastRowNum() - sheet.getFirstRowNum();
     }
 

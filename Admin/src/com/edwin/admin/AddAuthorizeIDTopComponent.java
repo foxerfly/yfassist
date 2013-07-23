@@ -46,7 +46,7 @@ public final class AddAuthorizeIDTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_AddAuthorizeIDTopComponent());
         setToolTipText(Bundle.HINT_AddAuthorizeIDTopComponent());
-        jXTable1.setModel(new MyJTableModel("权限ID", "权限名", "所属模块", "描述").buildModel());
+        myJXTable1.setModel(new MyJTableModel("权限ID", "权限名", "所属模块", "描述").buildModel());
 
     }
 
@@ -58,8 +58,6 @@ public final class AddAuthorizeIDTopComponent extends TopComponent {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jXTable1 = new org.jdesktop.swingx.JXTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -72,19 +70,8 @@ public final class AddAuthorizeIDTopComponent extends TopComponent {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-
-        jXTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jXTable1);
+        jScrollPane2 = new javax.swing.JScrollPane();
+        myJXTable1 = new com.edwin.myswingx.MyJXTable();
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(AddAuthorizeIDTopComponent.class, "AddAuthorizeIDTopComponent.jLabel1.text")); // NOI18N
 
@@ -130,6 +117,19 @@ public final class AddAuthorizeIDTopComponent extends TopComponent {
             }
         });
 
+        myJXTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(myJXTable1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -159,10 +159,10 @@ public final class AddAuthorizeIDTopComponent extends TopComponent {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4)
                     .addComponent(jButton3))
-                .addGap(104, 104, 104))
+                .addContainerGap(104, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane2)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -189,7 +189,7 @@ public final class AddAuthorizeIDTopComponent extends TopComponent {
                         .addGap(11, 11, 11)
                         .addComponent(jButton4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -239,12 +239,12 @@ public final class AddAuthorizeIDTopComponent extends TopComponent {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private org.jdesktop.swingx.JXTable jXTable1;
+    private com.edwin.myswingx.MyJXTable myJXTable1;
     // End of variables declaration//GEN-END:variables
 
     @Override

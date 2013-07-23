@@ -8,6 +8,8 @@ package com.edwin.my.sheets;
 import com.edwin.CWMONTH.Invmbc;
 import com.edwin.my.RCPSessionFactory;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
 import org.hibernate.HibernateException;
@@ -23,71 +25,71 @@ import org.openide.NotifyDescriptor;
  * @author John
  */
 public class UpdateInvmbcModle {
-    
+
     private String ph = "";
     private BigDecimal materialPrice = BigDecimal.ZERO;
     private BigDecimal laborePrice = BigDecimal.ZERO;
     private BigDecimal madePrice = BigDecimal.ZERO;
     private BigDecimal cooperationPrice = BigDecimal.ZERO;
-    
+
     public BigDecimal getMaterialPrice() {
         return materialPrice;
     }
-    
+
     public void setMaterialPrice(BigDecimal materialPrice) {
         this.materialPrice = materialPrice;
     }
-    
+
     public BigDecimal getLaborePrice() {
         return laborePrice;
     }
-    
+
     public void setLaborePrice(BigDecimal laborePrice) {
         this.laborePrice = laborePrice;
     }
-    
+
     public BigDecimal getMadePrice() {
         return madePrice;
     }
-    
+
     public void setMadePrice(BigDecimal madePrice) {
         this.madePrice = madePrice;
     }
-    
+
     public BigDecimal getCooperationPrice() {
         return cooperationPrice;
     }
-    
+
     public void setCooperationPrice(BigDecimal cooperationPrice) {
         this.cooperationPrice = cooperationPrice;
     }
-    
+
     public String getPh() {
         return ph;
     }
-    
+
     public void setPh(String ph) {
         this.ph = ph;
     }
-    
+
     public boolean insertOrUpdate() {
-        
+
         Session s = RCPSessionFactory.openSession();
         Transaction tx = s.beginTransaction();
         Invmbc iid = null;
-        
+
         Query q = s.createQuery("from Invmbc as c where c.mb001=:specph");
         q.setString("specph", ph);
         List result = q.list();
-        
+
         if (result.isEmpty()) {
             iid = new Invmbc();
-            iid.setGuid(UUID.randomUUID().toString());
+            iid.setGuid(UUID.randomUUID().toString().trim());
             iid.setMb001(this.getPh());
+//            System.out.println("empty"+this.getPh());
         } else {
-            for (; result.iterator().hasNext(); result.iterator().next()) {
-                iid = (Invmbc) result.iterator().next();
-            }
+            iid = (Invmbc) result.iterator().next();
+//            System.out.println("exists" + iid.getMb001());
         }
         try {
             iid.setLaborePrice(this.getLaborePrice());
@@ -108,7 +110,7 @@ public class UpdateInvmbcModle {
             s.close();
             return true;
         }
-        
+
     }
-    
+
 }
