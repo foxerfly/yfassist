@@ -46,11 +46,11 @@ public final class VisualAdminTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_VisualAdminTopComponent());
         setToolTipText(Bundle.HINT_VisualAdminTopComponent());
-        jScrollPane1.setViewportView(cs.createView());
-        lw = new LayerWidget(cs);
-        cs.addChild(lw);
-        wcw = new ComponentWidget(cs,  new MyJXTable(new MyJTableModel("权限ID", "权限名", "所属模块", "描述").buildModel()));
-        lw.addChild(wcw);
+//        jScrollPane1.setViewportView(cs.createView());
+//        lw = new LayerWidget(cs);
+//        cs.addChild(lw);
+//        wcw = new ComponentWidget(cs,  new MyJXTable(new MyJTableModel("权限ID", "权限名", "所属模块", "描述").buildModel()));
+//        lw.addChild(wcw);
     }
 
     /**
@@ -61,32 +61,21 @@ public final class VisualAdminTopComponent extends TopComponent {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cs = new org.netbeans.api.visual.widget.Scene();
-        jScrollPane1 = new javax.swing.JScrollPane();
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 802, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 550, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private LayerWidget lw;
     private ComponentWidget wcw;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private org.netbeans.api.visual.widget.Scene cs;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
