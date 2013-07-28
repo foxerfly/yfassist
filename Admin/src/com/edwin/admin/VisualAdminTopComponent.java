@@ -35,7 +35,7 @@ import org.openide.util.NbBundle.Messages;
         preferredID = "VisualAdminTopComponent"
         )
 @Messages({
-    "CTL_VisualAdminAction=可视控制",
+    "CTL_VisualAdminAction=可视 控制",
     "CTL_VisualAdminTopComponent=可视控制",
     "HINT_VisualAdminTopComponent=This is a VisualAdmin window"
 })
