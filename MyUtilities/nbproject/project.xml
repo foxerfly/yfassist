@@ -137,48 +137,24 @@
                 <package>com.edwin.myswingx</package>
             </public-packages>
             <class-path-extension>
-                <runtime-relative-path>ext/commons-lang-2.0.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/commons-lang-2.0.jar</binary-origin>
-            </class-path-extension>
-            <class-path-extension>
                 <runtime-relative-path>ext/serveros.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/serveros.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
-                <runtime-relative-path>ext/commons-beanutils-1.7.0.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/commons-beanutils-1.7.0.jar</binary-origin>
-            </class-path-extension>
-            <class-path-extension>
-                <runtime-relative-path>ext/commons-logging-1.0.4.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/commons-logging-1.0.4.jar</binary-origin>
-            </class-path-extension>
-            <class-path-extension>
-                <runtime-relative-path>ext/srccommonos.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/srccommonos.jar</binary-origin>
+                <runtime-relative-path>ext/jodd-joy-3.4.5.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/jodd-joy-3.4.5.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
                 <runtime-relative-path>ext/poi-2.0-RC2-20040102.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/poi-2.0-RC2-20040102.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
-                <runtime-relative-path>ext/hessian-3.1.1.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/hessian-3.1.1.jar</binary-origin>
-            </class-path-extension>
-            <class-path-extension>
-                <runtime-relative-path>ext/srcserveros.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/srcserveros.jar</binary-origin>
-            </class-path-extension>
-            <class-path-extension>
-                <runtime-relative-path>ext/itext-1.4.8.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/itext-1.4.8.jar</binary-origin>
+                <runtime-relative-path>ext/srccommonos.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/srccommonos.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
                 <runtime-relative-path>ext/log4j-1.2.7.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/log4j-1.2.7.jar</binary-origin>
-            </class-path-extension>
-            <class-path-extension>
-                <runtime-relative-path>ext/clientos.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/clientos.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
                 <runtime-relative-path>ext/hsqldb.jar</runtime-relative-path>
@@ -193,32 +169,72 @@
                 <binary-origin>release/modules/ext/iText-rtf-2.1.7.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
-                <runtime-relative-path>ext/iText-2.1.7.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/iText-2.1.7.jar</binary-origin>
-            </class-path-extension>
-            <class-path-extension>
                 <runtime-relative-path>ext/jnlp.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/jnlp.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
-                <runtime-relative-path>ext/jcalendar.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/jcalendar.jar</binary-origin>
+                <runtime-relative-path>ext/iText-2.1.7.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/iText-2.1.7.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
                 <runtime-relative-path>ext/jnlp-servlet.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/jnlp-servlet.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
-                <runtime-relative-path>ext/pooler.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/pooler.jar</binary-origin>
+                <runtime-relative-path>ext/jcalendar.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/jcalendar.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
                 <runtime-relative-path>ext/tikeswing.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/tikeswing.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
+                <runtime-relative-path>ext/jodd-3.4.5.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/jodd-3.4.5.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
                 <runtime-relative-path>ext/srcclientos.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/srcclientos.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/commons-lang-2.0.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/commons-lang-2.0.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/commons-beanutils-1.7.0.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/commons-beanutils-1.7.0.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/jodd-mobile-3.4.5.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/jodd-mobile-3.4.5.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/hessian-3.1.1.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/hessian-3.1.1.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/commons-logging-1.0.4.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/commons-logging-1.0.4.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/itext-1.4.8.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/itext-1.4.8.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/srcserveros.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/srcserveros.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/clientos.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/clientos.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/jodd-swingspy-3.4.5.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/jodd-swingspy-3.4.5.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/pooler.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/pooler.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
                 <runtime-relative-path>ext/BeanInfo.jar</runtime-relative-path>
