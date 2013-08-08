@@ -507,9 +507,9 @@ public final class DepartAddMaterialTopComponent extends TopComponent {
     @Override
     public void componentOpened() {
         // TODO add custom code on component opening
-        if (!ar.oAuth("DepartAddMaterial")) {
-            super.close();
-        }
+//        if (!ar.oAuth("DepartAddMaterial")) {
+//            super.close();
+//        }
     }
 
     @Override
