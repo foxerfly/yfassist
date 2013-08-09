@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 9, 2013 10:54:43 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.edwin.SFC.Cmsmq" table="CMSMQ" schema="dbo" >
+        <id name="mq001" type="string">
+            <column name="MQ001" length="4" />
+            <generator class="assigned" />
+        </id>
+        <property name="company" type="string">
+            <column name="COMPANY" length="10" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="10" />
+        </property>
+        <property name="usrGroup" type="string">
+            <column name="USR_GROUP" length="10" />
+        </property>
+        <property name="createDate" type="string">
+            <column name="CREATE_DATE" length="17" />
+        </property>
+        <property name="modifier" type="string">
+            <column name="MODIFIER" length="10" />
+        </property>
+        <property name="modiDate" type="string">
+            <column name="MODI_DATE" length="17" />
+        </property>
+        <property name="flag" type="java.lang.Short">
+            <column name="FLAG" precision="3" scale="0" />
+        </property>
+        <property name="mq002" type="string">
+            <column name="MQ002" length="10" />
+        </property>
+        <property name="mq003" type="string">
+            <column name="MQ003" length="2" />
+        </property>
+        <property name="mq004" type="java.lang.Character">
+            <column name="MQ004" length="1" />
+        </property>
+        <property name="mq005" type="java.lang.Boolean">
+            <column name="MQ005" precision="1" scale="0" />
+        </property>
+        <property name="mq006" type="java.lang.Byte">
+            <column name="MQ006" precision="2" scale="0" />
+        </property>
+        <property name="mq007" type="java.lang.Short">
+            <column name="MQ007" precision="3" scale="0" />
+        </property>
+        <property name="mq008" type="java.lang.Character">
+            <column name="MQ008" length="1" />
+        </property>
+        <property name="mq009" type="string">
+            <column name="MQ009" length="20" />
+        </property>
+        <property name="mq010" type="java.lang.Boolean">
+            <column name="MQ010" precision="1" scale="0" />
+        </property>
+        <property name="mq011" type="java.lang.Character">
+            <column name="MQ011" length="1" />
+        </property>
+        <property name="mq012" type="java.lang.Character">
+            <column name="MQ012" length="1" />
+        </property>
+        <property name="mq013" type="java.lang.Character">
+            <column name="MQ013" length="1" />
+        </property>
+        <property name="mq014" type="java.lang.Character">
+            <column name="MQ014" length="1" />
+        </property>
+        <property name="mq015" type="java.lang.Character">
+            <column name="MQ015" length="1" />
+        </property>
+        <property name="mq016" type="java.lang.Character">
+            <column name="MQ016" length="1" />
+        </property>
+        <property name="mq017" type="java.lang.Character">
+            <column name="MQ017" length="1" />
+        </property>
+        <property name="mq018" type="java.lang.Character">
+            <column name="MQ018" length="1" />
+        </property>
+        <property name="mq019" type="java.lang.Character">
+            <column name="MQ019" length="1" />
+        </property>
+        <property name="mq020" type="java.lang.Character">
+            <column name="MQ020" length="1" />
+        </property>
+        <property name="mq021" type="string">
+            <column name="MQ021" length="4" />
+        </property>
+        <property name="mq022" type="string">
+            <column name="MQ022" />
+        </property>
+        <property name="mq023" type="string">
+            <column name="MQ023" length="10" />
+        </property>
+        <property name="mq024" type="java.lang.Character">
+            <column name="MQ024" length="1" />
+        </property>
+        <property name="mq025" type="string">
+            <column name="MQ025" length="6" />
+        </property>
+        <property name="mq026" type="java.lang.Character">
+            <column name="MQ026" length="1" />
+        </property>
+        <property name="mq027" type="string">
+            <column name="MQ027" length="6" />
+        </property>
+        <property name="mq028" type="java.lang.Character">
+            <column name="MQ028" length="1" />
+        </property>
+        <property name="mq029" type="java.lang.Character">
+            <column name="MQ029" length="1" />
+        </property>
+        <property name="mq030" type="java.lang.Character">
+            <column name="MQ030" length="1" />
+        </property>
+        <property name="mq031" type="java.lang.Character">
+            <column name="MQ031" length="1" />
+        </property>
+        <property name="mq032" type="string">
+            <column name="MQ032" length="20" />
+        </property>
+        <property name="mq033" type="java.lang.Character">
+            <column name="MQ033" length="1" />
+        </property>
+        <property name="mq034" type="string">
+            <column name="MQ034" length="20" />
+        </property>
+        <property name="mq035" type="java.lang.Character">
+            <column name="MQ035" length="1" />
+        </property>
+        <property name="mq036" type="java.lang.Character">
+            <column name="MQ036" length="1" />
+        </property>
+        <property name="mq037" type="big_decimal">
+            <column name="MQ037" precision="16" />
+        </property>
+        <property name="mq038" type="string">
+            <column name="MQ038" length="4" />
+        </property>
+        <property name="mq039" type="java.lang.Character">
+            <column name="MQ039" length="1" />
+        </property>
+        <property name="mq040" type="java.lang.Character">
+            <column name="MQ040" length="1" />
+        </property>
+        <property name="mq041" type="java.lang.Character">
+            <column name="MQ041" length="1" />
+        </property>
+        <property name="mq042" type="java.lang.Character">
+            <column name="MQ042" length="1" />
+        </property>
+        <property name="mq043" type="java.lang.Character">
+            <column name="MQ043" length="1" />
+        </property>
+        <property name="mq044" type="java.lang.Character">
+            <column name="MQ044" length="1" />
+        </property>
+        <property name="mq045" type="java.lang.Character">
+            <column name="MQ045" length="1" />
+        </property>
+        <property name="mq046" type="java.lang.Character">
+            <column name="MQ046" length="1" />
+        </property>
+        <property name="mq047" type="java.lang.Character">
+            <column name="MQ047" length="1" />
+        </property>
+        <property name="mq048" type="string">
+            <column name="MQ048" length="4" />
+        </property>
+        <property name="mq049" type="java.lang.Character">
+            <column name="MQ049" length="1" />
+        </property>
+        <property name="mq050" type="java.lang.Character">
+            <column name="MQ050" length="1" />
+        </property>
+        <property name="mq051" type="java.lang.Character">
+            <column name="MQ051" length="1" />
+        </property>
+        <property name="mq052" type="java.lang.Byte">
+            <column name="MQ052" precision="2" scale="0" />
+        </property>
+        <property name="mq053" type="java.lang.Byte">
+            <column name="MQ053" precision="2" scale="0" />
+        </property>
+        <property name="mq054" type="java.lang.Character">
+            <column name="MQ054" length="1" />
+        </property>
+        <property name="mq055" type="string">
+            <column name="MQ055" length="8" />
+        </property>
+        <property name="mq056" type="string">
+            <column name="MQ056" length="30" />
+        </property>
+        <property name="mq057" type="big_decimal">
+            <column name="MQ057" precision="16" scale="6" />
+        </property>
+        <property name="mq058" type="big_decimal">
+            <column name="MQ058" precision="16" scale="6" />
+        </property>
+        <property name="mq059" type="big_decimal">
+            <column name="MQ059" precision="16" scale="6" />
+        </property>
+        <property name="mq060" type="java.lang.Character">
+            <column name="MQ060" length="1" />
+        </property>
+        <property name="mq061" type="java.lang.Character">
+            <column name="MQ061" length="1" />
+        </property>
+        <property name="mq062" type="java.lang.Character">
+            <column name="MQ062" length="1" />
+        </property>
+        <property name="mq063" type="string">
+            <column name="MQ063" length="4" />
+        </property>
+        <property name="mq064" type="java.lang.Character">
+            <column name="MQ064" length="1" />
+        </property>
+        <property name="mq065" type="java.lang.Character">
+            <column name="MQ065" length="1" />
+        </property>
+        <property name="mq066" type="java.lang.Character">
+            <column name="MQ066" length="1" />
+        </property>
+        <property name="mq067" type="java.lang.Character">
+            <column name="MQ067" length="1" />
+        </property>
+        <property name="mqd01" type="java.lang.Character">
+            <column name="MQD01" length="1" />
+        </property>
+        <property name="mqd02" type="java.lang.Character">
+            <column name="MQD02" length="1" />
+        </property>
+        <property name="mqd03" type="java.lang.Character">
+            <column name="MQD03" length="1" />
+        </property>
+        <property name="mqd04" type="java.lang.Character">
+            <column name="MQD04" length="1" />
+        </property>
+        <property name="mqd05" type="java.lang.Character">
+            <column name="MQD05" length="1" />
+        </property>
+        <property name="mqd06" type="java.lang.Character">
+            <column name="MQD06" length="1" />
+        </property>
+        <property name="mqc01" type="string">
+            <column name="MQC01" length="10" />
+        </property>
+        <property name="mqc02" type="java.lang.Character">
+            <column name="MQC02" length="1" />
+        </property>
+        <property name="mqc03" type="java.lang.Character">
+            <column name="MQC03" length="1" />
+        </property>
+        <property name="mqc04" type="java.lang.Character">
+            <column name="MQC04" length="1" />
+        </property>
+        <property name="mqc05" type="java.lang.Character">
+            <column name="MQC05" length="1" />
+        </property>
+        <property name="mq068" type="java.lang.Character">
+            <column name="MQ068" length="1" />
+        </property>
+        <property name="mq069" type="string">
+            <column name="MQ069" length="4" />
+        </property>
+        <property name="mq070" type="java.lang.Character">
+            <column name="MQ070" length="1" />
+        </property>
+        <property name="mq071" type="java.lang.Character">
+            <column name="MQ071" length="1" />
+        </property>
+        <property name="mq072" type="java.lang.Character">
+            <column name="MQ072" length="1" />
+        </property>
+        <property name="mq073" type="java.lang.Character">
+            <column name="MQ073" length="1" />
+        </property>
+        <property name="mqi01" type="java.lang.Character">
+            <column name="MQI01" length="1" />
+        </property>
+        <property name="mqi02" type="java.lang.Character">
+            <column name="MQI02" length="1" />
+        </property>
+        <property name="mq074" type="string">
+            <column name="MQ074" length="8" />
+        </property>
+        <property name="mq075" type="string">
+            <column name="MQ075" length="8" />
+        </property>
+        <property name="mq076" type="string">
+            <column name="MQ076" length="30" />
+        </property>
+        <property name="udf01" type="string">
+            <column name="UDF01" />
+        </property>
+        <property name="udf02" type="string">
+            <column name="UDF02" />
+        </property>
+        <property name="udf03" type="string">
+            <column name="UDF03" />
+        </property>
+        <property name="udf04" type="string">
+            <column name="UDF04" />
+        </property>
+        <property name="udf05" type="string">
+            <column name="UDF05" />
+        </property>
+        <property name="udf06" type="string">
+            <column name="UDF06" />
+        </property>
+        <property name="udf51" type="big_decimal">
+            <column name="UDF51" precision="16" scale="6" />
+        </property>
+        <property name="udf52" type="big_decimal">
+            <column name="UDF52" precision="16" scale="6" />
+        </property>
+        <property name="udf53" type="big_decimal">
+            <column name="UDF53" precision="16" scale="6" />
+        </property>
+        <property name="udf54" type="big_decimal">
+            <column name="UDF54" precision="16" scale="6" />
+        </property>
+        <property name="udf55" type="big_decimal">
+            <column name="UDF55" precision="16" scale="6" />
+        </property>
+        <property name="udf56" type="big_decimal">
+            <column name="UDF56" precision="16" scale="6" />
+        </property>
+        <property name="udf07" type="string">
+            <column name="UDF07" />
+        </property>
+        <property name="udf08" type="string">
+            <column name="UDF08" />
+        </property>
+        <property name="udf09" type="string">
+            <column name="UDF09" />
+        </property>
+        <property name="udf10" type="string">
+            <column name="UDF10" />
+        </property>
+        <property name="udf11" type="string">
+            <column name="UDF11" />
+        </property>
+        <property name="udf12" type="string">
+            <column name="UDF12" />
+        </property>
+        <property name="udf57" type="big_decimal">
+            <column name="UDF57" precision="16" scale="6" />
+        </property>
+        <property name="udf58" type="big_decimal">
+            <column name="UDF58" precision="16" scale="6" />
+        </property>
+        <property name="udf59" type="big_decimal">
+            <column name="UDF59" precision="16" scale="6" />
+        </property>
+        <property name="udf60" type="big_decimal">
+            <column name="UDF60" precision="16" scale="6" />
+        </property>
+        <property name="udf61" type="big_decimal">
+            <column name="UDF61" precision="16" scale="6" />
+        </property>
+        <property name="udf62" type="big_decimal">
+            <column name="UDF62" precision="16" scale="6" />
+        </property>
+    </class>
+</hibernate-mapping>

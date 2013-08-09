@@ -57,6 +57,9 @@
         <!--    CWMONTH-->
 
         <mapping resource="com/edwin/CWMONTH/Invmbc.hbm.xml"/>
+        
+        <!--    SFC-->
+        <mapping resource="com/edwin/SFC/Cmsmq.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
