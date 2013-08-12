@@ -5,9 +5,11 @@
  */
 package com.edwin.warehouse;
 
+import com.edwin.myswingx.ButtonRenderer;
+
 /**
  *
- * @author EDWIN
+ * @author John
  */
 public class SelectBills extends javax.swing.JPanel {
 
@@ -16,7 +18,12 @@ public class SelectBills extends javax.swing.JPanel {
      */
     public SelectBills() {
         initComponents();
+        myJXTable1.setModel(gs.getTableModel());
+        myJXTable1.getColumn(0).setCellRenderer(new ButtonRenderer());
+        
     }
+    
+    private GetSfctcModel gs = new GetSfctcModel();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,22 +49,20 @@ public class SelectBills extends javax.swing.JPanel {
             }
         ));
         jScrollPane1.setViewportView(myJXTable1);
+        myJXTable1.getColumnModel().getColumn(0).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myJXTable1.columnModel.title0")); // NOI18N
+        myJXTable1.getColumnModel().getColumn(1).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myJXTable1.columnModel.title1")); // NOI18N
+        myJXTable1.getColumnModel().getColumn(2).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myJXTable1.columnModel.title2")); // NOI18N
+        myJXTable1.getColumnModel().getColumn(3).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myJXTable1.columnModel.title3")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

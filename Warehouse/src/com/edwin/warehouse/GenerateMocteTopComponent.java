@@ -6,6 +6,9 @@
 package com.edwin.warehouse;
 
 import org.netbeans.api.settings.ConvertAsProperties;
+import org.openide.DialogDescriptor;
+import org.openide.DialogDisplayer;
+import org.openide.NotifyDescriptor;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.windows.TopComponent;
@@ -154,6 +157,12 @@ public final class GenerateMocteTopComponent extends TopComponent {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        DialogDescriptor nd=new DialogDescriptor(new SelectBills(),"选择投产单据",true,null);
+        nd.setModal(true);
+        DialogDisplayer.getDefault().notifyLater(nd);
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

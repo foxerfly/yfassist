@@ -9,7 +9,6 @@ import POI.Excel;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
@@ -48,6 +47,20 @@ public class MyJTableModel {
 
     }
 
+    public Object[] getColumnNamesObject() {
+
+        Object[] ooc = new Object[this.vcColumnNames.size()];
+        for (int i = 0; i <this.vcColumnNames.size(); i++) {
+            ooc[i] = this.vcColumnNames.get(i);
+        }
+        return ooc;
+    }
+
+    public Vector getColumnNames() {
+
+        return this.vcColumnNames;
+    }
+
     public Vector setColumnNames(String... columnNames) {
         vcColumnNames = new Vector((Arrays.asList(columnNames)));
         return vcColumnNames;
@@ -83,11 +96,15 @@ public class MyJTableModel {
         return new DefaultTableModel(vcData, vcColumnNames);
     }
 
+    public DefaultTableModel buildSpecModelSpec(Vector vcData) {
+//        setColumnNames(columnNames);
+        return new DefaultTableModel(vcData, vcColumnNames);
+    }
+
     //返回构建好数据和列名的tablemodel
     public DefaultTableModel buildExcelToTableModel() {
 
         DefaultTableModel dd = new DefaultTableModel(xls.getSheet(0).getObjectAllRow(), xls.getSheet(0).getColumnNames());
-        
 
         return dd;
     }
