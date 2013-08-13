@@ -5,7 +5,9 @@
  */
 package com.edwin.warehouse;
 
-import com.edwin.myswingx.ButtonRenderer;
+import com.edwin.myswingx.CheckBoxEditor;
+import com.edwin.myswingx.CheckBoxRenderer;
+import javax.swing.JCheckBox;
 
 /**
  *
@@ -18,11 +20,12 @@ public class SelectBills extends javax.swing.JPanel {
      */
     public SelectBills() {
         initComponents();
-        myJXTable1.setModel(gs.getTableModel());
-        myJXTable1.getColumn(0).setCellRenderer(new ButtonRenderer());
-        
+        myDefaultJXTable1.setModel(gs.getTableModel());
+        myDefaultJXTable1.getColumn(0).setCellRenderer(new CheckBoxRenderer());
+        myDefaultJXTable1.getColumn(0).setCellEditor(new CheckBoxEditor(new JCheckBox()));
+
     }
-    
+
     private GetSfctcModel gs = new GetSfctcModel();
 
     /**
@@ -35,9 +38,9 @@ public class SelectBills extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        myJXTable1 = new com.edwin.myswingx.MyJXTable();
+        myDefaultJXTable1 = new com.edwin.myswingx.MyDefaultJXTable();
 
-        myJXTable1.setModel(new javax.swing.table.DefaultTableModel(
+        myDefaultJXTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -48,26 +51,28 @@ public class SelectBills extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(myJXTable1);
-        myJXTable1.getColumnModel().getColumn(0).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myJXTable1.columnModel.title0")); // NOI18N
-        myJXTable1.getColumnModel().getColumn(1).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myJXTable1.columnModel.title1")); // NOI18N
-        myJXTable1.getColumnModel().getColumn(2).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myJXTable1.columnModel.title2")); // NOI18N
-        myJXTable1.getColumnModel().getColumn(3).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myJXTable1.columnModel.title3")); // NOI18N
+        jScrollPane1.setViewportView(myDefaultJXTable1);
+        myDefaultJXTable1.getColumnModel().getColumn(0).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myDefaultJXTable1.columnModel.title0")); // NOI18N
+        myDefaultJXTable1.getColumnModel().getColumn(1).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myDefaultJXTable1.columnModel.title1")); // NOI18N
+        myDefaultJXTable1.getColumnModel().getColumn(2).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myDefaultJXTable1.columnModel.title2")); // NOI18N
+        myDefaultJXTable1.getColumnModel().getColumn(3).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myDefaultJXTable1.columnModel.title3")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private com.edwin.myswingx.MyJXTable myJXTable1;
+    private com.edwin.myswingx.MyDefaultJXTable myDefaultJXTable1;
     // End of variables declaration//GEN-END:variables
 }

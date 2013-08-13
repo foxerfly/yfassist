@@ -23,14 +23,14 @@ public class GetSfctcModel {
     protected DefaultTableModel getTableModel() {
         Session s = RCPSessionFactory.openSession();
         Transaction tx = s.beginTransaction();
-        List<Object[][]> ll = s.createSQLQuery("SELECT '-1' ROWID,TB001,TB002,TB003,TB004,TB005,RTRIM(TB006) TB006\n"
+        List<Object[][]> ll = s.createSQLQuery("SELECT '' ROWID,TB001,TB002,TB003,TB004,TB005,RTRIM(TB006) TB006\n"
                 + "    FROM SFCTB AS SFCTB\n"
                 + "    LEFT JOIN CMSMQ  AS CMSMQ ON MQ001=TB001\n"
                 + "    WHERE  TB013='Y' AND MQ003='D1'  \n"
                 + "               AND TB012='N' AND NOT EXISTS(SELECT TOP 1 TC001 FROM MOCTC WHERE TC019=TB001 AND TC020=TB002)\n"
                 + "    AND TB003>CONVERT(CHAR(8),DATEADD(D,-15,GETDATE()),112)").list();
 
-        MyJTableModel mj = new MyJTableModel("选择","单别", "单号", "转移日期", "移出类别", "移出地", "移出地名称");
+        MyJTableModel mj = new MyJTableModel("选择", "单别", "单号", "转移日期", "移出类别", "移出地", "移出地名称");
         DefaultTableModel dd = new DefaultTableModel(getObjectAllRow(ll), mj.getColumnNamesObject());
         tx.commit();
         s.close();
@@ -43,6 +43,7 @@ public class GetSfctcModel {
 
         for (int i = 0; i < ll.size(); i++) {
             ooDate[i] = ll.get(i);
+            ooDate[i][0] = Boolean.FALSE;
         }
 
         return ooDate;
