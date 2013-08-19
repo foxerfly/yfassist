@@ -8,12 +8,17 @@ package com.edwin.warehouse;
 import com.edwin.myswingx.CheckBoxEditor;
 import com.edwin.myswingx.CheckBoxRenderer;
 import javax.swing.JCheckBox;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import org.openide.util.lookup.AbstractLookup;
+import org.openide.util.lookup.InstanceContent;
+import org.openide.windows.TopComponent;
 
 /**
  *
  * @author John
  */
-public class SelectBills extends javax.swing.JPanel {
+public class SelectBills extends TopComponent  {
 
     /**
      * Creates new form SelectBills
@@ -23,6 +28,7 @@ public class SelectBills extends javax.swing.JPanel {
         myDefaultJXTable1.setModel(gs.getTableModel());
         myDefaultJXTable1.getColumn(0).setCellRenderer(new CheckBoxRenderer());
         myDefaultJXTable1.getColumn(0).setCellEditor(new CheckBoxEditor(new JCheckBox()));
+        associateLookup(new AbstractLookup(content));
 
     }
 
@@ -51,6 +57,11 @@ public class SelectBills extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        myDefaultJXTable1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                myDefaultJXTable1PropertyChange(evt);
+            }
+        });
         jScrollPane1.setViewportView(myDefaultJXTable1);
         myDefaultJXTable1.getColumnModel().getColumn(0).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myDefaultJXTable1.columnModel.title0")); // NOI18N
         myDefaultJXTable1.getColumnModel().getColumn(1).setHeaderValue(org.openide.util.NbBundle.getMessage(SelectBills.class, "SelectBills.myDefaultJXTable1.columnModel.title1")); // NOI18N
@@ -71,8 +82,16 @@ public class SelectBills extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void myDefaultJXTable1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_myDefaultJXTable1PropertyChange
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_myDefaultJXTable1PropertyChange
+
+    private InstanceContent content=new InstanceContent();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private com.edwin.myswingx.MyDefaultJXTable myDefaultJXTable1;
     // End of variables declaration//GEN-END:variables
+
 }
