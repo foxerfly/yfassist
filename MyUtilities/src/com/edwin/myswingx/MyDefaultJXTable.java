@@ -16,6 +16,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
@@ -85,6 +86,7 @@ public class MyDefaultJXTable extends JXTable {
                 jc.setSelected((boolean) value);
                 jc.setBorder(null);
                 setColor(jc, table, isSelected, hasFocus, row, column);
+//                setHorizontalAlignment(SwingConstants.CENTER);
                 if (isSelected == Boolean.TRUE) {
                     setBackground(Color.blue);
                 }
