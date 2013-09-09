@@ -14,10 +14,12 @@ import org.openide.nodes.Children;
  */
 public class OrderNode extends AbstractNode{
 
-    public OrderNode(Children children) {
-        super(children);
+    public OrderNode(String key) {
+//        super(children);
+        super(new OrderNodeChildren(key));
     }
     
+        
     
     
     

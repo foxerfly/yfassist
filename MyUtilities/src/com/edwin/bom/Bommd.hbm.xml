@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 9, 2013 11:12:56 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.edwin.bom.Bommd" table="BOMMD" schema="dbo" >
+        <composite-id name="id" class="com.edwin.bom.BommdId">
+            <key-property name="md001" type="string">
+                <column name="MD001" length="20" />
+            </key-property>
+            <key-property name="md002" type="string">
+                <column name="MD002" length="4" />
+            </key-property>
+        </composite-id>
+        <property name="company" type="string">
+            <column name="COMPANY" length="10" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="10" />
+        </property>
+        <property name="usrGroup" type="string">
+            <column name="USR_GROUP" length="10" />
+        </property>
+        <property name="createDate" type="string">
+            <column name="CREATE_DATE" length="17" />
+        </property>
+        <property name="modifier" type="string">
+            <column name="MODIFIER" length="10" />
+        </property>
+        <property name="modiDate" type="string">
+            <column name="MODI_DATE" length="17" />
+        </property>
+        <property name="flag" type="java.lang.Short">
+            <column name="FLAG" precision="3" scale="0" />
+        </property>
+        <property name="md003" type="string">
+            <column name="MD003" length="20" />
+        </property>
+        <property name="md004" type="string">
+            <column name="MD004" length="4" />
+        </property>
+        <property name="md005" type="string">
+            <column name="MD005" length="4" />
+        </property>
+        <property name="md006" type="big_decimal">
+            <column name="MD006" precision="16" scale="6" />
+        </property>
+        <property name="md007" type="java.lang.Short">
+            <column name="MD007" precision="4" scale="0" />
+        </property>
+        <property name="md008" type="big_decimal">
+            <column name="MD008" precision="5" scale="4" />
+        </property>
+        <property name="md009" type="string">
+            <column name="MD009" length="4" />
+        </property>
+        <property name="md010" type="java.lang.Character">
+            <column name="MD010" length="1" />
+        </property>
+        <property name="md011" type="string">
+            <column name="MD011" length="8" />
+        </property>
+        <property name="md012" type="string">
+            <column name="MD012" length="8" />
+        </property>
+        <property name="md013" type="java.lang.Character">
+            <column name="MD013" length="1" />
+        </property>
+        <property name="md014" type="java.lang.Character">
+            <column name="MD014" length="1" />
+        </property>
+        <property name="md015" type="string">
+            <column name="MD015" />
+        </property>
+        <property name="md016" type="string">
+            <column name="MD016" />
+        </property>
+        <property name="md017" type="java.lang.Character">
+            <column name="MD017" length="1" />
+        </property>
+        <property name="md018" type="java.lang.Short">
+            <column name="MD018" precision="3" scale="0" />
+        </property>
+        <property name="md019" type="string">
+            <column name="MD019" length="80" />
+        </property>
+        <property name="md020" type="string">
+            <column name="MD020" length="80" />
+        </property>
+        <property name="md021" type="string">
+            <column name="MD021" length="80" />
+        </property>
+        <property name="md022" type="string">
+            <column name="MD022" length="80" />
+        </property>
+        <property name="md023" type="string">
+            <column name="MD023" length="80" />
+        </property>
+        <property name="md024" type="java.lang.Character">
+            <column name="MD024" length="1" />
+        </property>
+        <property name="md025" type="string">
+            <column name="MD025" length="8" />
+        </property>
+        <property name="md026" type="string">
+            <column name="MD026" length="30" />
+        </property>
+        <property name="md027" type="big_decimal">
+            <column name="MD027" precision="16" scale="6" />
+        </property>
+        <property name="md028" type="big_decimal">
+            <column name="MD028" precision="16" scale="6" />
+        </property>
+        <property name="md029" type="big_decimal">
+            <column name="MD029" precision="16" scale="6" />
+        </property>
+        <property name="mdc01" type="string">
+            <column name="MDC01" />
+        </property>
+        <property name="mdc02" type="java.lang.Character">
+            <column name="MDC02" length="1" />
+        </property>
+        <property name="md030" type="big_decimal">
+            <column name="MD030" precision="16" scale="6" />
+        </property>
+        <property name="md031" type="java.lang.Character">
+            <column name="MD031" length="1" />
+        </property>
+        <property name="md032" type="java.lang.Character">
+            <column name="MD032" length="1" />
+        </property>
+        <property name="md033" type="big_decimal">
+            <column name="MD033" precision="16" scale="6" />
+        </property>
+        <property name="md034" type="big_decimal">
+            <column name="MD034" precision="16" scale="6" />
+        </property>
+        <property name="md035" type="big_decimal">
+            <column name="MD035" precision="16" scale="6" />
+        </property>
+        <property name="udf01" type="string">
+            <column name="UDF01" />
+        </property>
+        <property name="udf02" type="string">
+            <column name="UDF02" />
+        </property>
+        <property name="udf03" type="string">
+            <column name="UDF03" />
+        </property>
+        <property name="udf04" type="string">
+            <column name="UDF04" />
+        </property>
+        <property name="udf05" type="string">
+            <column name="UDF05" />
+        </property>
+        <property name="udf06" type="string">
+            <column name="UDF06" />
+        </property>
+        <property name="udf51" type="big_decimal">
+            <column name="UDF51" precision="16" scale="6" />
+        </property>
+        <property name="udf52" type="big_decimal">
+            <column name="UDF52" precision="16" scale="6" />
+        </property>
+        <property name="udf53" type="big_decimal">
+            <column name="UDF53" precision="16" scale="6" />
+        </property>
+        <property name="udf54" type="big_decimal">
+            <column name="UDF54" precision="16" scale="6" />
+        </property>
+        <property name="udf55" type="big_decimal">
+            <column name="UDF55" precision="16" scale="6" />
+        </property>
+        <property name="udf56" type="big_decimal">
+            <column name="UDF56" precision="16" scale="6" />
+        </property>
+        <property name="udf07" type="string">
+            <column name="UDF07" />
+        </property>
+        <property name="udf08" type="string">
+            <column name="UDF08" />
+        </property>
+        <property name="udf09" type="string">
+            <column name="UDF09" />
+        </property>
+        <property name="udf10" type="string">
+            <column name="UDF10" />
+        </property>
+        <property name="udf11" type="string">
+            <column name="UDF11" />
+        </property>
+        <property name="udf12" type="string">
+            <column name="UDF12" />
+        </property>
+        <property name="udf57" type="big_decimal">
+            <column name="UDF57" precision="16" scale="6" />
+        </property>
+        <property name="udf58" type="big_decimal">
+            <column name="UDF58" precision="16" scale="6" />
+        </property>
+        <property name="udf59" type="big_decimal">
+            <column name="UDF59" precision="16" scale="6" />
+        </property>
+        <property name="udf60" type="big_decimal">
+            <column name="UDF60" precision="16" scale="6" />
+        </property>
+        <property name="udf61" type="big_decimal">
+            <column name="UDF61" precision="16" scale="6" />
+        </property>
+        <property name="udf62" type="big_decimal">
+            <column name="UDF62" precision="16" scale="6" />
+        </property>
+    </class>
+</hibernate-mapping>
