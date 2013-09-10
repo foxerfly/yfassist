@@ -62,16 +62,16 @@
         <mapping resource="com/edwin/SFC/Cmsmq.hbm.xml"/>
         
         
-        <!--        BOM-->
-        <mapping resource="com/edwin/bom/Coptv.hbm.xml"/>
-        <mapping resource="com/edwin/bom/Bomcb.hbm.xml"/>
-        <mapping resource="com/edwin/bom/Bommq.hbm.xml"/>
-        <mapping resource="com/edwin/bom/Coptq.hbm.xml"/>
-        <mapping resource="com/edwin/bom/Bommp.hbm.xml"/>
-        <mapping resource="com/edwin/bom/Coptr.hbm.xml"/>
-        <mapping resource="com/edwin/bom/Bommd.hbm.xml"/>
-        <mapping resource="com/edwin/bom/Bomca.hbm.xml"/>
-        <mapping resource="com/edwin/bom/Bommc.hbm.xml"/>
+        <!--  BOM-->
+        <mapping resource="com/edwin/bomtable/Coptv.hbm.xml"/>
+        <mapping resource="com/edwin/bomtable/Bomcb.hbm.xml"/>
+        <mapping resource="com/edwin/bomtable/Bommq.hbm.xml"/>
+        <mapping resource="com/edwin/bomtable/Coptq.hbm.xml"/>
+        <mapping resource="com/edwin/bomtable/Bommp.hbm.xml"/>
+        <mapping resource="com/edwin/bomtable/Coptr.hbm.xml"/>
+        <mapping resource="com/edwin/bomtable/Bommd.hbm.xml"/>
+        <mapping resource="com/edwin/bomtable/Bomca.hbm.xml"/>
+        <mapping resource="com/edwin/bomtable/Bommc.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
