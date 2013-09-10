@@ -21,6 +21,16 @@ public class OrderNodeChildren extends Children.Keys<String> {
 
     private ArrayList<String> bomList = new ArrayList<String>();
     private String ph = "";
+    private String root="";
+
+    public String getRoot() {
+        return root;
+    }
+
+    public void setRoot(String root) {
+        this.root = getNode().getDisplayName().trim();
+    }
+    
 
     public ArrayList<String> getBomList() {
         return bomList;
