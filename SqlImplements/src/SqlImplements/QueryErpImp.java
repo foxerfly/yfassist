@@ -369,7 +369,8 @@ public class QueryErpImp implements QueryErp {
             }
 //            i--;
 //            
-             cstmt.executeQuery();
+            System.out.println(list);
+            cstmt.execute();
 
 //            for(;i>0;i--)
 //                System.out.println(cstmt.getString(i));

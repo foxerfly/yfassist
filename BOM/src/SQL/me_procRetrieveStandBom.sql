@@ -1,4 +1,4 @@
-/****** Object:  StoredProcedure [dbo].[me_procRetrieveStandBom]    Script Date: 09/11/2013 16:35:30 ******/
+/****** Object:  StoredProcedure [dbo].[me_procRetrieveStandBom]    Script Date: 09/11/2013 22:36:07 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13,7 +13,7 @@ ALTER PROCEDURE [dbo].[me_procRetrieveStandBom]
 	-- Add the parameters for the stored procedure here
 	@PH CHAR(20),   --配置品号
 	@PZH CHAR(15),  --配置编号
-	@SJPH char(60),    --上阶品号
+	@SJPH char(20),    --上阶品号
 	@BJCJ char(60),    --本阶层级
 	@BJPH CHAR(20)   --本阶品号
 AS
@@ -51,6 +51,15 @@ BEGIN
 	 LEFT JOIN BOMMC ON MC001=MD001
 	 WHERE MD001=@BJPH
 
+	 --如果层级为 000  则插入一笔初始数据
+	 IF NOT EXISTS(SELECT  * FROM COPTR WHERE TR001=@PH AND TR002=@PZH and TR003='000' ) AND @BJCJ='000' AND @PH=@BJPH
+	 BEGIN
+	  INSERT INTO COPTR
+		SELECT  'fanski','09771','0501' ,CONVERT(CHAR(8),GETDATE(),112),'','',1,@PH,@PZH,'000',@BJPH,1,'','','Y',
+		@BJPH,1,1,0,'',0,'','','',0,'','N','','','','','','','',0,0,'','Y','','Y','','',
+		0,0,0,0,'N','0',0,0,0,
+		'','','','','','',0,0,0,0,0,0,'','','','','','',0,0,0,0,0,0,''
+	 END
 
 	--将本阶品号的直接下层插入COPTV
 	INSERT INTO COPTV		

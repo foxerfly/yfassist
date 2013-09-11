@@ -51,9 +51,17 @@ public class OrderNode extends AbstractNode {
 
         bomList.add(QueryCondition.getPh().toString().trim());  //配置品号
         bomList.add(QueryCondition.getPzh().toString().trim()); //配置号
-        bomList.add((String) lsa.get(0).toString().trim());     //上阶品号
-        bomList.add((String) lsb.get(0).toString().trim());    //本阶层级
-        bomList.add(ph.toString().trim());                     //本阶品
+        if (!lsa.isEmpty()) {
+            bomList.add((String) lsa.get(0).toString().trim());     //上阶品号
+        } else {
+            bomList.add(ph);
+        }
+        if (!lsb.isEmpty()) {
+            bomList.add((String) lsb.get(0).toString().trim());    //本阶层级
+        } else {
+            bomList.add("000");
+        }
+        bomList.add(ph.toString().trim());                     //本阶品号
 //        System.out.println(bomList);
         return bomList;
     }
@@ -96,6 +104,8 @@ public class OrderNode extends AbstractNode {
         public void actionPerformed(ActionEvent e) {
 
 //            System.out.println(e.getActionCommand());
+            BomFun bm=new BomFun();
+            
             switch (e.getActionCommand()) {
 
                 case "取标准BOM":
@@ -115,9 +125,11 @@ public class OrderNode extends AbstractNode {
     }
 
     private void insertBom() {
+        
     }
 
     private void changeBom() {
+        
     }
 
     private void importStandBom() {

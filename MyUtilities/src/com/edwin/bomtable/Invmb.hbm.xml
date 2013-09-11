@@ -797,13 +797,13 @@
         <property name="udf02" type="string">
             <column name="UDF02" />
         </property>
-        <property name="udf03" type="string">
+        <property name="udf03" type="string" not-null="false">
             <column name="UDF03" />
         </property>
         <property name="udf04" type="string">
             <column name="UDF04" />
         </property>
-        <property name="udf05" type="string">
+        <property name="udf05" type="string" not-null="false">
             <column name="UDF05" />
         </property>
         <property name="udf06" type="string">
@@ -827,7 +827,7 @@
         <property name="udf56" type="big_decimal">
             <column name="UDF56" precision="16" scale="6" />
         </property>
-        <property name="udf07" type="string">
+        <property name="udf07" type="string" not-null="false">
             <column name="UDF07" />
         </property>
         <property name="udf08" type="string">

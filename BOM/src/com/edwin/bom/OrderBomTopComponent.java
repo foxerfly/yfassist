@@ -95,10 +95,10 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
         udf05 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        orderBomTable = new com.edwin.myswingx.MyJXTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         myJXTable3 = new com.edwin.myswingx.MyJXTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        orderBomTable = new com.edwin.myswingx.MyJXTable();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         beanTreeView1 = new org.openide.explorer.view.BeanTreeView();
         beanTreeView2 = new org.openide.explorer.view.BeanTreeView();
@@ -239,7 +239,7 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
                                 .addComponent(mb109, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(mb110, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(udf05, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,23 +283,8 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(udf05, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel14)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        orderBomTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(orderBomTable);
-
-        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jScrollPane2.TabConstraints.tabTitle"), jScrollPane2); // NOI18N
 
         myJXTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -316,6 +301,21 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
 
         jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jScrollPane3.TabConstraints.tabTitle"), jScrollPane3); // NOI18N
 
+        orderBomTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(orderBomTable);
+
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jScrollPane2.TabConstraints.tabTitle"), jScrollPane2); // NOI18N
+
         beanTreeView1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jTabbedPane2.addTab(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.beanTreeView1.TabConstraints.tabTitle"), beanTreeView1); // NOI18N
         jTabbedPane2.addTab(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.beanTreeView2.TabConstraints.tabTitle"), beanTreeView2); // NOI18N
@@ -326,7 +326,7 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -343,7 +343,7 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
                         .addGap(18, 18, 18)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(262, 262, 262)))
-                .addContainerGap())
+                .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,7 +362,7 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE))
+                        .addComponent(jTabbedPane1))
                     .addComponent(jTabbedPane2))
                 .addContainerGap())
         );
