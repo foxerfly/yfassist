@@ -7,6 +7,7 @@ package SqlImplements;
 import HibernateCFG.HibernateCFG;
 import SqlInterface.QueryErp;
 import java.math.BigDecimal;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -33,7 +34,7 @@ public class QueryErpImp implements QueryErp {
 
     private static final String forname = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 
-    private static final String c_url = "jdbc:sqlserver://192.168.1.4:1433;databasename=fanski";
+    private static final String c_url = "jdbc:sqlserver://192.168.1.4:1433;databasename=mytest";
     private static final String c_name = "sa";
     private static final String c_password = "fanski=123";
 
@@ -342,6 +343,48 @@ public class QueryErpImp implements QueryErp {
             return true;
         }
         return false;
+
+    }
+
+    @Override
+    public Boolean rsErpProcS(String procedure, ArrayList<String> list) throws ClassNotFoundException, SQLException {
+
+        if (!list.isEmpty()) {
+            ResultSet rs = null;
+            CallableStatement cstmt = null;
+//		String sqls = "{CALL procPurchaseSelect(?,?,?)}";
+            cstmt = conn.prepareCall(procedure);
+//            
+//            cstmt.registerOutParameter(1, java.sql.Types.CHAR);
+//            cstmt.registerOutParameter(2, java.sql.Types.CHAR);
+//            cstmt.registerOutParameter(3, java.sql.Types.CHAR);
+//            cstmt.registerOutParameter(4, java.sql.Types.CHAR);
+//            cstmt.registerOutParameter(5, java.sql.Types.CHAR);
+//            
+            int i = 1;
+            for (String s : list) {
+//                System.out.println(s);
+                cstmt.setString(i, s);
+                i++;
+            }
+//            i--;
+//            
+            rs = cstmt.executeQuery();
+
+//            for(;i>0;i--)
+//                System.out.println(cstmt.getString(i));
+//
+//            rs.last();
+//            int length = rs.getRow();
+//            rs.beforeFirst();
+//            for (int z = 0; z < length; z++) {
+//                System.out.println(rs.getString(0));
+//                System.out.println(rs.getString(1));
+//                System.out.println(rs.getString(2));
+//                System.out.println(rs.getString(3));
+//                System.out.println(rs.getString(4));
+        }
+        return true;
 
     }
 
