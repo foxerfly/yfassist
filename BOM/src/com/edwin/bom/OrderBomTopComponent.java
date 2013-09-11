@@ -455,6 +455,7 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
         
         
         
+        
 
         tx.commit();
         s.close();
