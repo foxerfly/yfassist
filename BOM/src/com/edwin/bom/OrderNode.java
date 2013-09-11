@@ -5,24 +5,21 @@
  */
 package com.edwin.bom;
 
-import com.edwin.bomtable.Coptr;
-import com.edwin.bomtable.CoptrId;
 import com.edwin.my.RCPSessionFactory;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import static javax.swing.Action.NAME;
+import javax.swing.JMenuItem;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.openide.DialogDescriptor;
 import org.openide.DialogDisplayer;
-import org.openide.NotifyDescriptor;
 import org.openide.nodes.AbstractNode;
 
 /**
@@ -78,22 +75,49 @@ public class OrderNode extends AbstractNode {
 
     @Override
     public Action[] getActions(boolean context) {
-        return new Action[]{new MyAction() {
-        }};
+        return new Action[]{new MyAction("取标准BOM"), new MyAction("变更品号"), new MyAction("插入品号")
+        };
     }
 
     private class MyAction extends AbstractAction {
 
-        public MyAction() {
-            putValue(NAME, "取标准BOM");
+        public MyAction(String key) {
+//            JMenuItem mStandard=new JMenuItem("取标准BOM");  
+//            JMenuItem mUpdate=new JMenuItem("变更品号");  
+//            JMenuItem mInsert=new JMenuItem("插入品号");  
+//            
+//            putValue(NAME , "取标准BOM");
+//            putValue(NAME, "变更品号");
+//            putValue(NAME, "插入品号");
+            putValue(NAME, key);
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            importStandBom();
+
+//            System.out.println(e.getActionCommand());
+            switch (e.getActionCommand()) {
+
+                case "取标准BOM":
+                    importStandBom();
+                    break;
+                case "变更品号":
+                    changeBom();
+                    break;
+                case "插入品号":
+                    insertBom();
+                    break;
+
+            }
 
         }
 
+    }
+
+    private void insertBom() {
+    }
+
+    private void changeBom() {
     }
 
     private void importStandBom() {
@@ -113,7 +137,7 @@ public class OrderNode extends AbstractNode {
                 }
             }
         };
-        d = new DialogDescriptor("确定重新取标准BOM吗，将会清空原配置信息", "重取："+getPh()+"标准BOM信息", true, ac);
+        d = new DialogDescriptor("确定重新取标准BOM吗，将会清空原配置信息", "重取：" + getPh() + "标准BOM信息", true, ac);
 
         d.setClosingOptions(new Object[]{});
         d.addPropertyChangeListener(new PropertyChangeListener() {

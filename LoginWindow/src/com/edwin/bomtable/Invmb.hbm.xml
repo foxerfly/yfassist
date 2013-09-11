@@ -1,0 +1,867 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 11, 2013 8:04:41 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.edwin.bomtable.Invmb" table="INVMB" schema="dbo">
+        <id name="mb001" type="string">
+            <column name="MB001" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="company" type="string">
+            <column name="COMPANY" length="10" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="10" />
+        </property>
+        <property name="usrGroup" type="string">
+            <column name="USR_GROUP" length="10" />
+        </property>
+        <property name="createDate" type="string">
+            <column name="CREATE_DATE" length="17" />
+        </property>
+        <property name="modifier" type="string">
+            <column name="MODIFIER" length="10" />
+        </property>
+        <property name="modiDate" type="string">
+            <column name="MODI_DATE" length="17" />
+        </property>
+        <property name="flag" type="java.lang.Short">
+            <column name="FLAG" precision="3" scale="0" />
+        </property>
+        <property name="mb002" type="string">
+            <column name="MB002" length="60" />
+        </property>
+        <property name="mb003" type="string">
+            <column name="MB003" length="60" />
+        </property>
+        <property name="mb004" type="string">
+            <column name="MB004" length="4" />
+        </property>
+        <property name="mb005" type="string">
+            <column name="MB005" length="6" />
+        </property>
+        <property name="mb006" type="string">
+            <column name="MB006" length="6" />
+        </property>
+        <property name="mb007" type="string">
+            <column name="MB007" length="6" />
+        </property>
+        <property name="mb008" type="string">
+            <column name="MB008" length="6" />
+        </property>
+        <property name="mb009" type="string">
+            <column name="MB009" />
+        </property>
+        <property name="mb010" type="string">
+            <column name="MB010" length="20" />
+        </property>
+        <property name="mb011" type="string">
+            <column name="MB011" length="4" />
+        </property>
+        <property name="mb012" type="string">
+            <column name="MB012" length="10" />
+        </property>
+        <property name="mb013" type="string">
+            <column name="MB013" length="20" />
+        </property>
+        <property name="mb014" type="big_decimal">
+            <column name="MB014" precision="16" scale="6" />
+        </property>
+        <property name="mb015" type="string">
+            <column name="MB015" length="4" />
+        </property>
+        <property name="mb016" type="string">
+            <column name="MB016" length="4" />
+        </property>
+        <property name="mb017" type="string">
+            <column name="MB017" length="10" />
+        </property>
+        <property name="mb018" type="string">
+            <column name="MB018" length="10" />
+        </property>
+        <property name="mb019" type="java.lang.Character">
+            <column name="MB019" length="1" />
+        </property>
+        <property name="mb020" type="java.lang.Character">
+            <column name="MB020" length="1" />
+        </property>
+        <property name="mb021" type="string">
+            <column name="MB021" length="4" />
+        </property>
+        <property name="mb022" type="java.lang.Character">
+            <column name="MB022" length="1" />
+        </property>
+        <property name="mb023" type="java.lang.Short">
+            <column name="MB023" precision="4" scale="0" />
+        </property>
+        <property name="mb024" type="java.lang.Short">
+            <column name="MB024" precision="4" scale="0" />
+        </property>
+        <property name="mb025" type="java.lang.Character">
+            <column name="MB025" length="1" />
+        </property>
+        <property name="mb026" type="string">
+            <column name="MB026" length="2" />
+        </property>
+        <property name="mb027" type="java.lang.Character">
+            <column name="MB027" length="1" />
+        </property>
+        <property name="mb028" type="string">
+            <column name="MB028" />
+        </property>
+        <property name="mb029" type="string">
+            <column name="MB029" length="20" />
+        </property>
+        <property name="mb030" type="string">
+            <column name="MB030" length="8" />
+        </property>
+        <property name="mb031" type="string">
+            <column name="MB031" length="8" />
+        </property>
+        <property name="mb032" type="string">
+            <column name="MB032" length="10" />
+        </property>
+        <property name="mb033" type="java.lang.Character">
+            <column name="MB033" length="1" />
+        </property>
+        <property name="mb034" type="java.lang.Character">
+            <column name="MB034" length="1" />
+        </property>
+        <property name="mb035" type="string">
+            <column name="MB035" length="4" />
+        </property>
+        <property name="mb036" type="big_decimal">
+            <column name="MB036" precision="16" scale="6" />
+        </property>
+        <property name="mb037" type="big_decimal">
+            <column name="MB037" precision="16" scale="6" />
+        </property>
+        <property name="mb038" type="big_decimal">
+            <column name="MB038" precision="16" scale="6" />
+        </property>
+        <property name="mb039" type="big_decimal">
+            <column name="MB039" precision="16" scale="6" />
+        </property>
+        <property name="mb040" type="big_decimal">
+            <column name="MB040" precision="16" scale="6" />
+        </property>
+        <property name="mb041" type="big_decimal">
+            <column name="MB041" precision="16" scale="6" />
+        </property>
+        <property name="mb042" type="java.lang.Character">
+            <column name="MB042" length="1" />
+        </property>
+        <property name="mb043" type="java.lang.Character">
+            <column name="MB043" length="1" />
+        </property>
+        <property name="mb044" type="java.lang.Character">
+            <column name="MB044" length="1" />
+        </property>
+        <property name="mb045" type="big_decimal">
+            <column name="MB045" precision="5" scale="4" />
+        </property>
+        <property name="mb046" type="big_decimal">
+            <column name="MB046" precision="17" scale="8" />
+        </property>
+        <property name="mb047" type="big_decimal">
+            <column name="MB047" precision="17" scale="8" />
+        </property>
+        <property name="mb048" type="string">
+            <column name="MB048" length="4" />
+        </property>
+        <property name="mb049" type="big_decimal">
+            <column name="MB049" precision="17" scale="8" />
+        </property>
+        <property name="mb050" type="big_decimal">
+            <column name="MB050" precision="17" scale="8" />
+        </property>
+        <property name="mb051" type="big_decimal">
+            <column name="MB051" precision="17" scale="8" />
+        </property>
+        <property name="mb052" type="java.lang.Character">
+            <column name="MB052" length="1" />
+        </property>
+        <property name="mb053" type="big_decimal">
+            <column name="MB053" precision="17" scale="8" />
+        </property>
+        <property name="mb054" type="big_decimal">
+            <column name="MB054" precision="17" scale="8" />
+        </property>
+        <property name="mb055" type="big_decimal">
+            <column name="MB055" precision="17" scale="8" />
+        </property>
+        <property name="mb056" type="big_decimal">
+            <column name="MB056" precision="17" scale="8" />
+        </property>
+        <property name="mb057" type="big_decimal">
+            <column name="MB057" precision="17" scale="8" />
+        </property>
+        <property name="mb058" type="big_decimal">
+            <column name="MB058" precision="17" scale="8" />
+        </property>
+        <property name="mb059" type="big_decimal">
+            <column name="MB059" precision="17" scale="8" />
+        </property>
+        <property name="mb060" type="big_decimal">
+            <column name="MB060" precision="17" scale="8" />
+        </property>
+        <property name="mb061" type="big_decimal">
+            <column name="MB061" precision="17" scale="8" />
+        </property>
+        <property name="mb062" type="big_decimal">
+            <column name="MB062" precision="17" scale="8" />
+        </property>
+        <property name="mb063" type="big_decimal">
+            <column name="MB063" precision="17" scale="8" />
+        </property>
+        <property name="mb064" type="big_decimal">
+            <column name="MB064" precision="17" scale="6" />
+        </property>
+        <property name="mb065" type="big_decimal">
+            <column name="MB065" precision="16" />
+        </property>
+        <property name="mb066" type="java.lang.Character">
+            <column name="MB066" length="1" />
+        </property>
+        <property name="mb067" type="string">
+            <column name="MB067" length="10" />
+        </property>
+        <property name="mb068" type="string">
+            <column name="MB068" length="10" />
+        </property>
+        <property name="mb069" type="big_decimal">
+            <column name="MB069" precision="17" scale="8" />
+        </property>
+        <property name="mb070" type="big_decimal">
+            <column name="MB070" precision="17" scale="8" />
+        </property>
+        <property name="mb071" type="big_decimal">
+            <column name="MB071" precision="16" scale="6" />
+        </property>
+        <property name="mb072" type="string">
+            <column name="MB072" length="4" />
+        </property>
+        <property name="mb073" type="big_decimal">
+            <column name="MB073" precision="16" scale="6" />
+        </property>
+        <property name="mb074" type="big_decimal">
+            <column name="MB074" precision="16" scale="6" />
+        </property>
+        <property name="mb075" type="big_decimal">
+            <column name="MB075" precision="16" scale="6" />
+        </property>
+        <property name="mb076" type="java.lang.Short">
+            <column name="MB076" precision="3" scale="0" />
+        </property>
+        <property name="mb077" type="string">
+            <column name="MB077" length="6" />
+        </property>
+        <property name="mb078" type="java.lang.Short">
+            <column name="MB078" precision="3" scale="0" />
+        </property>
+        <property name="mb079" type="java.lang.Short">
+            <column name="MB079" precision="3" scale="0" />
+        </property>
+        <property name="mb080" type="string">
+            <column name="MB080" length="20" />
+        </property>
+        <property name="mb081" type="string">
+            <column name="MB081" length="4" />
+        </property>
+        <property name="mb082" type="big_decimal">
+            <column name="MB082" precision="7" scale="4" />
+        </property>
+        <property name="mb083" type="java.lang.Character">
+            <column name="MB083" length="1" />
+        </property>
+        <property name="mb084" type="big_decimal">
+            <column name="MB084" precision="5" scale="4" />
+        </property>
+        <property name="mb085" type="java.lang.Character">
+            <column name="MB085" length="1" />
+        </property>
+        <property name="mb086" type="big_decimal">
+            <column name="MB086" precision="5" scale="4" />
+        </property>
+        <property name="mb087" type="java.lang.Character">
+            <column name="MB087" length="1" />
+        </property>
+        <property name="mb088" type="big_decimal">
+            <column name="MB088" precision="5" scale="4" />
+        </property>
+        <property name="mb089" type="big_decimal">
+            <column name="MB089" precision="17" scale="6" />
+        </property>
+        <property name="mb090" type="string">
+            <column name="MB090" length="4" />
+        </property>
+        <property name="mb091" type="java.lang.Character">
+            <column name="MB091" length="1" />
+        </property>
+        <property name="mb092" type="java.lang.Character">
+            <column name="MB092" length="1" />
+        </property>
+        <property name="mb093" type="big_decimal">
+            <column name="MB093" precision="16" scale="6" />
+        </property>
+        <property name="mb094" type="big_decimal">
+            <column name="MB094" precision="16" scale="6" />
+        </property>
+        <property name="mb095" type="big_decimal">
+            <column name="MB095" precision="16" scale="6" />
+        </property>
+        <property name="mb096" type="big_decimal">
+            <column name="MB096" precision="7" scale="4" />
+        </property>
+        <property name="mb100" type="java.lang.Character">
+            <column name="MB100" length="1" />
+        </property>
+        <property name="mb101" type="java.lang.Character">
+            <column name="MB101" length="1" />
+        </property>
+        <property name="mb102" type="java.lang.Character">
+            <column name="MB102" length="1" />
+        </property>
+        <property name="mb103" type="java.lang.Character">
+            <column name="MB103" length="1" />
+        </property>
+        <property name="mb104" type="java.lang.Character">
+            <column name="MB104" length="1" />
+        </property>
+        <property name="mb105" type="java.lang.Character">
+            <column name="MB105" length="1" />
+        </property>
+        <property name="mb106" type="java.lang.Character">
+            <column name="MB106" length="1" />
+        </property>
+        <property name="mb107" type="java.lang.Character">
+            <column name="MB107" length="1" />
+        </property>
+        <property name="mb108" type="java.lang.Character">
+            <column name="MB108" length="1" />
+        </property>
+        <property name="mb109" type="java.lang.Character">
+            <column name="MB109" length="1" />
+        </property>
+        <property name="mb110" type="string">
+            <column name="MB110" length="40" />
+        </property>
+        <property name="mb111" type="big_decimal">
+            <column name="MB111" precision="5" scale="4" />
+        </property>
+        <property name="mb112" type="string">
+            <column name="MB112" length="60" />
+        </property>
+        <property name="mb113" type="java.lang.Character">
+            <column name="MB113" length="1" />
+        </property>
+        <property name="mb114" type="java.lang.Character">
+            <column name="MB114" length="1" />
+        </property>
+        <property name="mb115" type="java.lang.Character">
+            <column name="MB115" length="1" />
+        </property>
+        <property name="mb116" type="java.lang.Character">
+            <column name="MB116" length="1" />
+        </property>
+        <property name="mb117" type="java.lang.Character">
+            <column name="MB117" length="1" />
+        </property>
+        <property name="mb118" type="java.lang.Character">
+            <column name="MB118" length="1" />
+        </property>
+        <property name="mb119" type="java.lang.Character">
+            <column name="MB119" length="1" />
+        </property>
+        <property name="mb120" type="java.lang.Character">
+            <column name="MB120" length="1" />
+        </property>
+        <property name="mb121" type="string">
+            <column name="MB121" length="30" />
+        </property>
+        <property name="mb122" type="string">
+            <column name="MB122" length="30" />
+        </property>
+        <property name="mb123" type="string">
+            <column name="MB123" length="30" />
+        </property>
+        <property name="mb124" type="string">
+            <column name="MB124" length="30" />
+        </property>
+        <property name="mb125" type="string">
+            <column name="MB125" length="60" />
+        </property>
+        <property name="mb126" type="java.lang.Character">
+            <column name="MB126" length="1" />
+        </property>
+        <property name="mb127" type="java.lang.Character">
+            <column name="MB127" length="1" />
+        </property>
+        <property name="mb128" type="string">
+            <column name="MB128" length="60" />
+        </property>
+        <property name="mb129" type="string">
+            <column name="MB129" length="60" />
+        </property>
+        <property name="mb130" type="string">
+            <column name="MB130" length="60" />
+        </property>
+        <property name="mb131" type="string">
+            <column name="MB131" length="20" />
+        </property>
+        <property name="mb132" type="string">
+            <column name="MB132" length="20" />
+        </property>
+        <property name="mb133" type="string">
+            <column name="MB133" length="20" />
+        </property>
+        <property name="mb134" type="string">
+            <column name="MB134" />
+        </property>
+        <property name="mb135" type="string">
+            <column name="MB135" />
+        </property>
+        <property name="mb136" type="java.lang.Character">
+            <column name="MB136" length="1" />
+        </property>
+        <property name="mb137" type="java.lang.Character">
+            <column name="MB137" length="1" />
+        </property>
+        <property name="mb138" type="string">
+            <column name="MB138" length="10" />
+        </property>
+        <property name="mb139" type="string">
+            <column name="MB139" length="8" />
+        </property>
+        <property name="mb140" type="java.lang.Character">
+            <column name="MB140" length="1" />
+        </property>
+        <property name="mb141" type="java.lang.Character">
+            <column name="MB141" length="1" />
+        </property>
+        <property name="mb142" type="string">
+            <column name="MB142" length="12" />
+        </property>
+        <property name="mb143" type="string">
+            <column name="MB143" length="10" />
+        </property>
+        <property name="mb144" type="java.lang.Character">
+            <column name="MB144" length="1" />
+        </property>
+        <property name="mb145" type="java.lang.Character">
+            <column name="MB145" length="1" />
+        </property>
+        <property name="mb146" type="string">
+            <column name="MB146" length="10" />
+        </property>
+        <property name="mb147" type="java.lang.Short">
+            <column name="MB147" precision="4" scale="0" />
+        </property>
+        <property name="mb148" type="string">
+            <column name="MB148" length="4" />
+        </property>
+        <property name="mb149" type="string">
+            <column name="MB149" length="4" />
+        </property>
+        <property name="mb150" type="string">
+            <column name="MB150" length="10" />
+        </property>
+        <property name="mb151" type="java.lang.Integer">
+            <column name="MB151" precision="8" scale="0" />
+        </property>
+        <property name="mb152" type="java.lang.Integer">
+            <column name="MB152" precision="8" scale="0" />
+        </property>
+        <property name="mb179" type="string">
+            <column name="MB179" length="10" />
+        </property>
+        <property name="mb180" type="string">
+            <column name="MB180" length="60" />
+        </property>
+        <property name="mb181" type="string">
+            <column name="MB181" length="60" />
+        </property>
+        <property name="mb182" type="string">
+            <column name="MB182" length="60" />
+        </property>
+        <property name="mb183" type="string">
+            <column name="MB183" length="60" />
+        </property>
+        <property name="mb184" type="string">
+            <column name="MB184" length="60" />
+        </property>
+        <property name="mb185" type="string">
+            <column name="MB185" length="60" />
+        </property>
+        <property name="mb186" type="string">
+            <column name="MB186" length="60" />
+        </property>
+        <property name="mb187" type="string">
+            <column name="MB187" length="60" />
+        </property>
+        <property name="mb188" type="string">
+            <column name="MB188" length="60" />
+        </property>
+        <property name="mb189" type="string">
+            <column name="MB189" length="60" />
+        </property>
+        <property name="mb190" type="string">
+            <column name="MB190" length="60" />
+        </property>
+        <property name="mb191" type="string">
+            <column name="MB191" length="60" />
+        </property>
+        <property name="mb192" type="string">
+            <column name="MB192" length="60" />
+        </property>
+        <property name="mb193" type="string">
+            <column name="MB193" length="60" />
+        </property>
+        <property name="mb194" type="string">
+            <column name="MB194" length="60" />
+        </property>
+        <property name="mb195" type="string">
+            <column name="MB195" length="60" />
+        </property>
+        <property name="mb196" type="string">
+            <column name="MB196" length="60" />
+        </property>
+        <property name="mb197" type="string">
+            <column name="MB197" length="60" />
+        </property>
+        <property name="mb198" type="string">
+            <column name="MB198" length="60" />
+        </property>
+        <property name="mb199" type="string">
+            <column name="MB199" length="60" />
+        </property>
+        <property name="mb401" type="big_decimal">
+            <column name="MB401" precision="5" scale="4" />
+        </property>
+        <property name="mb402" type="big_decimal">
+            <column name="MB402" precision="5" scale="4" />
+        </property>
+        <property name="mb403" type="big_decimal">
+            <column name="MB403" precision="5" scale="4" />
+        </property>
+        <property name="mb404" type="big_decimal">
+            <column name="MB404" precision="17" scale="8" />
+        </property>
+        <property name="mb405" type="java.lang.Character">
+            <column name="MB405" length="1" />
+        </property>
+        <property name="mb406" type="string">
+            <column name="MB406" length="3" />
+        </property>
+        <property name="mb407" type="java.lang.Character">
+            <column name="MB407" length="1" />
+        </property>
+        <property name="mb408" type="string">
+            <column name="MB408" length="4" />
+        </property>
+        <property name="mb409" type="string">
+            <column name="MB409" length="10" />
+        </property>
+        <property name="mb410" type="big_decimal">
+            <column name="MB410" precision="16" scale="6" />
+        </property>
+        <property name="mb411" type="java.lang.Character">
+            <column name="MB411" length="1" />
+        </property>
+        <property name="mb412" type="string">
+            <column name="MB412" length="10" />
+        </property>
+        <property name="mb413" type="java.lang.Character">
+            <column name="MB413" length="1" />
+        </property>
+        <property name="mb414" type="string">
+            <column name="MB414" length="10" />
+        </property>
+        <property name="mb415" type="big_decimal">
+            <column name="MB415" precision="16" scale="6" />
+        </property>
+        <property name="mb416" type="big_decimal">
+            <column name="MB416" precision="16" scale="6" />
+        </property>
+        <property name="mb417" type="big_decimal">
+            <column name="MB417" precision="16" scale="6" />
+        </property>
+        <property name="mb418" type="big_decimal">
+            <column name="MB418" precision="16" scale="6" />
+        </property>
+        <property name="mb419" type="big_decimal">
+            <column name="MB419" precision="16" scale="6" />
+        </property>
+        <property name="mb420" type="big_decimal">
+            <column name="MB420" precision="16" scale="6" />
+        </property>
+        <property name="mb421" type="java.lang.Character">
+            <column name="MB421" length="1" />
+        </property>
+        <property name="mb422" type="string">
+            <column name="MB422" length="10" />
+        </property>
+        <property name="mb423" type="java.lang.Character">
+            <column name="MB423" length="1" />
+        </property>
+        <property name="mb424" type="string">
+            <column name="MB424" length="10" />
+        </property>
+        <property name="mb425" type="java.lang.Byte">
+            <column name="MB425" precision="2" scale="0" />
+        </property>
+        <property name="mb426" type="java.lang.Byte">
+            <column name="MB426" precision="2" scale="0" />
+        </property>
+        <property name="mb427" type="java.lang.Byte">
+            <column name="MB427" precision="2" scale="0" />
+        </property>
+        <property name="mb428" type="big_decimal">
+            <column name="MB428" precision="16" scale="6" />
+        </property>
+        <property name="mb429" type="big_decimal">
+            <column name="MB429" precision="16" scale="6" />
+        </property>
+        <property name="mb430" type="big_decimal">
+            <column name="MB430" precision="16" scale="6" />
+        </property>
+        <property name="mb431" type="big_decimal">
+            <column name="MB431" precision="16" scale="6" />
+        </property>
+        <property name="mb432" type="big_decimal">
+            <column name="MB432" precision="16" scale="6" />
+        </property>
+        <property name="mb433" type="big_decimal">
+            <column name="MB433" precision="16" scale="6" />
+        </property>
+        <property name="mb434" type="big_decimal">
+            <column name="MB434" precision="16" scale="6" />
+        </property>
+        <property name="mb435" type="java.lang.Character">
+            <column name="MB435" length="1" />
+        </property>
+        <property name="mb436" type="string">
+            <column name="MB436" length="8" />
+        </property>
+        <property name="mb437" type="string">
+            <column name="MB437" length="30" />
+        </property>
+        <property name="mb438" type="big_decimal">
+            <column name="MB438" precision="16" scale="6" />
+        </property>
+        <property name="mb439" type="big_decimal">
+            <column name="MB439" precision="16" scale="6" />
+        </property>
+        <property name="mb440" type="big_decimal">
+            <column name="MB440" precision="16" scale="6" />
+        </property>
+        <property name="mb441" type="java.lang.Character">
+            <column name="MB441" length="1" />
+        </property>
+        <property name="mb442" type="java.lang.Character">
+            <column name="MB442" length="1" />
+        </property>
+        <property name="mb443" type="java.lang.Character">
+            <column name="MB443" length="1" />
+        </property>
+        <property name="mb444" type="string">
+            <column name="MB444" length="4" />
+        </property>
+        <property name="mb445" type="string">
+            <column name="MB445" length="6" />
+        </property>
+        <property name="mb446" type="big_decimal">
+            <column name="MB446" precision="7" scale="4" />
+        </property>
+        <property name="mb447" type="big_decimal">
+            <column name="MB447" precision="7" scale="4" />
+        </property>
+        <property name="mb448" type="big_decimal">
+            <column name="MB448" precision="7" scale="4" />
+        </property>
+        <property name="mb449" type="big_decimal">
+            <column name="MB449" precision="7" scale="4" />
+        </property>
+        <property name="mb450" type="java.lang.Character">
+            <column name="MB450" length="1" />
+        </property>
+        <property name="mb451" type="string">
+            <column name="MB451" length="8" />
+        </property>
+        <property name="mb452" type="big_decimal">
+            <column name="MB452" precision="16" scale="6" />
+        </property>
+        <property name="mbd01" type="java.lang.Character">
+            <column name="MBD01" length="1" />
+        </property>
+        <property name="mbd02" type="java.lang.Character">
+            <column name="MBD02" length="1" />
+        </property>
+        <property name="mbe01" type="string">
+            <column name="MBE01" length="10" />
+        </property>
+        <property name="mb453" type="string">
+            <column name="MB453" length="30" />
+        </property>
+        <property name="mb454" type="java.lang.Character">
+            <column name="MB454" length="1" />
+        </property>
+        <property name="mbh01" type="java.lang.Character">
+            <column name="MBH01" length="1" />
+        </property>
+        <property name="mbh02" type="string">
+            <column name="MBH02" length="10" />
+        </property>
+        <property name="mbh03" type="string">
+            <column name="MBH03" length="10" />
+        </property>
+        <property name="mb455" type="java.lang.Character">
+            <column name="MB455" length="1" />
+        </property>
+        <property name="mb456" type="string">
+            <column name="MB456" length="6" />
+        </property>
+        <property name="mb457" type="string">
+            <column name="MB457" length="6" />
+        </property>
+        <property name="mb458" type="string">
+            <column name="MB458" length="6" />
+        </property>
+        <property name="mb459" type="string">
+            <column name="MB459" length="6" />
+        </property>
+        <property name="mb460" type="string">
+            <column name="MB460" length="6" />
+        </property>
+        <property name="mb461" type="string">
+            <column name="MB461" length="6" />
+        </property>
+        <property name="mb462" type="string">
+            <column name="MB462" length="6" />
+        </property>
+        <property name="mb463" type="string">
+            <column name="MB463" length="6" />
+        </property>
+        <property name="mb464" type="string">
+            <column name="MB464" length="6" />
+        </property>
+        <property name="mb465" type="string">
+            <column name="MB465" length="6" />
+        </property>
+        <property name="mb466" type="string">
+            <column name="MB466" length="6" />
+        </property>
+        <property name="mb467" type="string">
+            <column name="MB467" length="6" />
+        </property>
+        <property name="mb468" type="string">
+            <column name="MB468" length="6" />
+        </property>
+        <property name="mb469" type="string">
+            <column name="MB469" length="6" />
+        </property>
+        <property name="mb470" type="string">
+            <column name="MB470" length="6" />
+        </property>
+        <property name="mb471" type="string">
+            <column name="MB471" length="6" />
+        </property>
+        <property name="mb472" type="string">
+            <column name="MB472" length="6" />
+        </property>
+        <property name="mb473" type="string">
+            <column name="MB473" length="6" />
+        </property>
+        <property name="mb474" type="string">
+            <column name="MB474" length="6" />
+        </property>
+        <property name="mb475" type="string">
+            <column name="MB475" length="6" />
+        </property>
+        <property name="mbl01" type="java.lang.Byte">
+            <column name="MBL01" precision="2" scale="0" />
+        </property>
+        <property name="mbl02" type="java.lang.Character">
+            <column name="MBL02" length="1" />
+        </property>
+        <property name="mbl03" type="java.lang.Character">
+            <column name="MBL03" length="1" />
+        </property>
+        <property name="mbl04" type="java.lang.Character">
+            <column name="MBL04" length="1" />
+        </property>
+        <property name="udf01" type="string">
+            <column name="UDF01" />
+        </property>
+        <property name="udf02" type="string">
+            <column name="UDF02" />
+        </property>
+        <property name="udf03" type="string" nullable="true">
+            <column name="UDF03" />
+        </property>
+        <property name="udf04" type="string">
+            <column name="UDF04" />
+        </property>
+        <property name="udf05" type="string" nullable="true">
+            <column name="UDF05" />
+        </property>
+        <property name="udf06" type="string">
+            <column name="UDF06" />
+        </property>
+        <property name="udf51" type="big_decimal">
+            <column name="UDF51" precision="16" scale="6" />
+        </property>
+        <property name="udf52" type="big_decimal">
+            <column name="UDF52" precision="16" scale="6" />
+        </property>
+        <property name="udf53" type="big_decimal">
+            <column name="UDF53" precision="16" scale="6" />
+        </property>
+        <property name="udf54" type="big_decimal">
+            <column name="UDF54" precision="16" scale="6" />
+        </property>
+        <property name="udf55" type="big_decimal">
+            <column name="UDF55" precision="16" scale="6" />
+        </property>
+        <property name="udf56" type="big_decimal">
+            <column name="UDF56" precision="16" scale="6" />
+        </property>
+        <property name="udf07" type="string" nullable="true">
+            <column name="UDF07" />
+        </property>
+        <property name="udf08" type="string">
+            <column name="UDF08" />
+        </property>
+        <property name="udf09" type="string">
+            <column name="UDF09" />
+        </property>
+        <property name="udf10" type="string">
+            <column name="UDF10" />
+        </property>
+        <property name="udf11" type="string">
+            <column name="UDF11" />
+        </property>
+        <property name="udf12" type="string">
+            <column name="UDF12" />
+        </property>
+        <property name="udf57" type="big_decimal">
+            <column name="UDF57" precision="16" scale="6" />
+        </property>
+        <property name="udf58" type="big_decimal">
+            <column name="UDF58" precision="16" scale="6" />
+        </property>
+        <property name="udf59" type="big_decimal">
+            <column name="UDF59" precision="16" scale="6" />
+        </property>
+        <property name="udf60" type="big_decimal">
+            <column name="UDF60" precision="16" scale="6" />
+        </property>
+        <property name="udf61" type="big_decimal">
+            <column name="UDF61" precision="16" scale="6" />
+        </property>
+        <property name="udf62" type="big_decimal">
+            <column name="UDF62" precision="16" scale="6" />
+        </property>
+    </class>
+</hibernate-mapping>

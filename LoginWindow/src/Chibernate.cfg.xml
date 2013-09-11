@@ -72,6 +72,7 @@
         <mapping resource="com/edwin/bomtable/Bommd.hbm.xml"/>
         <mapping resource="com/edwin/bomtable/Bomca.hbm.xml"/>
         <mapping resource="com/edwin/bomtable/Bommc.hbm.xml"/>
+        <mapping resource="com/edwin/bomtable/Invmb.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

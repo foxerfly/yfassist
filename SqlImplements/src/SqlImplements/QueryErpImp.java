@@ -369,7 +369,7 @@ public class QueryErpImp implements QueryErp {
             }
 //            i--;
 //            
-            rs = cstmt.executeQuery();
+             cstmt.executeQuery();
 
 //            for(;i>0;i--)
 //                System.out.println(cstmt.getString(i));

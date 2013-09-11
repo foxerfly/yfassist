@@ -5,15 +5,21 @@
  */
 package com.edwin.bom;
 
+import com.edwin.bomtable.Invmb;
 import com.edwin.my.RCPSessionFactory;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.Iterator;
+import java.util.List;
+import javax.swing.JOptionPane;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.explorer.ExplorerManager;
+import org.openide.nodes.Node;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 
@@ -65,32 +71,32 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        mb001 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        mb002 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        udf07 = new javax.swing.JTextField();
+        mb009 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
+        mb110 = new javax.swing.JTextField();
+        mb003 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        mb109 = new javax.swing.JTextField();
+        mb025 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
+        mb004 = new javax.swing.JTextField();
+        mb034 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
+        udf03 = new javax.swing.JTextField();
+        udf05 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jScrollPane2 = new javax.swing.JScrollPane();
-        myJXTable2 = new com.edwin.myswingx.MyJXTable();
+        orderBomTable = new com.edwin.myswingx.MyJXTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         myJXTable3 = new com.edwin.myswingx.MyJXTable();
         jTabbedPane2 = new javax.swing.JTabbedPane();
@@ -116,61 +122,61 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel3, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jLabel3.text")); // NOI18N
 
-        jTextField3.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jTextField3.text")); // NOI18N
-        jTextField3.setEnabled(false);
+        mb001.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.mb001.text")); // NOI18N
+        mb001.setEnabled(false);
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel4, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jLabel4.text")); // NOI18N
 
-        jTextField4.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jTextField4.text")); // NOI18N
-        jTextField4.setEnabled(false);
+        mb002.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.mb002.text")); // NOI18N
+        mb002.setEnabled(false);
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel5, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jLabel5.text")); // NOI18N
 
-        jTextField5.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jTextField5.text")); // NOI18N
-        jTextField5.setEnabled(false);
+        udf07.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.udf07.text")); // NOI18N
+        udf07.setEnabled(false);
 
-        jTextField6.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jTextField6.text")); // NOI18N
-        jTextField6.setEnabled(false);
+        mb009.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.mb009.text")); // NOI18N
+        mb009.setEnabled(false);
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel6, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jLabel6.text")); // NOI18N
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel7, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jLabel7.text")); // NOI18N
 
-        jTextField7.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jTextField7.text")); // NOI18N
-        jTextField7.setEnabled(false);
+        mb110.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.mb110.text")); // NOI18N
+        mb110.setEnabled(false);
 
-        jTextField8.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jTextField8.text")); // NOI18N
-        jTextField8.setEnabled(false);
+        mb003.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.mb003.text")); // NOI18N
+        mb003.setEnabled(false);
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel8, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jLabel8.text")); // NOI18N
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel9, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jLabel9.text")); // NOI18N
 
-        jTextField9.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jTextField9.text")); // NOI18N
-        jTextField9.setEnabled(false);
+        mb109.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.mb109.text")); // NOI18N
+        mb109.setEnabled(false);
 
-        jTextField10.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jTextField10.text")); // NOI18N
-        jTextField10.setEnabled(false);
+        mb025.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.mb025.text")); // NOI18N
+        mb025.setEnabled(false);
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel10, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jLabel10.text")); // NOI18N
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel11, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jLabel11.text")); // NOI18N
 
-        jTextField11.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jTextField11.text")); // NOI18N
-        jTextField11.setEnabled(false);
+        mb004.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.mb004.text")); // NOI18N
+        mb004.setEnabled(false);
 
-        jTextField12.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jTextField12.text")); // NOI18N
-        jTextField12.setEnabled(false);
+        mb034.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.mb034.text")); // NOI18N
+        mb034.setEnabled(false);
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel12, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jLabel12.text")); // NOI18N
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel13, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jLabel13.text")); // NOI18N
 
-        jTextField13.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jTextField13.text")); // NOI18N
-        jTextField13.setEnabled(false);
+        udf03.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.udf03.text")); // NOI18N
+        udf03.setEnabled(false);
 
-        jTextField14.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jTextField14.text")); // NOI18N
-        jTextField14.setEnabled(false);
+        udf05.setText(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.udf05.text")); // NOI18N
+        udf05.setEnabled(false);
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel14, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jLabel14.text")); // NOI18N
 
@@ -184,16 +190,16 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(mb034, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel3)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(mb001, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel6)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(mb009, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
@@ -201,9 +207,9 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mb004, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(udf07, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mb002, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -212,12 +218,12 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
                             .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(mb025, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mb003, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField13)))
+                        .addComponent(udf03)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
@@ -230,9 +236,9 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(mb109, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(mb110, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(udf05, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -242,45 +248,45 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(mb002, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mb001, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel3)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel7)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(mb110, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(mb003, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(udf07, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(mb009, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel9)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(mb109, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel10)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(mb025, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mb004, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel12)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mb034, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel11))
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(udf03, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(udf05, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel14)))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        myJXTable2.setModel(new javax.swing.table.DefaultTableModel(
+        orderBomTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -291,7 +297,7 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(myJXTable2);
+        jScrollPane2.setViewportView(orderBomTable);
 
         jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jScrollPane2.TabConstraints.tabTitle"), jScrollPane2); // NOI18N
 
@@ -400,21 +406,21 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
-    private com.edwin.myswingx.MyJXTable myJXTable2;
+    private javax.swing.JTextField mb001;
+    private javax.swing.JTextField mb002;
+    private javax.swing.JTextField mb003;
+    private javax.swing.JTextField mb004;
+    private javax.swing.JTextField mb009;
+    private javax.swing.JTextField mb025;
+    private javax.swing.JTextField mb034;
+    private javax.swing.JTextField mb109;
+    private javax.swing.JTextField mb110;
     private com.edwin.myswingx.MyJXTable myJXTable3;
+    private com.edwin.myswingx.MyJXTable orderBomTable;
+    private javax.swing.JTextField udf03;
+    private javax.swing.JTextField udf05;
+    private javax.swing.JTextField udf07;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
@@ -450,12 +456,50 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
 
         Session s = RCPSessionFactory.openSession();
         Transaction tx = s.beginTransaction();
-        
-        
-        
-        
-        
-        
+        String ph = "";
+        Node[] no = em.getSelectedNodes();
+
+        for (Node n : no) {
+            ph = n.getDisplayName().trim();
+        }
+
+//        System.out.println(ph);
+        List list = s.createQuery("from Invmb as a where a.mb001=:mb001 ").setParameter("mb001", ph).list();
+        for (Iterator it = list.iterator(); it.hasNext();) {
+            Invmb tI = (Invmb) it.next();
+            try {
+                mb001.setText(tI.getMb001().toString().trim());
+                mb002.setText(tI.getMb002().toString().trim());
+                mb003.setText(tI.getMb003().toString().trim());
+                mb004.setText(tI.getMb004().toString().trim());
+                mb009.setText(tI.getMb009().toString().trim());
+                mb025.setText(tI.getMb025().toString().trim());
+                mb034.setText(tI.getMb034().toString().trim());
+                mb109.setText(tI.getMb109().toString().trim());
+                mb110.setText(tI.getMb110().toString().trim());
+
+                if (tI.getUdf03().toString().trim().equals(null)) {
+                    udf03.setText("");
+                } else {
+                    udf03.setText(tI.getUdf03().toString().trim());
+                }
+
+                if (tI.getUdf03().toString().trim().equals(null)) {
+                    udf05.setText("");
+                } else {
+                    udf05.setText(tI.getUdf05().toString().trim());
+                }
+
+                if (tI.getUdf03().toString().trim().equals(null)) {
+                    udf07.setText("");
+                } else {
+                    udf07.setText(tI.getUdf07().toString().trim());
+                }
+
+            } catch (HibernateException e) {
+                JOptionPane.showMessageDialog(this, e.getMessage());
+            }
+        }
 
         tx.commit();
         s.close();
