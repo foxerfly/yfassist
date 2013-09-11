@@ -40,6 +40,8 @@ public interface QueryErp {
     public Boolean rsErpProc(String procedure, String param) throws ClassNotFoundException, SQLException;
 
     public ResultSet rsErpProc(String procedure, ArrayList<String> list) throws ClassNotFoundException, SQLException;
+    
+    public Boolean rsErpProcS(String procedure, ArrayList<String> list) throws ClassNotFoundException, SQLException;
 
     public Boolean rsErpProcList(String procedure, ArrayList list) throws ClassNotFoundException, SQLException;
 
