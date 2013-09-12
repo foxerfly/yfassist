@@ -389,4 +389,43 @@ public class QueryErpImp implements QueryErp {
 
     }
 
+    @Override
+    public boolean updateErpS(String sql, ArrayList<String> alist) throws ClassNotFoundException, SQLException {
+        PreparedStatement pstmt = null;
+        pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE,
+                ResultSet.CONCUR_READ_ONLY);
+
+        int z = 1;
+        for (String s : alist) {
+            pstmt.setString(z, s);
+            z++;
+        }
+
+        int i = pstmt.executeUpdate();
+        if (i == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public Boolean rsErpS(String sql, ArrayList<String> list) throws ClassNotFoundException, SQLException {
+        if (!list.isEmpty()) {
+            int i = 1;
+            PreparedStatement pstmt = null;
+            pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            for (String s : list) {
+                pstmt.setString(i, s);
+                i++;
+            }
+            if (pstmt.execute()) {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
 }

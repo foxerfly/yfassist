@@ -29,6 +29,7 @@ public interface QueryErp {
     public ResultSet rsErp(String sql, String param1, String param2) throws ClassNotFoundException, SQLException;
 
     public ResultSet rsErp(String sql, ArrayList<String> list) throws ClassNotFoundException, SQLException;
+    public Boolean rsErpS(String sql, ArrayList<String> list) throws ClassNotFoundException, SQLException;
 
     //调用存储过程 无参
     public ResultSet rsErpProc(String procedure) throws ClassNotFoundException, SQLException;
@@ -52,6 +53,8 @@ public interface QueryErp {
     public boolean updateErp(String sql) throws ClassNotFoundException, SQLException;
 
     public boolean updateErp(String sql, ArrayList<BigDecimal> alist) throws ClassNotFoundException, SQLException;
+    
+     public boolean updateErpS(String sql, ArrayList<String> alist) throws ClassNotFoundException, SQLException;
 
     /*
      * 系统函数

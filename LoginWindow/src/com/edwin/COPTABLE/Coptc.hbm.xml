@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 12, 2013 8:08:54 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.edwin.COPTABLE.Coptc" table="COPTC" schema="dbo" >
+        <composite-id name="id" class="com.edwin.COPTABLE.CoptcId">
+            <key-property name="tc001" type="string">
+                <column name="TC001" length="4" />
+            </key-property>
+            <key-property name="tc002" type="string">
+                <column name="TC002" length="11" />
+            </key-property>
+        </composite-id>
+        <property name="company" type="string">
+            <column name="COMPANY" length="10" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="10" />
+        </property>
+        <property name="usrGroup" type="string">
+            <column name="USR_GROUP" length="10" />
+        </property>
+        <property name="createDate" type="string">
+            <column name="CREATE_DATE" length="17" />
+        </property>
+        <property name="modifier" type="string">
+            <column name="MODIFIER" length="10" />
+        </property>
+        <property name="modiDate" type="string">
+            <column name="MODI_DATE" length="17" />
+        </property>
+        <property name="flag" type="java.lang.Short">
+            <column name="FLAG" precision="3" scale="0" />
+        </property>
+        <property name="tc003" type="string">
+            <column name="TC003" length="8" />
+        </property>
+        <property name="tc004" type="string">
+            <column name="TC004" length="10" />
+        </property>
+        <property name="tc005" type="string">
+            <column name="TC005" length="6" />
+        </property>
+        <property name="tc006" type="string">
+            <column name="TC006" length="10" />
+        </property>
+        <property name="tc007" type="string">
+            <column name="TC007" length="6" />
+        </property>
+        <property name="tc008" type="string">
+            <column name="TC008" length="4" />
+        </property>
+        <property name="tc009" type="big_decimal">
+            <column name="TC009" precision="10" scale="7" />
+        </property>
+        <property name="tc010" type="string">
+            <column name="TC010" length="72" />
+        </property>
+        <property name="tc011" type="string">
+            <column name="TC011" length="72" />
+        </property>
+        <property name="tc012" type="string">
+            <column name="TC012" length="20" />
+        </property>
+        <property name="tc013" type="string">
+            <column name="TC013" length="16" />
+        </property>
+        <property name="tc014" type="string">
+            <column name="TC014" length="60" />
+        </property>
+        <property name="tc015" type="string">
+            <column name="TC015" />
+        </property>
+        <property name="tc016" type="java.lang.Character">
+            <column name="TC016" length="1" />
+        </property>
+        <property name="tc017" type="string">
+            <column name="TC017" length="20" />
+        </property>
+        <property name="tc018" type="string">
+            <column name="TC018" length="30" />
+        </property>
+        <property name="tc019" type="java.lang.Character">
+            <column name="TC019" length="1" />
+        </property>
+        <property name="tc020" type="string">
+            <column name="TC020" length="20" />
+        </property>
+        <property name="tc021" type="string">
+            <column name="TC021" length="20" />
+        </property>
+        <property name="tc022" type="string">
+            <column name="TC022" length="10" />
+        </property>
+        <property name="tc023" type="string">
+            <column name="TC023" length="10" />
+        </property>
+        <property name="tc024" type="string">
+            <column name="TC024" length="10" />
+        </property>
+        <property name="tc025" type="string">
+            <column name="TC025" length="10" />
+        </property>
+        <property name="tc026" type="big_decimal">
+            <column name="TC026" precision="6" scale="5" />
+        </property>
+        <property name="tc027" type="java.lang.Character">
+            <column name="TC027" length="1" />
+        </property>
+        <property name="tc028" type="java.lang.Boolean">
+            <column name="TC028" precision="1" scale="0" />
+        </property>
+        <property name="tc029" type="big_decimal">
+            <column name="TC029" precision="16" />
+        </property>
+        <property name="tc030" type="big_decimal">
+            <column name="TC030" precision="16" />
+        </property>
+        <property name="tc031" type="big_decimal">
+            <column name="TC031" precision="16" scale="6" />
+        </property>
+        <property name="tc032" type="string">
+            <column name="TC032" length="10" />
+        </property>
+        <property name="tc033" type="string">
+            <column name="TC033" length="10" />
+        </property>
+        <property name="tc034" type="string">
+            <column name="TC034" length="4" />
+        </property>
+        <property name="tc035" type="string">
+            <column name="TC035" length="20" />
+        </property>
+        <property name="tc036" type="string">
+            <column name="TC036" length="10" />
+        </property>
+        <property name="tc037" type="string">
+            <column name="TC037" />
+        </property>
+        <property name="tc038" type="string">
+            <column name="TC038" />
+        </property>
+        <property name="tc039" type="string">
+            <column name="TC039" length="8" />
+        </property>
+        <property name="tc040" type="string">
+            <column name="TC040" length="10" />
+        </property>
+        <property name="tc041" type="big_decimal">
+            <column name="TC041" precision="5" scale="4" />
+        </property>
+        <property name="tc042" type="string">
+            <column name="TC042" length="6" />
+        </property>
+        <property name="tc043" type="big_decimal">
+            <column name="TC043" precision="16" scale="6" />
+        </property>
+        <property name="tc044" type="big_decimal">
+            <column name="TC044" precision="16" scale="6" />
+        </property>
+        <property name="tc045" type="big_decimal">
+            <column name="TC045" precision="5" scale="4" />
+        </property>
+        <property name="tc046" type="big_decimal">
+            <column name="TC046" precision="16" scale="6" />
+        </property>
+        <property name="tc047" type="string">
+            <column name="TC047" length="10" />
+        </property>
+        <property name="tc048" type="java.lang.Character">
+            <column name="TC048" length="1" />
+        </property>
+        <property name="tc049" type="string">
+            <column name="TC049" length="2" />
+        </property>
+        <property name="tc050" type="java.lang.Character">
+            <column name="TC050" length="1" />
+        </property>
+        <property name="tc051" type="string">
+            <column name="TC051" length="10" />
+        </property>
+        <property name="tc052" type="string">
+            <column name="TC052" length="100" />
+        </property>
+        <property name="tc053" type="string">
+            <column name="TC053" length="100" />
+        </property>
+        <property name="tc054" type="string">
+            <column name="TC054" length="100" />
+        </property>
+        <property name="tc055" type="string">
+            <column name="TC055" length="100" />
+        </property>
+        <property name="tc056" type="string">
+            <column name="TC056" />
+        </property>
+        <property name="tc057" type="string">
+            <column name="TC057" />
+        </property>
+        <property name="tc058" type="java.lang.Boolean">
+            <column name="TC058" precision="1" scale="0" />
+        </property>
+        <property name="tc059" type="java.lang.Character">
+            <column name="TC059" length="1" />
+        </property>
+        <property name="tc060" type="string">
+            <column name="TC060" length="8" />
+        </property>
+        <property name="tc061" type="string">
+            <column name="TC061" length="30" />
+        </property>
+        <property name="tc062" type="big_decimal">
+            <column name="TC062" precision="16" scale="6" />
+        </property>
+        <property name="tc063" type="big_decimal">
+            <column name="TC063" precision="16" scale="6" />
+        </property>
+        <property name="tc064" type="big_decimal">
+            <column name="TC064" precision="16" scale="6" />
+        </property>
+        <property name="tc065" type="string">
+            <column name="TC065" length="25" />
+        </property>
+        <property name="tc066" type="string">
+            <column name="TC066" length="4" />
+        </property>
+        <property name="tc067" type="java.lang.Character">
+            <column name="TC067" length="1" />
+        </property>
+        <property name="tc068" type="big_decimal">
+            <column name="TC068" precision="16" />
+        </property>
+        <property name="tc069" type="big_decimal">
+            <column name="TC069" precision="16" />
+        </property>
+        <property name="tc070" type="java.lang.Character">
+            <column name="TC070" length="1" />
+        </property>
+        <property name="tc071" type="java.lang.Character">
+            <column name="TC071" length="1" />
+        </property>
+        <property name="tc072" type="java.lang.Character">
+            <column name="TC072" length="1" />
+        </property>
+        <property name="tc073" type="string">
+            <column name="TC073" length="20" />
+        </property>
+        <property name="tc074" type="string">
+            <column name="TC074" length="20" />
+        </property>
+        <property name="tc075" type="string">
+            <column name="TC075" length="20" />
+        </property>
+        <property name="tc076" type="string">
+            <column name="TC076" length="72" />
+        </property>
+        <property name="tci01" type="string">
+            <column name="TCI01" length="8" />
+        </property>
+        <property name="tci02" type="string">
+            <column name="TCI02" length="8" />
+        </property>
+        <property name="tci03" type="big_decimal">
+            <column name="TCI03" precision="16" />
+        </property>
+        <property name="tci04" type="big_decimal">
+            <column name="TCI04" precision="16" />
+        </property>
+        <property name="tc077" type="string">
+            <column name="TC077" length="20" />
+        </property>
+        <property name="udf01" type="string">
+            <column name="UDF01" />
+        </property>
+        <property name="udf02" type="string">
+            <column name="UDF02" />
+        </property>
+        <property name="udf03" type="string">
+            <column name="UDF03" />
+        </property>
+        <property name="udf04" type="string">
+            <column name="UDF04" />
+        </property>
+        <property name="udf05" type="string">
+            <column name="UDF05" />
+        </property>
+        <property name="udf06" type="string">
+            <column name="UDF06" />
+        </property>
+        <property name="udf51" type="big_decimal">
+            <column name="UDF51" precision="16" scale="6" />
+        </property>
+        <property name="udf52" type="big_decimal">
+            <column name="UDF52" precision="16" scale="6" />
+        </property>
+        <property name="udf53" type="big_decimal">
+            <column name="UDF53" precision="16" scale="6" />
+        </property>
+        <property name="udf54" type="big_decimal">
+            <column name="UDF54" precision="16" scale="6" />
+        </property>
+        <property name="udf55" type="big_decimal">
+            <column name="UDF55" precision="16" scale="6" />
+        </property>
+        <property name="udf56" type="big_decimal">
+            <column name="UDF56" precision="16" scale="6" />
+        </property>
+        <property name="udf07" type="string">
+            <column name="UDF07" />
+        </property>
+        <property name="udf08" type="string">
+            <column name="UDF08" />
+        </property>
+        <property name="udf09" type="string">
+            <column name="UDF09" />
+        </property>
+        <property name="udf10" type="string">
+            <column name="UDF10" />
+        </property>
+        <property name="udf11" type="string">
+            <column name="UDF11" />
+        </property>
+        <property name="udf12" type="string">
+            <column name="UDF12" />
+        </property>
+        <property name="udf57" type="big_decimal">
+            <column name="UDF57" precision="16" scale="6" />
+        </property>
+        <property name="udf58" type="big_decimal">
+            <column name="UDF58" precision="16" scale="6" />
+        </property>
+        <property name="udf59" type="big_decimal">
+            <column name="UDF59" precision="16" scale="6" />
+        </property>
+        <property name="udf60" type="big_decimal">
+            <column name="UDF60" precision="16" scale="6" />
+        </property>
+        <property name="udf61" type="big_decimal">
+            <column name="UDF61" precision="16" scale="6" />
+        </property>
+        <property name="udf62" type="big_decimal">
+            <column name="UDF62" precision="16" scale="6" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -73,6 +73,12 @@
         <mapping resource="com/edwin/bomtable/Bomca.hbm.xml"/>
         <mapping resource="com/edwin/bomtable/Bommc.hbm.xml"/>
         <mapping resource="com/edwin/bomtable/Invmb.hbm.xml"/>
+        
+        
+        <!--<  COP >-->
+        
+        <mapping resource="com/edwin/COPTABLE/Coptd.hbm.xml"/>
+        <mapping resource="com/edwin/COPTABLE/Coptc.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

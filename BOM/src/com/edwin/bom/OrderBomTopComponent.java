@@ -9,6 +9,7 @@ import com.edwin.bomtable.Invmb;
 import com.edwin.my.RCPSessionFactory;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -20,6 +21,7 @@ import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.explorer.ExplorerManager;
 import org.openide.nodes.Node;
+import org.openide.util.Exceptions;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 
@@ -102,6 +104,8 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
         jTabbedPane2 = new javax.swing.JTabbedPane();
         beanTreeView1 = new org.openide.explorer.view.BeanTreeView();
         beanTreeView2 = new org.openide.explorer.view.BeanTreeView();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jLabel1.text")); // NOI18N
 
@@ -320,6 +324,20 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
         jTabbedPane2.addTab(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.beanTreeView1.TabConstraints.tabTitle"), beanTreeView1); // NOI18N
         jTabbedPane2.addTab(org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.beanTreeView2.TabConstraints.tabTitle"), beanTreeView2); // NOI18N
 
+        org.openide.awt.Mnemonics.setLocalizedText(jButton2, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jButton2.text")); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        org.openide.awt.Mnemonics.setLocalizedText(jButton3, org.openide.util.NbBundle.getMessage(OrderBomTopComponent.class, "OrderBomTopComponent.jButton3.text")); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -342,7 +360,11 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(262, 262, 262)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
@@ -355,7 +377,9 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel2)
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton1))
+                                .addComponent(jButton1)
+                                .addComponent(jButton2)
+                                .addComponent(jButton3))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel1)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -381,11 +405,47 @@ public final class OrderBomTopComponent extends TopComponent implements Explorer
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            // TODO add your handling code here:
+
+            bm.changeOrderBom(true);
+        } catch (ClassNotFoundException ex) {
+            Exceptions.printStackTrace(ex);
+        } catch (SQLException ex) {
+            Exceptions.printStackTrace(ex);
+        }
+        jButton2.setEnabled(false);
+        jButton3.setEnabled(true);
+        
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+
+            bm.changeOrderBom(false);
+        } catch (ClassNotFoundException ex) {
+            Exceptions.printStackTrace(ex);
+        } catch (SQLException ex) {
+            Exceptions.printStackTrace(ex);
+            
+        }
+        
+         jButton3.setEnabled(false);
+         jButton2.setEnabled(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private BomFun bm = new BomFun();
     private ExplorerManager em = new ExplorerManager();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.openide.explorer.view.BeanTreeView beanTreeView1;
     private org.openide.explorer.view.BeanTreeView beanTreeView2;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
