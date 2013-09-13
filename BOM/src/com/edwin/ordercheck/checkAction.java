@@ -13,11 +13,16 @@ import org.openide.awt.ActionRegistration;
 import org.openide.util.NbBundle.Messages;
 
 @ActionID(
+        
         category = "基础资料",
         id = "com.edwin.ordercheck.checkAction"
         )
 @ActionRegistration(
+        
+        iconBase = "ICONS/help.png",
+        iconInMenu = true,
         displayName = "#CTL_checkAction"
+        
         )
 @ActionReference(path = "Menu/基础资料", position = 3333)
 @Messages("CTL_checkAction=checkAction")
