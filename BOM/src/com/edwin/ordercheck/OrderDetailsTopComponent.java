@@ -5,11 +5,14 @@
  */
 package com.edwin.ordercheck;
 
+import java.util.Collections;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
+import org.openide.util.lookup.AbstractLookup;
+import org.openide.util.lookup.InstanceContent;
 
 /**
  * Top component which displays something.
@@ -31,8 +34,8 @@ import org.openide.util.NbBundle.Messages;
         preferredID = "OrderDetailsTopComponent"
         )
 @Messages({
-    "CTL_OrderDetailsAction=OrderDetails",
-    "CTL_OrderDetailsTopComponent=OrderDetails Window",
+    "CTL_OrderDetailsAction=订单明细",
+    "CTL_OrderDetailsTopComponent=订单明细",
     "HINT_OrderDetailsTopComponent=This is a OrderDetails window"
 })
 public final class OrderDetailsTopComponent extends TopComponent {
@@ -41,6 +44,7 @@ public final class OrderDetailsTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_OrderDetailsTopComponent());
         setToolTipText(Bundle.HINT_OrderDetailsTopComponent());
+        associateLookup(new AbstractLookup(content));
 
     }
 
@@ -102,17 +106,17 @@ public final class OrderDetailsTopComponent extends TopComponent {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        OrderElement oe = new OrderElement();
+        oe.setPh(jTextField1.getText().trim());
+        content.set(Collections.singleton(oe), null);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void myJXTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myJXTable2MouseClicked
         // TODO add your handling code here:
-        
 //        int row=myJXTable2.getSelectedRow();
-        
-        
-        
     }//GEN-LAST:event_myJXTable2MouseClicked
 
+    private InstanceContent content;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;

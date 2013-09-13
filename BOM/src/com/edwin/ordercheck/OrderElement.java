@@ -9,7 +9,6 @@ package com.edwin.ordercheck;
  *
  * @author John
  */
-
 public class OrderElement {
 
     public String getPh() {
@@ -19,10 +18,7 @@ public class OrderElement {
     public void setPh(String ph) {
         this.ph = ph;
     }
-    
-    String ph;
-    
-    
-    
-    
+
+    private String ph;
+
 }

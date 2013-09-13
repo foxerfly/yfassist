@@ -5,11 +5,17 @@
  */
 package com.edwin.ordercheck;
 
+import java.util.Collection;
+import javax.swing.JOptionPane;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
+import org.openide.util.Lookup;
+import org.openide.util.LookupEvent;
+import org.openide.util.LookupListener;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
+import org.openide.util.Utilities;
 
 /**
  * Top component which displays something.
@@ -31,11 +37,11 @@ import org.openide.util.NbBundle.Messages;
         preferredID = "OrderDetailCheckTopComponent"
         )
 @Messages({
-    "CTL_OrderDetailCheckAction=OrderDetailCheck",
-    "CTL_OrderDetailCheckTopComponent=OrderDetailCheck Window",
+    "CTL_OrderDetailCheckAction=订单特征明细",
+    "CTL_OrderDetailCheckTopComponent=订单特征明细",
     "HINT_OrderDetailCheckTopComponent=This is a OrderDetailCheck window"
 })
-public final class OrderDetailCheckTopComponent extends TopComponent {
+public final class OrderDetailCheckTopComponent extends TopComponent implements LookupListener {
 
     public OrderDetailCheckTopComponent() {
         initComponents();
@@ -86,18 +92,20 @@ public final class OrderDetailCheckTopComponent extends TopComponent {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private Lookup.Result<OrderElement> result;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private com.edwin.myswingx.MyJXTable myJXTable1;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
-        // TODO add custom code on component opening
+        result = Utilities.actionsGlobalContext().lookupResult(OrderElement.class);
+        result.addLookupListener(this);
     }
 
     @Override
     public void componentClosed() {
-        // TODO add custom code on component closing
+        result.removeLookupListener(this);
     }
 
     void writeProperties(java.util.Properties p) {
@@ -110,5 +118,18 @@ public final class OrderDetailCheckTopComponent extends TopComponent {
     void readProperties(java.util.Properties p) {
         String version = p.getProperty("version");
         // TODO read your settings according to their version
+    }
+
+    @Override
+    public void resultChanged(LookupEvent ev) {
+        Collection<? extends OrderElement> oes = result.allInstances();
+        if (!oes.isEmpty()) {
+
+            for (OrderElement oe : oes) {
+
+                JOptionPane.showConfirmDialog(this, oe.getPh());
+            }
+
+        }
     }
 }
