@@ -34,7 +34,10 @@ public final class checkAction implements ActionListener {
 
         TopComponentGroup group = WindowManager.getDefault().findTopComponentGroup("ordercheckGroup");
         if (group != null) {
+            group.close();
             group.open();
+//             WindowManager.getDefault().findTopComponent("OrderDetailCheckTopComponent").open();
+//            WindowManager.getDefault().findTopComponent("OrderDetailsTopComponent").open();
         } else {
             JOptionPane.showConfirmDialog(null, "未找到窗口");
         }
