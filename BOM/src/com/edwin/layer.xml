@@ -7,10 +7,20 @@
         <folder name="Groups">
             <file name="ordercheckGroup.wsgrp" url="ordercheck/groups/ordercheckGroupWsgrp.xml"/>
             <folder name="ordercheckGroup">
-                <file name="OrderDetailCheckTopComponent.wstcgrp" url="ordercheck/groups/ordercheckGroup/OrderDetailCheckTopComponentWstcgrp.xml"/>
-                <file name="OrderDetailsTopComponent.wstcgrp" url="ordercheck/groups/ordercheckGroup/OrderDetailsTopComponentWstcgrp.xml"/>
+                <file name="ChecksTopComponent.wstcgrp" url="ordercheck/groups/ordercheckGroup/ChecksTopComponentWstcgrp.xml"/>
+                <file name="OrdersTopComponent.wstcgrp" url="ordercheck/groups/ordercheckGroup/OrdersTopComponentWstcgrp.xml"/>
             </folder>
         </folder>
+        <folder name="Modes">
+            <folder name="anonymousMode_3">
+                <file name="OrdersTopComponent.wstcref" url="OrdersTopComponentWstcref.xml"/>
+            </folder>
+            <file name="anonymousMode_3.wsmode" url="anonymousMode_3Wsmode.xml"/>
+            <folder name="editor">
+                <file name="OrderDetailCheckTopComponent.wstcref_hidden"/>
+            </folder>
+        </folder>
+        <file name="WindowManager.wswmgr" url="WindowManager.wswmgr"/>
     </folder>     
         
         

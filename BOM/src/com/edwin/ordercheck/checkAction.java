@@ -12,6 +12,7 @@ import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionRegistration;
 import org.openide.util.NbBundle.Messages;
+import org.openide.windows.Mode;
 import org.openide.windows.TopComponentGroup;
 import org.openide.windows.WindowManager;
 
@@ -36,8 +37,11 @@ public final class checkAction implements ActionListener {
         if (group != null) {
             group.close();
             group.open();
-//             WindowManager.getDefault().findTopComponent("OrderDetailCheckTopComponent").open();
-//            WindowManager.getDefault().findTopComponent("OrderDetailsTopComponent").open();
+
+            Mode a = WindowManager.getDefault().findMode("anonymousMode_3");
+            WindowManager.getDefault().findTopComponent("ChecksTopComponent").open();
+            WindowManager.getDefault().findTopComponent("OrdersTopComponent").open();
+            WindowManager.getDefault().findTopComponent("OrdersTopComponent").requestActive();
         } else {
             JOptionPane.showConfirmDialog(null, "未找到窗口");
         }

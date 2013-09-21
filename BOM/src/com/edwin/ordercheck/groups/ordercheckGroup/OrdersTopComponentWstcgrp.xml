@@ -6,6 +6,6 @@
 
 <tc-group version="2.0">
     <module name="com.edwin.bom" spec="1.0"/>
-    <tc-id id="OrderDetailCheckTopComponent" />
+    <tc-id id="OrdersTopComponent" />
     <open-close-behavior open="true" close="true" />
 </tc-group>
