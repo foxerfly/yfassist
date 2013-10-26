@@ -60,6 +60,8 @@
         
         <!--    SFC-->
         <mapping resource="com/edwin/SFC/Cmsmq.hbm.xml"/>
+        <mapping resource="com/edwin/SFC/Cmsmq.hbm.xml"/>
+        <mapping resource="com/edwin/SFC/Cmsmq.hbm.xml"/>
         
         
         <!--  BOM-->
