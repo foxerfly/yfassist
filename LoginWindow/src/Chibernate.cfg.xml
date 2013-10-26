@@ -16,7 +16,7 @@
 
 
         <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-        <property name="hibernate.connection.url">jdbc:sqlserver://192.168.1.4:1433;databaseName=mytest</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://192.168.1.4:1433;databaseName=fanski</property>
         <property name="hibernate.connection.username">sa</property>
         <property name="hibernate.connection.password">fanski=123</property>
 
@@ -59,8 +59,6 @@
         <mapping resource="com/edwin/CWMONTH/Invmbc.hbm.xml"/>
         
         <!--    SFC-->
-        <mapping resource="com/edwin/SFC/Cmsmq.hbm.xml"/>
-        <mapping resource="com/edwin/SFC/Cmsmq.hbm.xml"/>
         <mapping resource="com/edwin/SFC/Cmsmq.hbm.xml"/>
         
         
