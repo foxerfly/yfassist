@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated Jun 7, 2013 9:45:51 PM by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
-    <class name="com.edwin.authorize.UserAccount" table="UserAccount" schema="dbo" >
+    <class name="com.edwin.authorize.UserAccount" table="UserAccount" schema="dbo"  >
         <id name="userId" type="string">
             <column name="UserId" length="10" />
             <generator class="assigned" />
