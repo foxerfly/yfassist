@@ -112,7 +112,7 @@ public class Installer extends ModuleInstall implements ActionListener {
 
                     } else {
 
-                        dlg.setInfo("Wrong user name or password");
+                        dlg.setInfo("由和同ddd");
                     }
                 } catch (ClassNotFoundException ex) {
                     Exceptions.printStackTrace(ex);
