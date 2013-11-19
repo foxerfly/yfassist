@@ -5,6 +5,7 @@
  */
 package com.edwin.manufacture.cop;
 
+import com.edwin.clickfunction.OpenFileDialg;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -24,15 +25,15 @@ import org.openide.util.NbBundle.Messages;
         persistenceType = TopComponent.PERSISTENCE_ALWAYS
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
-@ActionID(category = "Window", id = "com.edwin.manufacture.cop.BatchImportReturnOfGoodsByXlsSheetTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
+@ActionID(category = "销售", id = "com.edwin.manufacture.cop.BatchImportReturnOfGoodsByXlsSheetTopComponent")
+@ActionReference(path = "Menu/销售/退货" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
         displayName = "#CTL_BatchImportReturnOfGoodsByXlsSheetAction",
         preferredID = "BatchImportReturnOfGoodsByXlsSheetTopComponent"
 )
 @Messages({
-    "CTL_BatchImportReturnOfGoodsByXlsSheetAction=BatchImportReturnOfGoodsByXlsSheet",
-    "CTL_BatchImportReturnOfGoodsByXlsSheetTopComponent=BatchImportReturnOfGoodsByXlsSheet Window",
+    "CTL_BatchImportReturnOfGoodsByXlsSheetAction=退货批量导入",
+    "CTL_BatchImportReturnOfGoodsByXlsSheetTopComponent=退货批量导入",
     "HINT_BatchImportReturnOfGoodsByXlsSheetTopComponent=This is a BatchImportReturnOfGoodsByXlsSheet window"
 })
 public final class BatchImportReturnOfGoodsByXlsSheetTopComponent extends TopComponent {
@@ -52,19 +53,94 @@ public final class BatchImportReturnOfGoodsByXlsSheetTopComponent extends TopCom
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        tx_absolutFilePath = new javax.swing.JTextField();
+        btn_OpenFindFileDialog = new javax.swing.JButton();
+        btn_CheckAndImportFile = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tb_ShowXlsDetail = new com.edwin.myswingx.MyJXTable();
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(BatchImportReturnOfGoodsByXlsSheetTopComponent.class, "BatchImportReturnOfGoodsByXlsSheetTopComponent.jLabel1.text")); // NOI18N
+
+        tx_absolutFilePath.setText(org.openide.util.NbBundle.getMessage(BatchImportReturnOfGoodsByXlsSheetTopComponent.class, "BatchImportReturnOfGoodsByXlsSheetTopComponent.tx_absolutFilePath.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(btn_OpenFindFileDialog, org.openide.util.NbBundle.getMessage(BatchImportReturnOfGoodsByXlsSheetTopComponent.class, "BatchImportReturnOfGoodsByXlsSheetTopComponent.btn_OpenFindFileDialog.text")); // NOI18N
+        btn_OpenFindFileDialog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_OpenFindFileDialogActionPerformed(evt);
+            }
+        });
+
+        org.openide.awt.Mnemonics.setLocalizedText(btn_CheckAndImportFile, org.openide.util.NbBundle.getMessage(BatchImportReturnOfGoodsByXlsSheetTopComponent.class, "BatchImportReturnOfGoodsByXlsSheetTopComponent.btn_CheckAndImportFile.text")); // NOI18N
+        btn_CheckAndImportFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CheckAndImportFileActionPerformed(evt);
+            }
+        });
+
+        tb_ShowXlsDetail.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tb_ShowXlsDetail);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 756, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(tx_absolutFilePath, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_OpenFindFileDialog)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_CheckAndImportFile))
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(tx_absolutFilePath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_OpenFindFileDialog)
+                    .addComponent(btn_CheckAndImportFile))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_OpenFindFileDialogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_OpenFindFileDialogActionPerformed
+        OpenFileDialg openFileDialog = new OpenFileDialg();
+        String filePath = "";
+        filePath = openFileDialog.getAbsolutFilePath();
+        tx_absolutFilePath.setText(filePath);
+        
+
+    }//GEN-LAST:event_btn_OpenFindFileDialogActionPerformed
+
+    private void btn_CheckAndImportFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CheckAndImportFileActionPerformed
+        
+        
+    }//GEN-LAST:event_btn_CheckAndImportFileActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_CheckAndImportFile;
+    private javax.swing.JButton btn_OpenFindFileDialog;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private com.edwin.myswingx.MyJXTable tb_ShowXlsDetail;
+    private javax.swing.JTextField tx_absolutFilePath;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {

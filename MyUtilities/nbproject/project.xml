@@ -149,6 +149,7 @@
                 <package>com.edwin.SFC</package>
                 <package>com.edwin.authorize</package>
                 <package>com.edwin.bomtable</package>
+                <package>com.edwin.clickfunction</package>
                 <package>com.edwin.javafx</package>
                 <package>com.edwin.myswingx</package>
             </public-packages>
