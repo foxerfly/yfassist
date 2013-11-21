@@ -124,9 +124,7 @@ public final class BatchImportReturnOfGoodsByXlsSheetTopComponent extends TopCom
         OpenFileDialg openFileDialog = new OpenFileDialg();
         String filePath = "";
         filePath = openFileDialog.getAbsolutFilePath();
-        tx_absolutFilePath.setText(filePath);
-        
-
+        tx_absolutFilePath.setText(filePath);   
     }//GEN-LAST:event_btn_OpenFindFileDialogActionPerformed
 
     private void btn_CheckAndImportFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CheckAndImportFileActionPerformed
