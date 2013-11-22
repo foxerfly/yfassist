@@ -23,4 +23,5 @@ public abstract class MyJdbc {
     public static Connection getConn() {
         return connc;
     }
+    
 }

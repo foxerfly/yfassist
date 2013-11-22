@@ -128,6 +128,20 @@
                     </run-dependency>
                 </dependency>
             </module-dependencies>
+            <test-dependencies>
+                <test-type>
+                    <name>unit</name>
+                    <test-dependency>
+                        <code-name-base>org.netbeans.libs.junit4</code-name-base>
+                        <compile-dependency/>
+                    </test-dependency>
+                    <test-dependency>
+                        <code-name-base>org.netbeans.modules.nbjunit</code-name-base>
+                        <recursive/>
+                        <compile-dependency/>
+                    </test-dependency>
+                </test-type>
+            </test-dependencies>
             <public-packages>
                 <package>com.edwin.COPTABLE</package>
                 <package>com.edwin.CWMONTH</package>
@@ -135,6 +149,7 @@
                 <package>com.edwin.SFC</package>
                 <package>com.edwin.authorize</package>
                 <package>com.edwin.bomtable</package>
+                <package>com.edwin.clickfunction</package>
                 <package>com.edwin.javafx</package>
                 <package>com.edwin.myswingx</package>
             </public-packages>
