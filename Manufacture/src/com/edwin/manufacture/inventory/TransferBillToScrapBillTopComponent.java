@@ -5,6 +5,8 @@
  */
 package com.edwin.manufacture.inventory;
 
+import com.edwin.myswingx.MyJTableModel;
+import javax.swing.table.DefaultTableModel;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -41,6 +43,10 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_TransferBillToScrapBillTopComponent());
         setToolTipText(Bundle.HINT_TransferBillToScrapBillTopComponent());
+        tb_TransferBills.setModel(new MyJTableModel("选中","单别","单号").buildModel());
+        
+        
+        
 
     }
 
@@ -53,19 +59,10 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tb_TransferBill = new com.edwin.myswingx.MyJXTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tb_ScrapBill = new com.edwin.myswingx.MyJXTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        tx_TransferBillType = new javax.swing.JTextField();
-        tx_TransferBills = new javax.swing.JTextField();
-        btn_QueryByTransferBills = new javax.swing.JButton();
-        btn_addSelectedTransferBillTableRows = new javax.swing.JButton();
-        btn_AddAll = new javax.swing.JButton();
-        btn_GenerateScrapBill = new javax.swing.JButton();
+        tb_TransferBills = new com.edwin.myswingx.MyJXTable();
+        btn_GeneraterScrapBill = new javax.swing.JButton();
 
-        tb_TransferBill.setModel(new javax.swing.table.DefaultTableModel(
+        tb_TransferBills.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -76,54 +73,18 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tb_TransferBill);
+        jScrollPane1.setViewportView(tb_TransferBills);
+        if (tb_TransferBills.getColumnModel().getColumnCount() > 0) {
+            tb_TransferBills.getColumnModel().getColumn(0).setHeaderValue(org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.tb_TransferBills.columnModel.title0")); // NOI18N
+            tb_TransferBills.getColumnModel().getColumn(1).setHeaderValue(org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.tb_TransferBills.columnModel.title1")); // NOI18N
+            tb_TransferBills.getColumnModel().getColumn(2).setHeaderValue(org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.tb_TransferBills.columnModel.title2")); // NOI18N
+            tb_TransferBills.getColumnModel().getColumn(3).setHeaderValue(org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.tb_TransferBills.columnModel.title3")); // NOI18N
+        }
 
-        tb_ScrapBill.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(tb_ScrapBill);
-
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.jLabel1.text")); // NOI18N
-
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.jLabel2.text")); // NOI18N
-
-        tx_TransferBillType.setText(org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.tx_TransferBillType.text")); // NOI18N
-
-        tx_TransferBills.setText(org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.tx_TransferBills.text")); // NOI18N
-
-        org.openide.awt.Mnemonics.setLocalizedText(btn_QueryByTransferBills, org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.btn_QueryByTransferBills.text")); // NOI18N
-        btn_QueryByTransferBills.addActionListener(new java.awt.event.ActionListener() {
+        org.openide.awt.Mnemonics.setLocalizedText(btn_GeneraterScrapBill, org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.btn_GeneraterScrapBill.text")); // NOI18N
+        btn_GeneraterScrapBill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_QueryByTransferBillsActionPerformed(evt);
-            }
-        });
-
-        org.openide.awt.Mnemonics.setLocalizedText(btn_addSelectedTransferBillTableRows, org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.btn_addSelectedTransferBillTableRows.text")); // NOI18N
-        btn_addSelectedTransferBillTableRows.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_addSelectedTransferBillTableRowsActionPerformed(evt);
-            }
-        });
-
-        org.openide.awt.Mnemonics.setLocalizedText(btn_AddAll, org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.btn_AddAll.text")); // NOI18N
-        btn_AddAll.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_AddAllActionPerformed(evt);
-            }
-        });
-
-        org.openide.awt.Mnemonics.setLocalizedText(btn_GenerateScrapBill, org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.btn_GenerateScrapBill.text")); // NOI18N
-        btn_GenerateScrapBill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_GenerateScrapBillActionPerformed(evt);
+                btn_GeneraterScrapBillActionPerformed(evt);
             }
         });
 
@@ -132,97 +93,33 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_AddAll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_addSelectedTransferBillTableRows, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tx_TransferBillType, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(tx_TransferBills, javax.swing.GroupLayout.PREFERRED_SIZE, 809, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_QueryByTransferBills, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_GenerateScrapBill, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 20, Short.MAX_VALUE)))
+                        .addComponent(btn_GeneraterScrapBill)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel2)
-                    .addContainerGap(1039, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tx_TransferBillType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addComponent(btn_GeneraterScrapBill)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tx_TransferBills, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_QueryByTransferBills)
-                        .addComponent(btn_GenerateScrapBill)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_addSelectedTransferBillTableRows)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_AddAll)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel2)
-                    .addContainerGap(618, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_QueryByTransferBillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_QueryByTransferBillsActionPerformed
-        
-        
-        
-    }//GEN-LAST:event_btn_QueryByTransferBillsActionPerformed
-
-    private void btn_GenerateScrapBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GenerateScrapBillActionPerformed
+    private void btn_GeneraterScrapBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GeneraterScrapBillActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_GenerateScrapBillActionPerformed
-
-    private void btn_addSelectedTransferBillTableRowsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addSelectedTransferBillTableRowsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_addSelectedTransferBillTableRowsActionPerformed
-
-    private void btn_AddAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AddAllActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_AddAllActionPerformed
+    }//GEN-LAST:event_btn_GeneraterScrapBillActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_AddAll;
-    private javax.swing.JButton btn_GenerateScrapBill;
-    private javax.swing.JButton btn_QueryByTransferBills;
-    private javax.swing.JButton btn_addSelectedTransferBillTableRows;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btn_GeneraterScrapBill;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private com.edwin.myswingx.MyJXTable tb_ScrapBill;
-    private com.edwin.myswingx.MyJXTable tb_TransferBill;
-    private javax.swing.JTextField tx_TransferBillType;
-    private javax.swing.JTextField tx_TransferBills;
+    private com.edwin.myswingx.MyJXTable tb_TransferBills;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
