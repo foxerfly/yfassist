@@ -6,7 +6,14 @@
 package com.edwin.manufacture.inventory;
 
 import com.edwin.myswingx.MyJTableModel;
+import java.awt.event.MouseEvent;
+import java.util.Vector;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -43,10 +50,7 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_TransferBillToScrapBillTopComponent());
         setToolTipText(Bundle.HINT_TransferBillToScrapBillTopComponent());
-        tb_TransferBills.setModel(new MyJTableModel("选中","单别","单号").buildModel());
-        
-        
-        
+        tb_TransferBills.setModel(new MyJTableModel("选中", "单别", "单号").buildModel());
 
     }
 
@@ -73,6 +77,11 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tb_TransferBills.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tb_TransferBillsMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tb_TransferBills);
         if (tb_TransferBills.getColumnModel().getColumnCount() > 0) {
             tb_TransferBills.getColumnModel().getColumn(0).setHeaderValue(org.openide.util.NbBundle.getMessage(TransferBillToScrapBillTopComponent.class, "TransferBillToScrapBillTopComponent.tb_TransferBills.columnModel.title0")); // NOI18N
@@ -95,7 +104,7 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_GeneraterScrapBill)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -103,18 +112,44 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(btn_GeneraterScrapBill)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane1)
+                .addGap(14, 14, 14))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_GeneraterScrapBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GeneraterScrapBillActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btn_GeneraterScrapBillActionPerformed
+
+    private void tb_TransferBillsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_TransferBillsMouseClicked
+
+        if (evt.getButton() == MouseEvent.BUTTON1) {
+            int checkColumnNumber = 0;
+            int billTypeColumnNumber = 1;
+            TableColumn checkColumn = tb_TransferBills.getColumnModel().getColumn(checkColumnNumber);
+            TableColumn billTypeColumn = tb_TransferBills.getColumnModel().getColumn(billTypeColumnNumber);
+            ((DefaultTableModel) tb_TransferBills.getModel()).addRow(new Vector());
+            int sElectedColumnNumber = 0;
+            JComboBox cb_billType = new JComboBox();
+            JCheckBox jc_check = new JCheckBox();
+            jc_check.setSelected(true);
+            cb_billType.addItem("1280");
+            DefaultCellEditor comboBoxEditor = new DefaultCellEditor(cb_billType);
+//            DefaultTableCellRenderer comboBoxRenderer=new  DefaultTableCellRenderer(cb_billType);
+            DefaultCellEditor checkBoxEditor = new DefaultCellEditor(jc_check);
+            sElectedColumnNumber = tb_TransferBills.getSelectedColumn();
+            if (sElectedColumnNumber == billTypeColumnNumber) {
+                billTypeColumn.setCellEditor(comboBoxEditor);
+//                billTypeColumn.setCellRenderer(comboBoxEditor);
+                checkColumn.setCellEditor(checkBoxEditor);
+                checkColumn.setCellRenderer(null);
+            }
+        }
+    }//GEN-LAST:event_tb_TransferBillsMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_GeneraterScrapBill;
