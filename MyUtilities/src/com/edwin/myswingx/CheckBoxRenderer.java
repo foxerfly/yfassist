@@ -5,7 +5,6 @@
  */
 package com.edwin.myswingx;
 
-import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JCheckBox;
 import javax.swing.JTable;
@@ -20,8 +19,7 @@ public class CheckBoxRenderer extends JCheckBox implements TableCellRenderer {
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
 
-        this.setSelected((boolean) value);
-        this.setBorder(null);
+        
         return this;
 
     }
