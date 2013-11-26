@@ -55,8 +55,8 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
         ((DefaultTableModel) tb_TransferBills.getModel()).addRow(new Vector());
         int checkColumnNumber = 0;
         int billTypeColumnNumber = 1;
-        TableColumn checkColumn = jTable3.getColumnModel().getColumn(checkColumnNumber);
-        TableColumn billTypeColumn = jTable3.getColumnModel().getColumn(billTypeColumnNumber);
+        TableColumn checkColumn = jXTable1.getColumnModel().getColumn(checkColumnNumber);
+        TableColumn billTypeColumn = jXTable1.getColumnModel().getColumn(billTypeColumnNumber);
         CheckBoxRenderer checkBoxRenderer = new CheckBoxRenderer();
         ComboBoxRenderer comboBoxRenderer = new ComboBoxRenderer();
         checkColumn.setCellRenderer(checkBoxRenderer);
@@ -75,8 +75,8 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_TransferBills = new com.edwin.myswingx.MyJXTable();
         btn_GeneraterScrapBill = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jXTable1 = new org.jdesktop.swingx.JXTable();
 
         tb_TransferBills.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,7 +109,7 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
             }
         });
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        jXTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -120,7 +120,7 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane4.setViewportView(jTable3);
+        jScrollPane2.setViewportView(jXTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -133,9 +133,9 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_GeneraterScrapBill)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)))
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,8 +145,8 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -184,8 +184,8 @@ public final class TransferBillToScrapBillTopComponent extends TopComponent {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_GeneraterScrapBill;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable3;
+    private javax.swing.JScrollPane jScrollPane2;
+    private org.jdesktop.swingx.JXTable jXTable1;
     private com.edwin.myswingx.MyJXTable tb_TransferBills;
     // End of variables declaration//GEN-END:variables
     @Override
