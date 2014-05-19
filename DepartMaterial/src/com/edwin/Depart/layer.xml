@@ -80,7 +80,7 @@
                 <attr name="position" intvalue="400"/>
             </file>
         </folder>
-        <folder name="File">
+        <folder name="File_hidden">
             <file name="com-edwin-Depart-DepartMaterialTopComponent.instance_hidden"/>
             <file name="com-edwin-Depart-DepartMaterialTopComponent.shadow_hidden"/>
             <file name="com-edwin-admin-AuthorizeTopComponent.shadow_hidden"/>

@@ -26,7 +26,7 @@ import org.openide.util.NbBundle.Messages;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "销售", id = "com.edwin.manufacture.cop.BatchImportReturnOfGoodsByXlsSheetTopComponent")
-@ActionReference(path = "Menu/销售/退货" /*, position = 333 */)
+//@ActionReference(path = "Menu/销售/退货" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
         displayName = "#CTL_BatchImportReturnOfGoodsByXlsSheetAction",
         preferredID = "BatchImportReturnOfGoodsByXlsSheetTopComponent"

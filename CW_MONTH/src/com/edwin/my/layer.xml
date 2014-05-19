@@ -49,13 +49,13 @@
         <folder name="Versioning_hidden"/>
         <folder name="Help_hidden"/>
         <folder name="RunProject_hidden"/>
-        <folder name="财务">
+        <folder name="财务_hidden">
             <file name="com-edwin-my-Cost-OpenCost.shadow">
                 <attr name="originalFile" stringvalue="Actions/Tools/com-edwin-my-Cost-OpenCost.instance"/>
             </file>
         </folder>
         <folder name="生产">
-            <file name="com-edwin-my-SFC-MPS.shadow">
+            <file name="com-edwin-my-SFC-MPS.shadow_hidden">
                 <attr name="originalFile" stringvalue="Actions/Tools/com-edwin-my-SFC-MPS.instance"/>
             </file>
         </folder>
@@ -80,7 +80,7 @@
         </folder>
         <folder name="File">
             <file name="com-edwin-my-SFC-MPS.shadow_hidden"/>
-            <file name="com-edwin-my-sheets-ExcelCheckinTopComponent.instance">
+            <file name="com-edwin-my-sheets-ExcelCheckinTopComponent.instance_hidden">
                 <attr name="iconBase" stringvalue="ICONS/download.png"/>
                 <attr name="instanceCreate" methodvalue="org.openide.windows.TopComponent.openAction"/>
                 <attr name="preferredID" stringvalue="ExcelCheckinTopComponent"/>

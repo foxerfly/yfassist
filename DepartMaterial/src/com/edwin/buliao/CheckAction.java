@@ -21,7 +21,7 @@ import org.openide.util.NbBundle.Messages;
         iconBase = "ICONS/bookmarksTable.png",
         displayName = "#CTL_CheckAction")
 @ActionReferences({
-    @ActionReference(path = "Menu/生产", position = 3333, separatorBefore = 3283, separatorAfter = 3383),
+//    @ActionReference(path = "Menu/生产", position = 3333, separatorBefore = 3283, separatorAfter = 3383),
     @ActionReference(path = "Editors/text/x-java/Popup", position = 1300, separatorBefore = 1250, separatorAfter = 1350)
 })
 @Messages("CTL_CheckAction=检查补单明细")
@@ -31,6 +31,7 @@ public final class CheckAction implements ActionListener {
 
     public CheckAction(EditorCookie context) {
         this.context = context;
+        
     }
 
     @Override

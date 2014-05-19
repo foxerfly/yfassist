@@ -2,7 +2,7 @@
 <!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
 <filesystem>
     <folder name="Menu">
-        <folder name="系统管理">
+        <folder name="系统管理_hidden">
 
             <file name="com-edwin-javafx-JavaFXWidgetTestTopComponent.shadow_hidden"/>
             <file name="com-edwin-javafx-JavaFXWidgetTestTopComponent.shadow_hidden">

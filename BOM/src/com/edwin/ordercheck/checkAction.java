@@ -25,7 +25,7 @@ import org.openide.windows.WindowManager;
         iconInMenu = true,
         displayName = "#CTL_checkAction"
         )
-@ActionReference(path = "Menu/基础资料", position = 3333)
+//@ActionReference(path = "Menu/基础资料", position = 3333)
 @Messages("CTL_checkAction=检查特征属性")
 public final class checkAction implements ActionListener {
 

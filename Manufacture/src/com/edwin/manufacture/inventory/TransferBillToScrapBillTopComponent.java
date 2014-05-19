@@ -35,7 +35,7 @@ import org.openide.util.NbBundle.Messages;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "仓库", id = "com.edwin.manufacture.inventory.TransferBillToScrapBillTopComponent")
-@ActionReference(path = "Menu/仓库/调拨单转废品入库单" /*, position = 333 */)
+//@ActionReference(path = "Menu/仓库/调拨单转废品入库单"  /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
         displayName = "#CTL_TransferBillToScrapBillAction",
         preferredID = "TransferBillToScrapBillTopComponent"
