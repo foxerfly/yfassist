@@ -25,7 +25,7 @@ import org.openide.util.NbBundle.Messages;
         )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "生产", id = "com.edwin.my.LRP.MOCTA.UpdateMoctaTopComponent")
-@ActionReference(path = "Menu/生产" /*, position = 333 */)
+//@ActionReference(path = "Menu/生产" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
         displayName = "#CTL_UpdateMoctaAction",
         preferredID = "UpdateMoctaTopComponent"
