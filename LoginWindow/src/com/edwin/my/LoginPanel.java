@@ -31,6 +31,8 @@ public class LoginPanel extends ImagePanel {
 //        this.setBackgroundImage(new ImageIcon(getClass().getResource("/ICON/login.png")).getImage());
         this.setBackgroundImage(ImageUtilities.loadImage("/ICON/login.png", true));
         this.setImageDisplayMode(ImagePanel.CENTRE);
+        jLabel3.setVisible(false);
+        jComboBox1.setVisible(false);
 
     }
 

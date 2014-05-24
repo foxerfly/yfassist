@@ -3,5 +3,5 @@ OpenIDE-Module: com.edwin.my
 OpenIDE-Module-Install: com/edwin/my/Installer.class
 OpenIDE-Module-Layer: com/edwin/my/layer.xml
 OpenIDE-Module-Localizing-Bundle: com/edwin/my/Bundle.properties
-OpenIDE-Module-Specification-Version: 1.0
+OpenIDE-Module-Specification-Version: 2.0
 

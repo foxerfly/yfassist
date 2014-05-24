@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 OpenIDE-Module: SqlInterface
 OpenIDE-Module-Localizing-Bundle: SqlInterface/Bundle.properties
-OpenIDE-Module-Specification-Version: 1.0
+OpenIDE-Module-Specification-Version: 2.0
 
